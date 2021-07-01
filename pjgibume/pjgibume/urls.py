@@ -20,4 +20,5 @@ from gibumeapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name="home"),
+    path('mypage', mypage, name = "mypage")
 ]
