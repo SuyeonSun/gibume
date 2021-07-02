@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block extrahead %} {% endblock %}
+        <link rel="stylesheet" href='{% static "css/reset.css" %}' />
+        <link rel="stylesheet" href='{% static "css/base.css" %}' />
+        <style>
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="baseHeader">
+            <a href="{% url 'home'%}">
+                <img class="logoImg" src="../static/img/logo.png" alt="" />
+            </a>
+            <div class="menuWrapper">
+                <a href=""><div class="menuItem">PERFUME</div></a>
+                <a href=""><div class="menuItem">EDUCATION</div></a>
+                <a href=""><div class="menuItem">TEST</div></a>
+                <a href=""><div class="menuItem">BLOG</div></a>
+            </div>
+            <div class="buttonWrapper">
+                <a href="{% url 'mypage' %}">
+                    <div class="buttonItem">MYPAGE</div>
+                </a>
+                <div class="buttonItem">SIGNIN</div>
+            </div>
+        </div>
+        {%block content%} {% endblock%}
+        <div class="baseFooter">
+            <span>&copy; copyright all rights reserved PERFUMEE</span>
+        </div>
+    </body>
+</html>
