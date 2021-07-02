@@ -1,0 +1,141 @@
+.homeWrapper {
+    width: 100%;
+    height: auto;
+}
+
+.homeLandingTop {
+    width: 100%;
+    height: 100vh;
+    background-color: #fef5fa;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.baseHeader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    height: 100px;
+    background-color: #fef5fa;
+    /* border: 1px solid red; */
+}
+
+.logoImg {
+    display: block;
+    /* border: 1px solid red; */
+    width: 130px;
+    height: 23px;
+    margin-left: 20px;
+}
+
+.menuWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.menuWrapper .menuItem {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f12361;
+    margin: 0 20px;
+}
+
+.buttonWrapper {
+    display: flex;
+    /* justify-content: space-around; */
+    /* border: 1px solid red; */
+    align-items: center;
+    /* width: 20%; */
+}
+
+.buttonWrapper .buttonItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f12361;
+    border-radius: 5px;
+    height: 30px;
+    width: 140px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 5px 2px;
+    margin: 0 10px;
+}
+
+.baseFooter {
+    width: 100%;
+    height: 7vh;
+    background-color: #f12361;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    padding-top: 5px;
+}
+
+.landingTitle {
+    margin-bottom: 30px;
+    /* 수정필요 */
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.landingTitle span {
+    font-size: 20px;
+    font-weight: 200;
+    color: #f12361;
+}
+
+.landingMessage {
+    text-align: center;
+}
+
+.landingMessage span {
+    display: block;
+    font-size: 72px;
+    font-weight: 800;
+    color: #f12361;
+    margin: 0 auto;
+}
+
+.homeLandingContents {
+    width: 100%;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.contentsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
+    border: 4px solid #f8b5d7;
+    border-radius: 15px;
+    margin: 3% 0;
+    background-color: #fef5fa;
+}
+
+.contentsItem span {
+    font-size: 18px;
+    font-weight: 200;
+    color: #f12361;
+}
