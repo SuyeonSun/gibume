@@ -55,7 +55,7 @@ ROOT_URLCONF = 'pjgibume.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['pjgibume/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
