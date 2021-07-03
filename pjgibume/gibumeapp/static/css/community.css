@@ -180,13 +180,14 @@ hr{
     width: 130px;
     height: 23px;
     margin-left: 20px;
+    
 }
 
 .menuWrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 55px;
+    margin-left: 80px;
 }
 
 .menuWrapper .menuItem {
@@ -222,7 +223,7 @@ hr{
 
 .baseFooter {
     width: 100%;
-    height:15px;
+    height:25px;
     background-color: #f12361;
     position: fixed;
     bottom: 0;
