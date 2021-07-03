@@ -20,3 +20,6 @@ def community(request):
 
 def community_detail(request):
     return render(request, 'community_page.html')
+
+def perfume(request):
+    return render(request, 'perfume.html')
