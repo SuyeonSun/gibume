@@ -25,4 +25,5 @@ urlpatterns = [
     path('product/',product,name="product"),
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
+    path('education/',education,name="education"),
 ]
