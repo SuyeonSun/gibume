@@ -7,7 +7,7 @@
     z-index: 1000;
     width: 100%;
     display: flex;
-    height: 100px;
+    height: 35px;
     background-color: #fef5fa;
     /* border: 1px solid red; */
 }
@@ -24,11 +24,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 40px;
+    margin-left: 80px;
 }
 
 .menuWrapper .menuItem {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     color: #f12361;
     margin: 0 20px;
@@ -40,6 +40,7 @@
     /* border: 1px solid red; */
     align-items: center;
     /* width: 20%; */
+    
 }
 
 .buttonWrapper .buttonItem {
@@ -48,9 +49,9 @@
     justify-content: center;
     background-color: #f12361;
     border-radius: 5px;
-    height: 30px;
-    width: 140px;
-    font-size: 20px;
+    height: 15px;
+    width: 100px;
+    font-size: 13px;
     font-weight: 600;
     color: #ffffff;
     padding: 5px 2px;
@@ -59,7 +60,7 @@
 
 .baseFooter {
     width: 100%;
-    height: 7vh;
+    height:15px;
     background-color: #f12361;
     position: fixed;
     bottom: 0;
@@ -67,7 +68,8 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 24px;
+    font-size: 13px;
     font-weight: 200;
     padding-top: 5px;
+    padding-bottom:5px;
 }
