@@ -1,23 +1,29 @@
-.detail_2 {
+
+.detail_2{
     background-color: white;
-    border-width: 2px;
-    border-color: #f12361;
-    border-radius: 10px;
-    border-style: solid;
-    height: 100%;
-    width: 1100px;
-    padding: 30px;
+    border-width:2px;
+    border-color:#F12361;
+    border-radius:10px;
+    border-style:solid;
+    height:100%;
+    width:1100px;
+    padding:30px;
+    
+    
+    
+    
 }
 
-.detail_1 {
+.detail_1{
     display: flex;
     justify-content: center;
     background-color: white;
-
-    padding: 50px;
-    padding-bottom: 50px;
+    
+    padding:50px;
+    padding-bottom:50px;
+    
 }
-.title {
+.title{
     width: 100%;
     height: 100vh;
     background-color: #fef5fa;
@@ -25,33 +31,38 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+
 }
-.maintitle {
-    color: #f12361;
+.maintitle{
+    color:#F12361;
     font-weight: bold;
-    font-size: 50px;
+    font-size:50px;
 }
 
-.subtitle {
-    color: #f12361;
+.subtitle{
+    color:#F12361;
     font-weight: bold;
-    font-size: 28px;
+    font-size:28px;
+    
 }
-/* 
+
 body{
     width:100%;
     height:100%;
     background-color:#FEF5FA;
     padding:0;
     margin:0;
-} */
+}
 
-/* .navi {
+.navi{
     padding-left: 30px;
-    padding-right: 30px;
-} */
+    padding-right:30px;
+    
+  
+}
 
-.container-fluid {
+.container-fluid{
     position: fixed;
     display: flex;
     align-items: center;
@@ -59,77 +70,78 @@ body{
     top: 0;
     z-index: 1000;
     width: 100%;
-    height: 50px;
+    height:43px;
     display: flex;
-
+    
     background-color: #fef5fa;
 }
-/* 
-a.nav-link:link,
-a.nav-link:visited,
-a.nav-link:active,
-a.nav-link:hover {
-    color: #f12361;
-    text-decoration: none;
-    padding: 0px;
-} */
 
-/* .nav-btn {
-    background-color: #f12361;
+a.nav-link:link, a.nav-link:visited, a.nav-link:active, a.nav-link:hover { 
+    color:#F12361; 
+    text-decoration: none; 
+    padding:0px;
+}
 
-    color: white;
-    text-decoration: none;
-    height: 25px;
-    display: flex;
+.nav-btn{
+    background-color:#F12361;
+
+    color:white;
+    text-decoration:none;
+    height:25px;
+    display:flex;
     align-items: center;
-    text-align: center;
-    border: 1px solid #f12361;
-} */
+    text-align:center;
+    border: 1px solid #F12361;
+}
 
 .nav-btn:hover {
     background-color: white;
-    color: #f12361;
-    border: 1px solid #f12361;
+    color:#F12361;
+    border: 1px solid #F12361;
+    
 }
+ 
 
-/* a {
+a {
     font-weight: bold;
-    font-size: 15px;
-} */
-/* a.navbar-brand:link,
-a.navbar-brand:visited,
-a.navbar-brand:active,
-a.navbar-brand:hover {
-    color: #f12361;
-    text-decoration: none;
-} */
-
-.navbar-brand {
-    margin: 0;
+    font-size:15px;
+}
+a.navbar-brand:link, a.navbar-brand:visited, a.navbar-brand:active, a.navbar-brand:hover {
+    color:#F12361;
+    text-decoration:none;
 }
 
-.navbar-toggler {
-    height: 20px;
-    width: 20px;
-    background-color: #f12361;
+.navbar-brand{
+    margin:0;
 }
 
-.nav-item {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 1px;
+.navbar-toggler{
+    
+    height:20px;
+    width:20px;
+    background-color: #F12361;
 }
 
-hr {
-    border: none;
-    border-top: 3px dashed #f12361;
-    color: white;
-    background-color: white;
+.nav-item{
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:1px;
+}
+
+
+
+hr{
+    border:none;
+    border-top:1px solid #F12361;
+    color:white;
+    background-color:white;
+    
+    
 }
 
 .baseFooter {
     width: 100%;
-    height: 4vh;
+    height:20px;
     background-color: #f12361;
     position: fixed;
     bottom: 0;
@@ -137,43 +149,277 @@ hr {
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 200;
     padding-top: 5px;
-}
+    padding-bottom:5px;
+  }
 
-.prof1 {
-    border: 1px solid #f12361;
-    border-radius: 5px;
-    width: 250px;
-    height: 250px;
-    display: inline-block;
+.prof1{
+    border: 1px solid #F12361;
+    border-radius:5px;
+    width: 110px;
+    height: 110px;
+    display:inline-block;
     vertical-align: middle;
+    margin-left:10px;
+   
 }
 
-.prof2 {
-    font-size: 17px;
+.prof2{
 
-    display: inline-block;
+    font-size:17px;
+    width:300px;
+    display:inline-block;
+    text-align:left;
     vertical-align: middle;
-    margin-left: 30px;
+    margin-left:30px;
+    
 }
 
-.profs {
-    margin-left: 60px;
-    margin-right: 60px;
+.profs{
+    padding:15px;
+    border:1px solid #F12361;
+    margin-right:50px;
+    margin-left:50px;
+    
+    
 }
-
-.card {
-    margin: 5px;
-    display: inline-block;
-    border-color: #f12361;
+.infodetail{
+    margin:0;
+    line-height:2.5em;
 }
-
-.like {
+.card{
+    
+    margin:8px;
     text-align: center;
+    display:inline-block;
+    border-color: #F12361;
+    
 }
 
-.list-group-item {
-    border-color: #f12361;
+
+
+
+.list-group-item{
+    border-color:#F12361;
+    display:inline-block;
+    
+    
+    
 }
+
+.list-group1{
+    height: 375px;
+    width:450px;
+    overflow-y: scroll;
+    display:inline-block;
+    vertical-align: middle;
+    margin:13px;
+}
+
+/* total width */
+.list-group1::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 16px;
+    
+}
+
+/* background of the scrollbar except button or resizer */
+.list-group1::-webkit-scrollbar-track {
+    background-color: #fef5fa;
+    
+}
+
+/* scrollbar itself */
+.list-group1::-webkit-scrollbar-thumb {
+    background-color: #F12361;
+    border-radius: 16px;
+    border: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.list-group1::-webkit-scrollbar-button {
+    display:none;
+}
+
+.list-group2{
+    height: 375px;
+    width:450px;
+    overflow-y: scroll;
+    display:inline-block;
+    vertical-align: middle;
+    margin:13px;
+}
+
+/* total width */
+.list-group2::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 16px;
+    
+}
+
+/* background of the scrollbar except button or resizer */
+.list-group2::-webkit-scrollbar-track {
+    background-color: #fef5fa;
+    
+}
+
+/* scrollbar itself */
+.list-group2::-webkit-scrollbar-thumb {
+    background-color: #F12361;
+    border-radius: 16px;
+    border: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.list-group2::-webkit-scrollbar-button {
+    display:none;
+}
+
+.posts{
+    
+    text-align:center;
+}
+
+.comment{
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.post{
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.post-title{
+    color:#F12361;
+    font-weight:bold;
+    font-size:22px;
+    margin:0;
+
+}
+
+.mb-1{
+    margin:5px 0px 5px 0px;
+    font-size:17px;
+    font-weight: bold;
+}
+
+.mb-2{
+    margin:8px 0px 0px 0px;
+    font-size:14px;
+    text-align: left;
+    
+}
+
+.likepost{
+    display:inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin:10px 0px 20px 0px;
+
+}
+
+.list-group3{
+    height: 375px;
+    
+    overflow-y: scroll;
+    display:inline-block;
+    vertical-align: middle;
+    margin:10px 70px 10px 70px;
+}
+
+/* total width */
+.list-group3::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 16px;
+    
+}
+
+/* background of the scrollbar except button or resizer */
+.list-group3::-webkit-scrollbar-track {
+    background-color: #fef5fa;
+    
+}
+
+/* scrollbar itself */
+.list-group3::-webkit-scrollbar-thumb {
+    background-color: #F12361;
+    border-radius: 16px;
+    border: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.list-group3::-webkit-scrollbar-button {
+    display:none;
+}
+
+small{
+    margin-left:10px;
+}
+
+.tab-content{
+    overflow-y: scroll;
+    height:500px;
+    width: 100%;
+    border: 1px solid  #F12361;
+    display: inline-block;
+    text-align:left;
+    padding:5px;
+    
+}
+
+
+.like{
+    
+    border-radius:5px;
+    height:500px;
+    margin:20px 60px 20px 60px;
+    
+}
+
+
+
+/* total width */
+.tab-content::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 13px;
+    
+}
+
+/* background of the scrollbar except button or resizer */
+.tab-content::-webkit-scrollbar-track {
+    background-color: #fef5fa;
+    
+   
+}
+
+/* scrollbar itself */
+.tab-content::-webkit-scrollbar-thumb {
+    background-color: #F12361;
+    border-radius: 20px;
+    border: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.tab-content::-webkit-scrollbar-button {
+    display:none;
+}
+
+
+/* not active */
+.nav-pills .nav-link:not(.active) {
+    background-color: #fef5fa;
+    color:black;
+    
+}
+
+
+
+/* active (faded) */
+.nav-pills > .active {
+    background-color: #F12361 !important;
+    color: white !important;
+}
+

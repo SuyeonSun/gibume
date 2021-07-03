@@ -23,4 +23,5 @@ urlpatterns = [
     path('mypage', mypage, name = "mypage"),
     path('detail/',detail,name="detail"),
     path('product/',product,name="product"),
+    path('community/', community, name="community"),
 ]
