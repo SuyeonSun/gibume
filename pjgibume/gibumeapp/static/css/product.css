@@ -36,6 +36,11 @@
     border-radius: 15px;
 }
 
+.type {
+    display: flex;
+    align-items: center;
+}
+
 .love_to_hate {
     display: flex;
     justify-content: center;

@@ -17,3 +17,6 @@ def product(request):
 
 def community(request):
     return render(request,'community.html')
+
+def community_detail(request):
+    return render(request, 'community_page.html')
