@@ -23,3 +23,6 @@ def community_detail(request):
 
 def perfume(request):
     return render(request, 'perfume.html')
+
+def education(request):
+    return render(request, 'education.html')
