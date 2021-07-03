@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .homeLandingTop {
     width: 100%;
     height: auto;
@@ -102,3 +103,109 @@
     height: auto;
     width: 960px;
 }
+=======
+.homeLandingTop {
+    width: 100%;
+    height: auto;
+    background-color: #fef5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-top: 35px;
+}
+
+.type_date {
+    /* margin-top: 80px; */
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    color: #787878;
+}
+
+.tag {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.tag span {
+    background-color: #ffffff;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+}
+
+.landingMessage {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.landingMessage span {
+    display: block;
+    font-size: 40px;
+    /* font-size: 45px; */
+    font-weight: 800;
+    color: #f12361;
+    margin: 0 auto;
+}
+
+.homeLandingContents {
+    /* display: flex;
+    justify-content: center; */
+    height: auto;
+    margin-bottom: 10vh;
+}
+
+.contentsItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.product_image {
+    /* float: left; */
+    /* width: 50%; */
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    margin-right: 30px;
+}
+
+.product_image_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .contentsItem span {
+    font-size: 18px;
+    font-weight: 200;
+    color: #f12361;
+} */
+
+.homeLandingContents {
+    /* display: flex;
+    justify-content: center; */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #fef5fa;
+}
+
+.blog_text {
+    height: auto;
+    width: 960px;
+}
+>>>>>>> 9d0e300b597c3f9d5802b221042066007573fb18
