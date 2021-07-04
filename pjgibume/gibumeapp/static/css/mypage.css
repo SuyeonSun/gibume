@@ -74,7 +74,14 @@ hr{
     display:inline-block;
     vertical-align: middle;
     margin-left:10px;
+    background-color: #f12361;
    
+}
+
+.Img{
+    width: 110px;
+    height: 110px;
+    
 }
 
 .prof2{
@@ -102,7 +109,7 @@ hr{
 }
 .card{
     
-    margin:8px;
+    margin:16px;
     text-align: center;
     display:inline-block;
     border-color: #F12361;
@@ -351,8 +358,8 @@ small{
 .logoImg {
     display: block;
     /* border: 1px solid red; */
-    width: 130px;
-    height: 23px;
+    width: 110px;
+    height: 30px;
     margin-left: 20px;
 }
 
