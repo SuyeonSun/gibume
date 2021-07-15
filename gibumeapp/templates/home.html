@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {%block content%}
+
+    <head>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href='{% static "css/home.css" %}' />
+        <title>HOME</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="homeLandingTop">
+            <div class="landingTitle">
+                <span
+                    >Perfume Team <br />
+                    this is DJANGO</span
+                >
+            </div>
+            <br />
+            <div class="landingMessage">
+                <span
+                    >검색하지 마세요. <br />
+                    여러분에게 맞는 향수를 추천해 드립니다.</span
+                >
+            </div>
+        </div>
+        <div class="homeLandingContents">
+            <a href="{%url 'detail'%}">
+                <div class="contentsItem">
+                    <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+                </div>
+            </a>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+            <div class="contentsItem">
+                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+            </div>
+        </div>
+    </body>
+    {% endblock%}
+</html>
