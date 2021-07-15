@@ -29,9 +29,3 @@ def education(request):
 
 def test(request):
     return render(request, 'test.html')
-
-def form(request):
-    return render(request, 'form.html')
-
-def result(request):
-    return render(request, 'result.html')
