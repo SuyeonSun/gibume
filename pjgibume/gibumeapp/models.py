@@ -6,13 +6,26 @@ class Perfume(models.Model):
     name = models.CharField(max_length=200, default = '') # 향수 이름
     perfume_img = models.CharField(max_length=100, default = '') # 향수 사진
 
+    COLOR_CHOICES = (
+        ('red', 'red'),
+        ('ora', 'orange'),
+        ('yel', 'yellow'),
+        ('gre', 'green'),
+        ('blu', 'blue'),
+        ('pur', 'purple'),
+        ('pin', 'pink'),
+        ('whi', 'white'),
+        ('bla', 'black'),
+    )
+    color = models.CharField(max_length=3, choices=COLOR_CHOICES) # 색 분류
+
     TIME_CHOICES = ( 
         ('per', '퍼퓸'),
         ('edp', '오드퍼퓸'),
         ('edt', '오드뜨왈렛'),
         ('edc', '오드콜로뉴'),
     )
-    time = models.CharField(max_length=3, choices=TIME_CHOICES) # 지속 시간에 따른 향수 구분
+    time = models.CharField(max_length=3, choices=TIME_CHOICES) # 지속 시간에 따른 향수 분류
 
     love_count = models.PositiveIntegerField(default=0) # love 수
     like_count = models.PositiveIntegerField(default=0) # like 수
@@ -37,10 +50,13 @@ class Perfume(models.Model):
         ('BA', 'Balsamic'),
     )
 
-    top = models.CharField(max_length=2, choices=TOP_CHOICES) # 탑 노트
-    middle = models.CharField(max_length=2, choices=MIDDLE_CHOICES) # 미들 노트
-    base = models.CharField(max_length=2, choices=BASE_CHOICES) # 베이스 노트
-    # 색 
+    top_group = models.CharField(max_length=2, choices=TOP_CHOICES) # 탑 노트 ( 검색 위한 분류 )
+    middle_group = models.CharField(max_length=2, choices=MIDDLE_CHOICES) # 미들 노트 ( 검색 위한 분류 )
+    base_group = models.CharField(max_length=2, choices=BASE_CHOICES) # 베이스 노트 ( 검색 위한 분류 )
+     
+    top_note = models.CharField(max_length=400, default = '') # 탑 노트 세부 표기
+    middle_note = models.CharField(max_length=400, default = '') # 미들 노트 세부 표기
+    base_note = models.CharField(max_length=400, default = '') # 베이스 노트 세부 표기
 
     def __str__(self):
         return self.name
