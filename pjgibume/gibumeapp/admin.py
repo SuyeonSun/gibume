@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Perfume
+from .models import Comment
 
-# Register your models here.
+admin.site.register(Perfume)
+admin.site.register(Comment)
