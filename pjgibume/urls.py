@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gibumeapp.views import *
+from testapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home,name="home"),
+    path('', home, name="home"),
     path('mypage', mypage, name = "mypage"),
     path('detail/',detail,name="detail"),
     path('product/',product,name="product"),
@@ -27,7 +28,7 @@ urlpatterns = [
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
     path('education/',education,name="education"),
-    path('test/', test, name="test"),
+    path('test/', test,name="test"),
     path('form/', form, name="form"),
     path('result/', result, name="result"),
 ]
