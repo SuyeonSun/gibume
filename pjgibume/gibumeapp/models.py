@@ -1,9 +1,10 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 # Create your models here.
 
 class Perfume(models.Model):
     brand = models.CharField(max_length=200, default = '') # 브랜드
-    name = models.CharField(max_length=200, default = '') # 향수 이름
+    name = models.CharField(max_length=20, primary_key=True)  # 향수 이름
     perfume_img = models.CharField(max_length=100, default = '') # 향수 사진
 
     COLOR_CHOICES = (
@@ -33,27 +34,19 @@ class Perfume(models.Model):
     dislike_count = models.PositiveIntegerField(default=0) # dislike 수
     hate_count = models.PositiveIntegerField(default=0) # hate 수
 
-    TOP_CHOICES = (
+    NOTE_CHOICES = (
         ('CI', 'Citrus fruits'),
-        ('AR', 'Aromatics'),      
-    )
-
-    MIDDLE_CHOICES = (
+        ('AR', 'Aromatics'),    
         ('FL', 'Floral'),
         ('GR', 'Green'),
         ('FR', 'Fruity'),
         ('SP', 'Spices'),
-    )
-
-    BASE_CHOICES = (
         ('WO', 'Wooded'),
         ('BA', 'Balsamic'),
     )
 
-    top_group = models.CharField(max_length=2, choices=TOP_CHOICES) # 탑 노트 ( 검색 위한 분류 )
-    middle_group = models.CharField(max_length=2, choices=MIDDLE_CHOICES) # 미들 노트 ( 검색 위한 분류 )
-    base_group = models.CharField(max_length=2, choices=BASE_CHOICES) # 베이스 노트 ( 검색 위한 분류 )
-     
+    note_group = MultiSelectField(choices=NOTE_CHOICES) # 노트 그룹( 검색 위한 분류 )
+    
     top_note = models.CharField(max_length=400, default = '') # 탑 노트 세부 표기
     middle_note = models.CharField(max_length=400, default = '') # 미들 노트 세부 표기
     base_note = models.CharField(max_length=400, default = '') # 베이스 노트 세부 표기
