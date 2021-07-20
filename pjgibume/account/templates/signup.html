@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href='{% static "css/reset.css" %}' />
+        <link rel="stylesheet" href='{% static "css/signup.css" %}' />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <section>
+            <div class="wrapper">
+                <div class="formWrapper">
+                    <form action="{% url 'signup' %}" method="POST">
+                        <div class="formHeader">
+                            <span>SIGNUP</span>
+                        </div>
+                        {% csrf_token %}
+                        <div class="formItemWrapper">
+                            <div class="formItem">
+                                <span>ID </span>{{form.username}}
+                            </div>
+                            <div class="formItem">
+                                <span>PASSWORD1 </span>{{form.password1}}
+                            </div>
+                            <div class="formItem">
+                                <span>PASSWORD2 </span>{{form.password2}}
+                            </div>
+                            <div class="formItem">
+                                <span>닉네임 </span>{{form.nickname}}
+                            </div>
+                            <div class="formItem">
+                                <span>이메일 </span>{{form.email}}
+                            </div>
+                            <div class="formItem">
+                                <span>성별 </span>{{form.gender}}
+                            </div>
+                            <div class="formItem">
+                                <span>나이 </span>{{form.age}}
+                            </div>
+                            <button class="btn" type="submit">회원가입</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </section>
+        <!-- <div class="signupWrapper">
+      <div class="formWrapper">
+        <form action="{% url 'signup' %}" method="POST">
+          <div class="formHeader"></div>
+          {% csrf_token %}
+          <div class="formItemWrapper">
+            <div class="formItem">{{form.username}}</div>
+            <div class="formItem">{{form.password1}}</div>
+            <div class="formItem">{{form.password2}}</div>
+            <div class="formItem">{{form.nickname}}</div>
+            <div class="formItem">{{form.email}}</div>
+            <div class="formItem">{{form.gender}}</div>
+            <div class="formItem">{{form.age}}</div>
+          </div>
+          <button type="submit">회원가입</button>
+        </form>
+      </div>
+    </div> -->
+    </body>
+</html>
