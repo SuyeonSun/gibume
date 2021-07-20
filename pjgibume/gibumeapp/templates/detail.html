@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {%block content%}
 {% load static %}
+
 <head>
     {% load static %} {% block extrahead %}
     <link rel="stylesheet" href='{% static "css/detail.css" %}' />
@@ -8,55 +9,57 @@
 </head>
 
 <body>
-        <div class="homeLandingTop">
-            <div class="landingMessage">
-                <span>처음보는 면접, <br />
-                    뿌리기 좋은 향수</span>
-            </div>
+    <div class="homeLandingTop">
+        <div class="landingMessage">
+            <span>처음보는 면접, <br />
+                뿌리기 좋은 향수</span>
         </div>
+    </div>
 
-        <div class="outer_homeLandingContents">
-            <div class="homeLandingContents">
-                <a href="{% url 'product' %}">
+    <div class="outer_homeLandingContents">
+        <div class="homeLandingContents">
+
+            <a href="{% url 'product' %}">
                 <div class="contentsItem">
-                    <span>블랙베리 앤 베이 코롱</span>
+                    <span>향수 이미지</span>
                 </div>
             </a>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
-                <div class="contentsItem">
-                    <span>향수 이미지</span>
-                </div>
+
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
+            </div>
+            <div class="contentsItem">
+                <span>향수 이미지</span>
             </div>
         </div>
+    </div>
     </div>
 
     {% endblock%}

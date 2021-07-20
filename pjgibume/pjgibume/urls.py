@@ -22,7 +22,11 @@ urlpatterns = [
     path('',home,name="home"),
     path('mypage', mypage, name = "mypage"),
     path('detail/',detail,name="detail"),
-    path('product/',product,name="product"),
+
+    # product 페이지 
+    path('product/<str:name>',product,name="product"),
+    path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
+    
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
