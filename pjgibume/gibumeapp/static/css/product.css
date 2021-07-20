@@ -1,50 +1,107 @@
 .homeLandingTop {
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*left*/
+.left {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    height: 60vh;
+    width: 50%;
+    display: 50%;
+    background-color: #ffffff;
+
+    /*product_image 가운데 배치*/
+    display: flex;
+    justify-content: center;
+}
+
+/*right*/
+.right {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    height: 60vh;
+    width: 50%;
+    display: 50%;
     background-color: #fef5fa;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    text-align: center;
+
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.landingTitle {
-    margin-top: 20px;
+.product_image {
+    width: 300px;
+    height: 300px;
 }
 
-.landingTitle span {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.brand {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+.name {
     font-size: 20px;
-    /* font-weight: 600; */
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-.tag {
+.tags {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-.tag span {
-    background-color: #ffffff;
-    margin-left: 10px;
-    margin-right: 10px;
+.tags div {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 12px;
     padding: 5px;
-    border: 1px solid #ffffff;
-    border-radius: 15px;
+    text-decoration: underline;
+
 }
 
-.type {
+.time_outer {
+    margin-bottom: 30px;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
+.time_outer div {
+    font-size: 15px;
+    font-weight: 12px;
+    background-color: black;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.note_outer {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.note_outer div {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 12px;
+    background-color: black;
+    color: #ffffff;
+    padding: 5px;
+
+}
+
+/* 선호도 */
 .love_to_hate {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
 }
 
@@ -58,122 +115,40 @@
     padding: 10px;
 }
 
-.landingMessage {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.landingMessage span {
-    display: block;
-    font-size: 72px;
-    /* font-size: 45px; */
-    font-weight: 800;
-    color: #f12361;
-    margin: 0 auto;
-}
-
 .homeLandingContents {
     /* display: flex;
     justify-content: center; */
+    margin-top: 10vh;
     height: auto;
     margin-bottom: 10vh;
 }
 
-.contentsItem {
+/* 댓글 작성 */
+.writecomment_wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 30px;
+    margin-bottom: 30px;
 }
 
-.product_image {
-    /* float: left; */
-    /* width: 50%; */
-    width: 300px;
-    height: 300px;
-    background-color: #fef5fa;
-    margin-right: 30px;
-}
-
-/* .description {
-    float: right;
-    width: 50%;
-} */
-
-.description ul {
-    list-style: none;
-}
-
-.description li {
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-
-/* .contentsItem span {
-    font-size: 18px;
-    font-weight: 200;
-    color: #f12361;
-} */
-
-.button_love_to_hate {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    align-items: center;
-}
-
-.button_love_to_hate .icon {
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px;
-    background-color: #fef5fa;
+.writecomment_button {
+    background-color: #f12361;
     border: 2.5px solid #f12361;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100px;
-    height: 25px;
-    margin-bottom: 40px;
-}
-
-.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.user_info {
-    display: flex;
-    flex-direction: column;
-}
-
-.user_info span {
-    margin-left: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 60px;
+    margin-left: 10px;
 }
 
 .CommentWrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .comments {
-    background-color: #f6f6f6;
-    width: 50%;
+    width: 780px;
     height: auto;
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-}
-
-.user_content {
-    display: flex;
-    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
 }
