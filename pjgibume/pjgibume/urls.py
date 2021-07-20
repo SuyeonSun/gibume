@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from gibumeapp.views import *
 
 urlpatterns = [
@@ -25,9 +25,8 @@ urlpatterns = [
     path('product/',product,name="product"),
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
-
     path('perfume/', perfume, name = "perfume"),
-
     path('education/',education,name="education"),
+    path('account/', include('account.urls')),
 
 ]

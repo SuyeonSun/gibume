@@ -9,7 +9,6 @@
 
 .landingTitle {
     margin-bottom: 30px;
-    /* 수정필요 */
     display: flex;
     justify-content: space-around;
 }
