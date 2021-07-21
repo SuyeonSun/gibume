@@ -41,7 +41,8 @@ def community_detail(request):
     return render(request, 'community_page.html')
 
 def perfume(request):
-    return render(request, 'perfume.html')
+    perfume_list = Perfume.objects.all()
+    return render(request, 'perfume.html', {'perfume_list' : perfume_list})
 
 def education(request):
     return render(request, 'education.html')

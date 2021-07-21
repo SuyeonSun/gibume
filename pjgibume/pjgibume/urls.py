@@ -27,7 +27,7 @@ urlpatterns = [
     path('product/<str:name>',product,name="product"),
     path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
     
-    path('like/<str:id>/', like_post, name="like_post"),
+    path('like/<str:name>/', like_post, name="like_post"),
 
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
