@@ -1,0 +1,201 @@
+  {% load static %}
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="{% static 'css/perfume.css' %}">
+          <style>
+            a {
+                text-decoration: none;
+            }
+          </style>
+      </head>
+      <body>
+        <div class="baseHeader">
+            <a href="{% url 'home'%}">
+                <img class="logoImg" src="../static/img/logo.png" alt="" />
+            </a>
+            <div class="menuWrapper">
+                <a href="{% url 'perfume' %}"><div class="menuItem">PERFUME</div></a>
+                <a href="{% url 'education' %}"><div class="menuItem">EDUCATION</div></a>
+                <a href="{% url 'test' %}"><div class="menuItem">TEST</div></a>
+                <a href="{% url 'community' %}"><div class="menuItem">COMMUNITY</div></a>
+            </div>
+            <div class="buttonWrapper">
+                <a href="{% url 'mypage' %}">
+                    <div class="buttonItem">MYPAGE</div>
+                </a>
+                <div class="buttonItem">SIGNIN</div>
+            </div>
+            </div>
+          
+          <div class = "title"><p class = "maintitle">PERFUME</p></div>
+          <div class = "detail_1">
+              <div class = "detail_2">
+                  <div class = "rainbow">
+                    <div class = "color">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                              <button class="nav-link active" id="nav-red-tab" data-bs-toggle="tab" data-bs-target="#nav-red" type="button" role="tab" aria-controls="nav-red" aria-selected="true"><img class="Img" src="../static/img/red.png" alt="" /></button>
+                              <button class="nav-link" id="nav-orange-tab" data-bs-toggle="tab" data-bs-target="#nav-orange" type="button" role="tab" aria-controls="nav-orange" aria-selected="false"><img class="Img" src="../static/img/orange.png" alt="" /></button>
+                              <button class="nav-link" id="nav-yellow-tab" data-bs-toggle="tab" data-bs-target="#nav-yellow" type="button" role="tab" aria-controls="nav-yellow" aria-selected="false"><img class="Img" src="../static/img/yellow.png" alt="" /></button>
+                              <button class="nav-link" id="nav-green-tab" data-bs-toggle="tab" data-bs-target="#nav-green" type="button" role="tab" aria-controls="nav-green" aria-selected="false"><img class="Img" src="../static/img/green.png" alt="" /></button>
+                              <button class="nav-link" id="nav-blue-tab" data-bs-toggle="tab" data-bs-target="#nav-blue" type="button" role="tab" aria-controls="nav-blue" aria-selected="false"><img class="Img" src="../static/img/blue.png" alt="" /></button>
+                              <button class="nav-link" id="nav-deepblue-tab" data-bs-toggle="tab" data-bs-target="#nav-deepblue" type="button" role="tab" aria-controls="nav-deepblue" aria-selected="false"><img class="Img" src="../static/img/deepblue.png" alt="" /></button>
+                              <button class="nav-link" id="nav-puple-tab" data-bs-toggle="tab" data-bs-target="#nav-puple" type="button" role="tab" aria-controls="nav-puple" aria-selected="false"><img class="Img" src="../static/img/puple.png" alt="" /></button>
+                              <button class="nav-link" id="nav-pink-tab" data-bs-toggle="tab" data-bs-target="#nav-pink" type="button" role="tab" aria-controls="nav-pink" aria-selected="false"><img class="Img" src="../static/img/pink.png" alt="" /></button>
+                              <button class="nav-link" id="nav-white-tab" data-bs-toggle="tab" data-bs-target="#nav-white" type="button" role="tab" aria-controls="nav-white" aria-selected="false"><img class="Img" src="../static/img/white.png" alt="" /></button>
+                              <button class="nav-link" id="nav-black-tab" data-bs-toggle="tab" data-bs-target="#nav-black" type="button" role="tab" aria-controls="nav-black" aria-selected="false"><img class="Img" src="../static/img/black.png" alt="" /></button>
+                            
+                            </div>
+                          </nav>
+                          <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-red" role="tabpanel" aria-labelledby="nav-red-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">헤라 지일 우먼<br>오드퍼퓸</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-orange" role="tabpanel" aria-labelledby="nav-orange-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/MONOTHEME.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">모노템 보씨올리<br>디 리몬<br>오드뚜왈렛</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-yellow" role="tabpanel" aria-labelledby="nav-yellow-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/LANVIN2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">랑방 걸 인<br>카프리<br>오드뚜왈렛</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-green" role="tabpanel" aria-labelledby="nav-green-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/Arcipelago.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">알키펠라고<br>오드퍼퓸</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                  <img src="..." class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <p class="card-text">향수 이름</p>
+                                  </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="tab-pane fade" id="nav-blue" role="tabpanel" aria-labelledby="nav-blue-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/MARC.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">마크제이콥스<br>데이지 드림 우먼<br>오드뚜왈렛</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-deepblue" role="tabpanel" aria-labelledby="nav-deepblue-tab">
+                                <div class="card" style="width: 10rem;">
+                                  <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <p class="card-text">불가리 블루<br>뿌르 옴므<br>오드뚜왈렛</p>
+                                  </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">향수 이름</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-puple" role="tabpanel" aria-labelledby="nav-puple-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/LANVIN.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">랑방 에끌라 드<br>아르페쥬</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-pink" role="tabpanel" aria-labelledby="nav-pink-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/MissDior.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">미스디올<br>블루밍부케<br>오드뚜왈렛</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                  <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <p class="card-text">샤넬 샹스 오<br>땅드르 오 드<br>빠르펭 스프레이</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-white" role="tabpanel" aria-labelledby="nav-white-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/Jomalon.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">조말론 잉글리쉬<br>페어 앤 프리지아</p>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 10rem;">
+                                  <img src="../static/img/BLANCHE.jpg" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <p class="card-text">바이레도 블랑쉬<br>오 드 퍼퓸</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-black" role="tabpanel" aria-labelledby="nav-black-tab">
+                                <div class="card" style="width: 10rem;">
+                                    <img src="../static/img/PERRARI.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">페라리 블랙 맨<br>스쿠데리아<br>오드뚜왈렛</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          
+            
+          <div class="baseFooter">
+              <span>&copy; copyright all rights reserved PERFUMEE</span>
+          </div>
+      </body>
+  </html>

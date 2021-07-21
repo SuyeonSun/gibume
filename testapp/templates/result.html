@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<head>
+    {% block extrahead %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css/result.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/reset.css" %}'/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>나에게 맞는 향수</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <meta property="og:title" content="나의 향수 유형은?" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="나에게 꼭 맞는 향수는 무엇일까?" />
+    </head>
+    
+    {% endblock %}
+    <style>
+        h1 { color: #f12361;  text-align: center; font-size: 30px;}
+        h3 { color: #000; text-align: center;}
+    </style>
+</head>
+<body>
+    <section id="main_contents">
+        <div class="resultwrapper">
+            <div class="result">
+                <div class="result_titles">
+                    <h3>당신에게 가장 잘 어울리는 향수는</h3>
+                    <br><br>
+                    <h1>지미츄</h1>
+                    <br>
+                </div>
+                <div class="result_img">
+                    <img src="../static/img/jimichu.jpeg" alt="jimichu">
+                </div>
+                </div>
+            </div>
+            <br><br>
+            <h3>친구에게 공유하기</h3>
+            <div class="result_share">
+                <div class="url">
+                    <button class="copy_btn" type="button">URL 복사하기</button>
+                </div>
+                <div class="kakao">
+                    <button class="kakao_share" type="button">카카오톡 공유하기</button>
+                </div>
+            </div>
+            <br><br>
+            <h3>더 알아보기</h3>
+            <div class="result_buttons">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <button type="button">테스트 다시 하기</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <button type="button">다른 결과 알아보기</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <script type="text/javascript" src="js/result.js"></script>
+</body>
