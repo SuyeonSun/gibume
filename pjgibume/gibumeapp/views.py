@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Perfume
 from .models import Comment
+from .models import User
 from django.utils import timezone
+from django.contrib import auth
+
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -42,5 +46,12 @@ def perfume(request):
 def education(request):
     return render(request, 'education.html')
 
-
-
+# 좋아요
+@login_required
+def like_post(request, name):
+    product = Perfume.objects.get(pk=name)
+    if request.user in product.like_users.all():
+        product.like_users.remove(request.user)
+    else:
+        product.like_users.add(request.user)
+    return redirect("product", name)

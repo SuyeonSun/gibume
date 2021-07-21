@@ -8,3 +8,5 @@ from .models import *
 admin.site.register(Perfume)
 admin.site.register(Comment)
 admin.site.register(User)
+
+

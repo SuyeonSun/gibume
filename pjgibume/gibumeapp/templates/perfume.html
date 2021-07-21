@@ -1,17 +1,11 @@
+{% extends 'base.html' %} {%block content%}
 
-
-  {% load static %}
-  <!DOCTYPE html>
   <html>
       <head>
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-          <link rel="stylesheet" href="{% static 'css/perfume.css' %}">
-          <style>
-            a {
-                text-decoration: none;
-            }
-          </style>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href="{% static 'css/perfume.css' %}">
+        {% endblock %}
+
       </head>
       <body>
         <div class="baseHeader">
@@ -194,10 +188,7 @@
                   </div>
                 </div>
           </div>
-          
-            
-          <div class="baseFooter">
-              <span>&copy; copyright all rights reserved PERFUMEE</span>
-          </div>
+
       </body>
+      {% endblock%}
   </html>

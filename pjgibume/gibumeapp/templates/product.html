@@ -24,15 +24,6 @@
             <div class="brand">{{product.brand}}</div>
             <div class="name">{{product.name}}</div>
 
-            <div class="tags">
-                <div class="tag_1"># {{product.product_tag_1}}</div>
-                <div class="tag_2"># {{product.product_tag_2}}</div>
-                <div class="tag_3"># {{product.product_tag_3}}</div>
-                <div class="tag_4"># {{product.product_tag_4}}</div>
-                <div class="tag_5"># {{product.product_tag_5}}</div>
-            </div>
-
-
             <!-- time -->
             <div style="font-size: small; margin-bottom: 5px;">TIME</div>
             <div class="time_outer">
@@ -42,26 +33,38 @@
             <!-- note -->
             <div style="font-size: small; margin-bottom: 5px;">NOTE</div>
             <div class="note_outer">
-                <div>{{product.top}}</div>
-                <div>{{product.middle}}</div>
-                <div>{{product.base}}</div>
+                <div>{{product.top_note}}</div>
+                <div>{{product.middle_note}}</div>
+                <div>{{product.base_note}}</div>
             </div>
 
             <!-- 선호도 -->
-            <div class="love_to_hate">
+            <!-- <div class="love_to_hate">
                 <span style="color: orangered"><i class="far fa-grin-hearts fa-2x"></i>&nbsp; 327</span>
                 <span style="color: #ff1493"><i class="far fa-smile fa-2x"></i>&nbsp; 327</span>
                 <span style="color: #ffa500"><i class="far fa-meh fa-2x"></i>&nbsp; 34</span>
                 <span style="color: #0064ff"><i class="far fa-frown fa-2x"></i>&nbsp; 20</span>
                 <span style="color: #6a5acd"><i class="far fa-tired fa-2x"></i>&nbsp; 7</span>
-            </div>
+            </div> -->
+
+            <!-- 좋아요 버튼 -->
+            <a href="{% url 'like_post' product.name %}">
+                {% if user in product.like_users.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+            </a>
+
         </div>
     </div>
 
     <div class="homeLandingContents">
         <div style="font-size: 13px; font-weight: 500; margin-left: 370px; margin-bottom: 20px;">
             ({{comment_list | length}})개의 댓글 </div>
+
         <!-- 댓글 작성 -->
+        <!-- {% if user.is_authenticated %} -->
         <div class="writecomment_wrapper">
 
             <div>
@@ -73,7 +76,7 @@
                 </form>
             </div>
         </div>
-
+        <!-- {% endif %} -->
 
         <!-- 댓글 목록 -->
         {%for comment in comment_list%}
@@ -81,7 +84,7 @@
             <div class="comments">
                 <div class="user">
                     <!-- <div><i class="fas fa-user-circle fa-2x"></i></div> -->
-                    <span class="name" style="font-weight: 600; font-size: 13px;">USERNAME</span>
+                    <span class="name" style="font-weight: 600; font-size: 13px;">{{user.nickname}}</span>
                     <span class="date" style="color: grey; font-size: 13px;">{{comment.pub_date}}</span>
 
                 </div>
