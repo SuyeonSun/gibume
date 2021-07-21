@@ -1,0 +1,179 @@
+.homeLandingTop {
+    width: 100%;
+    height: 100vh;
+    background-color: #fef5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.landingTitle {
+    margin-top: 20px;
+}
+
+.landingTitle span {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    /* font-weight: 600; */
+}
+
+.tag {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.tag span {
+    background-color: #ffffff;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+}
+
+.love_to_hate {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.love_to_hate span {
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.landingMessage {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.landingMessage span {
+    display: block;
+    font-size: 72px;
+    /* font-size: 45px; */
+    font-weight: 800;
+    color: #f12361;
+    margin: 0 auto;
+}
+
+.homeLandingContents {
+    /* display: flex;
+    justify-content: center; */
+    height: auto;
+    margin-bottom: 10vh;
+}
+
+.contentsItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.product_image {
+    /* float: left; */
+    /* width: 50%; */
+    width: 300px;
+    height: 300px;
+    background-color: #fef5fa;
+    margin-right: 30px;
+}
+
+/* .description {
+    float: right;
+    width: 50%;
+} */
+
+.description ul {
+    list-style: none;
+}
+
+.description li {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* .contentsItem span {
+    font-size: 18px;
+    font-weight: 200;
+    color: #f12361;
+} */
+
+.button_love_to_hate {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.button_love_to_hate .icon {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #fef5fa;
+    border: 2.5px solid #f12361;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 25px;
+    margin-bottom: 40px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info span {
+    margin-left: 5px;
+}
+
+.CommentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comments {
+    background-color: #f6f6f6;
+    width: 50%;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.user_content {
+    display: flex;
+    align-items: center;
+}

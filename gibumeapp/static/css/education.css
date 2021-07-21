@@ -1,0 +1,39 @@
+.eduWrapper {
+    width: 100%;
+    height: auto;
+    /* padding-top: 35px; */
+}
+
+.eduSec {
+    width: 100%;
+    height: 50vh;
+    background-color: #f8b5d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.contentsWrapper {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    background-color: #ffffff;
+}
+
+.eduBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    border: 1px solid #f8b5d7;
+}
+
+.eduBox .title span {
+    color: #f8b5d7;
+    font-size: 28px;
+    font-weight: 200;
+}

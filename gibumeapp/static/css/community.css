@@ -1,0 +1,248 @@
+.detail_2 {
+    background-color: white;
+    border-width: 2px;
+    border-color: #F12361;
+    border-radius: 10px;
+    border-style: solid;
+    height: 100%;
+    width: 1100px;
+    padding: 30px;
+
+
+
+
+}
+
+.detail_1 {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    padding: 50px;
+    padding-bottom: 50px;
+
+}
+
+.title {
+    width: 100%;
+    height: 100vh;
+    background-color: #fef5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+.maintitle {
+    color: #F12361;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #FEF5FA;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.post {
+    width: 450px;
+    border: 1px solid #f12361;
+    display: inline-block;
+    text-align: center;
+    margin: 15px;
+
+}
+
+.post-list {
+    overflow-y: scroll;
+    height: 500px;
+    text-align: center;
+}
+
+/* total width */
+.post-list::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 13px;
+
+}
+
+/* background of the scrollbar except button or resizer */
+.post-list::-webkit-scrollbar-track {
+    background-color: #fef5fa;
+}
+
+/* scrollbar itself */
+.post-list::-webkit-scrollbar-thumb {
+    background-color: #F12361;
+    border-radius: 20px;
+    border: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.post-list::-webkit-scrollbar-button {
+    display: none;
+}
+
+.username {
+
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 2px 5px 15px;
+
+}
+
+.date {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 10px 5px 2px;
+}
+
+
+.type {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 2px 5px 15px;
+}
+
+.posttitle {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 10px 5px 2px;
+}
+
+.write {
+    text-align: left;
+    margin: 10px 10px 10px 25px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #f12361;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.comment {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 2px 5px 15px;
+}
+
+.save {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 10px 5px 2px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #F12361;
+    color: white;
+    background-color: white;
+    margin: 0px;
+}
+
+.post-top {
+    text-align: left;
+}
+
+.post-middle {
+    text-align: left;
+}
+
+.post-bottom {
+    text-align: left;
+}
+
+.post-bottom button {
+    background-color: #F12361;
+    color: white;
+    border: 2px solid #F12361;
+    border-radius: 5px;
+}
+
+.baseHeader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    height: 35px;
+    background-color: #fef5fa;
+    /* border: 1px solid red; */
+}
+
+.logoImg {
+    display: block;
+    /* border: 1px solid red; */
+    width: 110px;
+    height: 30px;
+    margin-left: 20px;
+
+}
+
+.menuWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 80px;
+}
+
+.menuWrapper .menuItem {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f12361;
+    margin: 0 20px;
+}
+
+.buttonWrapper {
+    display: flex;
+    /* justify-content: space-around; */
+    /* border: 1px solid red; */
+    align-items: center;
+    /* width: 20%; */
+
+}
+
+.buttonWrapper .buttonItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f12361;
+    border-radius: 5px;
+    height: 25px;
+    width: 104px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 5px 2px;
+    margin: 0 10px;
+}
+
+.baseFooter {
+    width: 100%;
+    height: 25px;
+    background-color: #f12361;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
