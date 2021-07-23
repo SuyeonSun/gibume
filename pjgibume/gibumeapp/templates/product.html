@@ -115,6 +115,9 @@
                         {{comment.content}}
                     </div>
                 </div>
+
+                <!-- 버튼 -->
+                <a href="{% url 'deletecomment' product.name comment.id %}">삭제하기</a>
             </div>
         </div>
         {% endfor %}

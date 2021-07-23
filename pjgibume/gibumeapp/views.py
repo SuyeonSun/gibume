@@ -34,6 +34,12 @@ def writecomment(request, name):
     comment.save()
     return redirect("product", name)
 
+#
+def deletecomment(request, name, id):
+    delete_comment = Comment.objects.get(pk=id)
+    delete_comment.delete()
+    return redirect("product", name)
+
 def community(request):
     return render(request,'community.html')
 

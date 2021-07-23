@@ -27,9 +27,13 @@ urlpatterns = [
     path('product/<str:name>',product,name="product"),
     path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
     
+    # 선호도
     path('like/<str:name>/', like_post, name="like_post"),
     path('ok/<str:name>/', ok_post, name="ok_post"),
     path('dislike/<str:name>/', dislike_post, name="dislike_post"),
+
+    # 댓글 삭제
+    path('product/<str:name>/<str:id>/deletecomment', deletecomment, name="deletecomment"),
 
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
