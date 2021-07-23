@@ -67,25 +67,25 @@ def like_post(request, name):
     product = Perfume.objects.get(pk=name)
     if request.user in product.like_users.all():
         product.like_users.remove(request.user)
-        product.like_count -= 1
+        #product.like_count -= 1
         product.save()
     else:
         if request.user in product.ok_users.all():
             product.ok_users.remove(request.user)
-            product.ok_count -= 1
+            #product.ok_count -= 1
             product.like_users.add(request.user)
-            product.like_count += 1
+            #product.like_count += 1
             product.save()
 
         if request.user in product.dislike_users.all():
             product.dislike_users.remove(request.user)
-            product.dislike_count -= 1
+            #product.dislike_count -= 1
             product.like_users.add(request.user)
-            product.like_count += 1
+            #product.like_count += 1
             product.save()
         else:
             product.like_users.add(request.user)
-            product.like_count += 1
+            #product.like_count += 1
             product.save()
     return redirect("product", name)
 
@@ -95,26 +95,26 @@ def ok_post(request, name):
     product = Perfume.objects.get(pk=name)
     if request.user in product.ok_users.all():
         product.ok_users.remove(request.user)
-        product.ok_count -= 1
+        # product.ok_count -= 1
         product.save()
     else:
         if request.user in product.like_users.all():
             product.like_users.remove(request.user)
-            product.like_count -= 1
+            #product.like_count -= 1
             product.ok_users.add(request.user)
-            product.ok_count += 1
+            #product.ok_count += 1
             product.save()
 
         if request.user in product.dislike_users.all():
             product.dislike_users.remove(request.user)
-            product.dislike_count -= 1
+            #product.dislike_count -= 1
             product.ok_users.add(request.user)
-            product.ok_count += 1
+            #product.ok_count += 1
             product.save()
 
         else:
             product.ok_users.add(request.user)
-            product.ok_count += 1
+            #product.ok_count += 1
             product.save()
     return redirect("product", name)
 
@@ -124,25 +124,25 @@ def dislike_post(request, name):
     product = Perfume.objects.get(pk=name)
     if request.user in product.dislike_users.all():
         product.dislike_users.remove(request.user)
-        product.dislike_count -= 1
+        #product.dislike_count -= 1
         product.save()
     else:
         if request.user in product.like_users.all():
             product.like_users.remove(request.user)
-            product.like_count -= 1
+            #product.like_count -= 1
             product.dislike_users.add(request.user)
-            product.dislike_count += 1
+            #product.dislike_count += 1
             product.save()
 
         if request.user in product.ok_users.all():
             product.ok_users.remove(request.user)
-            product.ok_count -= 1
+            #product.ok_count -= 1
             product.dislike_users.add(request.user)
-            product.dislike_count += 1
+            #product.dislike_count += 1
             product.save()
 
         else:
             product.dislike_users.add(request.user)
-            product.dislike_count += 1
+            #product.dislike_count += 1
             product.save()
     return redirect("product", name)
