@@ -16,11 +16,11 @@ class User(models.Model):
 class Perfume(models.Model):
     id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
     
-    love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='')
-    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='')
-    ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='')
-    dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='')
-    hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='')
+    love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
+    ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='', blank=True)
+    dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='', blank=True)
+    hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
     
     brand = models.CharField(max_length=200, default = '') # 브랜드
     name = models.CharField(max_length=20, primary_key=True)  # 향수 이름

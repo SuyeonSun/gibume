@@ -47,96 +47,102 @@ def perfume(request):
 def education(request):
     return render(request, 'education.html')
 
+# love
 # @login_required
-# def like_post(request, name):
+# def love_post(request, name):
 #     product = Perfume.objects.get(pk=name)
-#     if request.user in product.like_users.all():
-#         product.like_users.remove(request.user)
+#     if request.user in product.love_users.all():
+#         product.love_users.remove(request.user)
+#         product.love_count -= 1
+#         product.save()
 #     else:
-#         product.like_users.add(request.user)
+#         product.love_users.add(request.user)
+#         product.love_count += 1
+#         product.save()
 #     return redirect("product", name)
 
-# love
-@login_required
-def love_post(request, name):
-    product = Perfume.objects.get(pk=name)
-    if request.user not in ((product.like_users.all()) or (product.ok_users.all()) or (product.dislike_users.all()) or (product.hate_users.all())):
-        if request.user in product.love_users.all():
-            product.love_users.remove(request.user)
-        else:
-            product.love_users.add(request.user)
-    else:
-        product.like_users.remove(request.user)
-        product.ok_users.remove(request.user)
-        product.dislike_users.remove(request.user)
-        product.hate_users.remove(request.user)
-        product.love_users.add(request.user)
-    return redirect("product", name)
-
-# like
+#like
 @login_required
 def like_post(request, name):
     product = Perfume.objects.get(pk=name)
-    if request.user not in ((product.love_users.all()) or (product.ok_users.all()) or (product.dislike_users.all()) or (product.hate_users.all())):
-        if request.user in product.like_users.all():
-            product.like_users.remove(request.user)
+    if request.user in product.like_users.all():
+        product.like_users.remove(request.user)
+        product.like_count -= 1
+        product.save()
+    else:
+        if request.user in product.ok_users.all():
+            product.ok_users.remove(request.user)
+            product.ok_count -= 1
+            product.like_users.add(request.user)
+            product.like_count += 1
+            product.save()
+
+        if request.user in product.dislike_users.all():
+            product.dislike_users.remove(request.user)
+            product.dislike_count -= 1
+            product.like_users.add(request.user)
+            product.like_count += 1
+            product.save()
         else:
             product.like_users.add(request.user)
-    else:
-        product.love_users.remove(request.user)
-        product.ok_users.remove(request.user)
-        product.dislike_users.remove(request.user)
-        product.hate_users.remove(request.user)
-        product.like_users.add(request.user)
+            product.like_count += 1
+            product.save()
     return redirect("product", name)
 
-# ok
+#ok
 @login_required
 def ok_post(request, name):
     product = Perfume.objects.get(pk=name)
-    if request.user not in ((product.love_users.all()) or (product.like_users.all()) or (product.dislike_users.all()) or (product.hate_users.all())):
-        if request.user in product.ok_users.all():
-            product.ok_users.remove(request.user)
+    if request.user in product.ok_users.all():
+        product.ok_users.remove(request.user)
+        product.ok_count -= 1
+        product.save()
+    else:
+        if request.user in product.like_users.all():
+            product.like_users.remove(request.user)
+            product.like_count -= 1
+            product.ok_users.add(request.user)
+            product.ok_count += 1
+            product.save()
+
+        if request.user in product.dislike_users.all():
+            product.dislike_users.remove(request.user)
+            product.dislike_count -= 1
+            product.ok_users.add(request.user)
+            product.ok_count += 1
+            product.save()
+
         else:
             product.ok_users.add(request.user)
-    else:
-        product.love_users.remove(request.user)
-        product.like_users.remove(request.user)
-        product.dislike_users.remove(request.user)
-        product.hate_users.remove(request.user)
-        product.ok_users.add(request.user)
+            product.ok_count += 1
+            product.save()
     return redirect("product", name)
 
-# dislike
+#dislike
 @login_required
 def dislike_post(request, name):
     product = Perfume.objects.get(pk=name)
-    if request.user not in ((product.love_users.all()) or (product.like_users.all()) or (product.ok_users.all()) or (product.hate_users.all())):
-        if request.user in product.dislike_users.all():
-            product.dislike_users.remove(request.user)
+    if request.user in product.dislike_users.all():
+        product.dislike_users.remove(request.user)
+        product.dislike_count -= 1
+        product.save()
+    else:
+        if request.user in product.like_users.all():
+            product.like_users.remove(request.user)
+            product.like_count -= 1
+            product.dislike_users.add(request.user)
+            product.dislike_count += 1
+            product.save()
+
+        if request.user in product.ok_users.all():
+            product.ok_users.remove(request.user)
+            product.ok_count -= 1
+            product.dislike_users.add(request.user)
+            product.dislike_count += 1
+            product.save()
+
         else:
             product.dislike_users.add(request.user)
-    else:
-        product.love_users.remove(request.user)
-        product.like_users.remove(request.user)
-        product.ok_users.remove(request.user)
-        product.hate_users.remove(request.user)
-        product.dislike_users.add(request.user)
-    return redirect("product", name)
-
-# hate
-@login_required
-def hate_post(request, name):
-    product = Perfume.objects.get(pk=name)
-    if request.user not in ((product.love_users.all()) or (product.like_users.all()) or (product.ok_users.all()) or (product.dislike_users.all())):
-        if request.user in product.hate_users.all():
-            product.hate_users.remove(request.user)
-        else:
-            product.hate_users.add(request.user)
-    else:
-        product.love_users.remove(request.user)
-        product.like_users.remove(request.user)
-        product.ok_users.remove(request.user)
-        product.dislike_users.remove(request.user)
-        product.hate_users.add(request.user)
+            product.dislike_count += 1
+            product.save()
     return redirect("product", name)
