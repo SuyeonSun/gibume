@@ -28,6 +28,10 @@ urlpatterns = [
     path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
     
     path('like/<str:name>/', like_post, name="like_post"),
+    path('love/<str:name>/', love_post, name="love_post"),
+    path('ok/<str:name>/', ok_post, name="ok_post"),
+    path('dislike/<str:name>/', dislike_post, name="dislike_post"),
+    path('hate/<str:name>/', hate_post, name="hate_post"),
 
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),

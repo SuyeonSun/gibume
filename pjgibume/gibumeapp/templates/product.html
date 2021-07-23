@@ -47,6 +47,16 @@
                 <span style="color: #6a5acd"><i class="far fa-tired fa-2x"></i>&nbsp; 7</span>
             </div> -->
 
+            <!-- 완전 좋아요 버튼 -->
+            <a href="{% url 'love_post' product.name %}">
+                {% if user in product.love_users.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+                완전 좋아요 ({{product.love_users.all | length}}) 명
+            </a>
+
             <!-- 좋아요 버튼 -->
             <a href="{% url 'like_post' product.name %}">
                 {% if user in product.like_users.all %}
@@ -54,8 +64,39 @@
                 {% else %}
                 <i class="far fa-heart"></i>
                 {% endif %}
-                ({{product.like_users.all | length}}) 명이 좋아합니다.
+                좋아요 ({{product.like_users.all | length}}) 명
             </a>
+
+            <!-- 보통이에요 버튼 -->
+            <a href="{% url 'ok_post' product.name %}">
+                {% if user in product.ok_users.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+                좋아요 ({{product.ok_users.all | length}}) 명
+            </a>
+
+            <!-- dislike 버튼 -->
+            <a href="{% url 'dislike_post' product.name %}">
+                {% if user in product.dislike_users.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+                좋아요 ({{product.dislike_users.all | length}}) 명
+            </a>
+
+            <!-- hate 버튼 -->
+            <a href="{% url 'hate_post' product.name %}">
+                {% if user in product.hate_users.all %}
+                <i class="fas fa-heart"></i>
+                {% else %}
+                <i class="far fa-heart"></i>
+                {% endif %}
+                좋아요 ({{product.hate_users.all | length}}) 명
+            </a>
+
 
         </div>
     </div>
