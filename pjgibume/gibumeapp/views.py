@@ -34,7 +34,7 @@ def writecomment(request, name):
     comment.save()
     return redirect("product", name)
 
-#
+# 댓글 삭제
 def deletecomment(request, name, id):
     delete_comment = Comment.objects.get(pk=id)
     delete_comment.delete()
@@ -52,20 +52,6 @@ def perfume(request):
 
 def education(request):
     return render(request, 'education.html')
-
-# love
-# @login_required
-# def love_post(request, name):
-#     product = Perfume.objects.get(pk=name)
-#     if request.user in product.love_users.all():
-#         product.love_users.remove(request.user)
-#         product.love_count -= 1
-#         product.save()
-#     else:
-#         product.love_users.add(request.user)
-#         product.love_count += 1
-#         product.save()
-#     return redirect("product", name)
 
 #like
 @login_required
@@ -151,4 +137,32 @@ def dislike_post(request, name):
             product.dislike_users.add(request.user)
             #product.dislike_count += 1
             product.save()
+    return redirect("product", name)
+
+# 댓글 좋아요
+@login_required
+def yesUp(request,name,id):
+    yes = get_object_or_404(Comment, id=id)
+    if request.user in yes.yes_users.all():
+        yes.yes_users.remove(request.user)
+    else:
+        if request.user in yes.no_users.all():
+            yes.no_users.remove(request.user)
+            yes.yes_users.add(request.user)
+        else:
+            yes.yes_users.add(request.user)
+    return redirect("product", name)
+
+# 댓글 싫어요
+@login_required
+def noUp(request,name,id):
+    no = get_object_or_404(Comment, id=id)
+    if request.user in no.no_users.all():
+        no.no_users.remove(request.user)
+    else:
+        if request.user in no.yes_users.all():
+            no.yes_users.remove(request.user)
+            no.no_users.add(request.user)
+        else:
+            no.no_users.add(request.user)
     return redirect("product", name)

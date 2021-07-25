@@ -118,6 +118,30 @@
 
                 <!-- 버튼 -->
                 <a href="{% url 'deletecomment' product.name comment.id %}">삭제하기</a>
+
+                <!-- 좋아요 -->
+                <a href="{% url 'yesUp' product.name comment.id %}">
+                    {% if user in comment.yes_users.all %}
+                    <!--<i class="fas fa-heart"></i>-->
+                    좋아요 ({{comment.yes_users.all | length}}) 명
+                    {% else %}
+                    <!--<i class="far fa-heart"></i>-->
+                    좋아요 ({{comment.yes_users.all | length}}) 명
+                    {% endif %}
+                </a>
+                <!---->
+
+                <!-- 싫어요 -->
+                <a href="{% url 'noUp' product.name comment.id %}">
+                    {% if user in comment.no_users.all %}
+                    <!--<i class="fas fa-heart"></i>-->
+                    싫어요 ({{comment.no_users.all | length}}) 명
+                    {% else %}
+                    <!--<i class="far fa-heart"></i>-->
+                    싫어요 ({{comment.no_users.all | length}}) 명
+                    {% endif %}
+                </a>
+                <!---->
             </div>
         </div>
         {% endfor %}

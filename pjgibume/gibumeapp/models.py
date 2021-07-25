@@ -78,3 +78,7 @@ class Comment(models.Model):
     name=models.ForeignKey(Perfume, on_delete=models.CASCADE,default='') 
     pub_date = models.DateTimeField(default='')
     content=models.TextField(default='')
+
+    # 
+    yes_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="yes_posts", default='', blank=True)
+    no_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="no_posts", default='', blank=True)
