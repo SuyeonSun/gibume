@@ -85,7 +85,7 @@
             ({{comment_list | length}})개의 댓글 </div>
 
         <!-- 댓글 작성 -->
-        <!-- {% if user.is_authenticated %} -->
+        {% if user.is_authenticated %}
         <div class="writecomment_wrapper">
 
             <div>
@@ -97,7 +97,7 @@
                 </form>
             </div>
         </div>
-        <!-- {% endif %} -->
+        {% endif %}
 
         <!-- 댓글 목록 -->
         {%for comment in comment_list%}
@@ -122,24 +122,24 @@
                 <!-- 좋아요 -->
                 <a href="{% url 'yesUp' product.name comment.id %}">
                     {% if user in comment.yes_users.all %}
-                    <!--<i class="fas fa-heart"></i>-->
-                    좋아요 ({{comment.yes_users.all | length}}) 명
+                    좋아요 <i class="fas fa-heart"></i>
+                    <!--좋아요 ({{comment.yes_users.all | length}}) 명-->
                     {% else %}
-                    <!--<i class="far fa-heart"></i>-->
-                    좋아요 ({{comment.yes_users.all | length}}) 명
+                    좋아요 <i class="far fa-heart"></i>
                     {% endif %}
+                    {{comment.yes_count}}
                 </a>
                 <!---->
 
                 <!-- 싫어요 -->
                 <a href="{% url 'noUp' product.name comment.id %}">
                     {% if user in comment.no_users.all %}
-                    <!--<i class="fas fa-heart"></i>-->
-                    싫어요 ({{comment.no_users.all | length}}) 명
+                    싫어요 <i class="fas fa-heart"></i>
+                    <!--싫어요 ({{comment.no_users.all | length}}) 명-->
                     {% else %}
-                    <!--<i class="far fa-heart"></i>-->
-                    싫어요 ({{comment.no_users.all | length}}) 명
+                    싫어요 <i class="far fa-heart"></i>
                     {% endif %}
+                    {{comment.no_count}}
                 </a>
                 <!---->
             </div>

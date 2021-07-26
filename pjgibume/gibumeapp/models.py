@@ -82,3 +82,7 @@ class Comment(models.Model):
     # 
     yes_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="yes_posts", default='', blank=True)
     no_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="no_posts", default='', blank=True)
+
+    #
+    yes_count = models.PositiveIntegerField(default=0)
+    no_count = models.PositiveIntegerField(default=0)
