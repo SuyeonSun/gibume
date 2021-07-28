@@ -15,7 +15,7 @@
 <body>
     <div class="homeLandingTop">
         <div class="left">
-            <!-- product_image -->
+            <!-- 향수 이미지 -->
             <img class="product_image" src="../static/img/blog_img4.png" alt="" />
             <!-- {{product.perfume_img}} -->
         </div>
@@ -30,6 +30,18 @@
                 <div class="time">{{product.time}}</div>
             </div>
 
+            <!-- color -->
+            <div style="font-size: small; margin-bottom: 5px;">COLOR</div>
+            <div class="note_outer">
+                <div>{{product.color}}</div>
+            </div>
+
+            <!-- note group-->
+            <div style="font-size: small; margin-bottom: 5px;">NOTE GROUP</div>
+            <div class="note_outer">
+                <div>{{product.note_group}}</div>
+            </div>
+
             <!-- note -->
             <div style="font-size: small; margin-bottom: 5px;">NOTE</div>
             <div class="note_outer">
@@ -38,62 +50,83 @@
                 <div>{{product.base_note}}</div>
             </div>
 
-            <!-- 선호도 -->
-            <!-- <div class="love_to_hate">
-                <span style="color: orangered"><i class="far fa-grin-hearts fa-2x"></i>&nbsp; 327</span>
-                <span style="color: #ff1493"><i class="far fa-smile fa-2x"></i>&nbsp; 327</span>
-                <span style="color: #ffa500"><i class="far fa-meh fa-2x"></i>&nbsp; 34</span>
-                <span style="color: #0064ff"><i class="far fa-frown fa-2x"></i>&nbsp; 20</span>
-                <span style="color: #6a5acd"><i class="far fa-tired fa-2x"></i>&nbsp; 7</span>
-            </div> -->
+            <!--선호도 버튼-->
+            <span style="font-size:14px; text-align:center; margin-top: 8px; margin-bottom: 8px; color: #949494;"><i
+                    class="fas fa-caret-square-down"></i>&nbsp아래에서 선호도를
+                표시해주세요!</span>
 
-            <!-- 좋아요 버튼 -->
-            <a href="{% url 'like_post' product.name %}">
-                {% if user in product.like_users.all %}
-                <i class="fas fa-heart"></i>
-                {% else %}
-                <i class="far fa-heart"></i>
-                {% endif %}
-                like ({{product.like_users.all | length}}) 명
-            </a>
+            <div class="preference_icon">
+                <div class="icon_outer">
+                    <!-- 좋아요 버튼 -->
+                    <a href="{% url 'like_post' product.name %}">
+                        {% if user in product.like_users.all %}
+                        <span class="icon" style="color: #f12361">
+                            <div><i class="fas fa-smile fa-2x"></i></div>
+                            <div>&nbsp LIKE {{product.like_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% else %}
+                        <span class="icon" style="color: #949494">
+                            <div><i class="fas fa-smile fa-2x"></i></div>
+                            <div>&nbsp LIKE {{product.like_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% endif %}
+                    </a>
+                </div>
 
-            <!-- 보통이에요 버튼 -->
-            <a href="{% url 'ok_post' product.name %}">
-                {% if user in product.ok_users.all %}
-                <i class="fas fa-heart"></i>
-                {% else %}
-                <i class="far fa-heart"></i>
-                {% endif %}
-                ok ({{product.ok_users.all | length}}) 명
-            </a>
+                <div class="icon_outer">
+                    <!-- 보통이에요 버튼 -->
+                    <a href="{% url 'ok_post' product.name %}">
+                        {% if user in product.ok_users.all %}
+                        <span class="icon" style="color: #f12361">
+                            <div><i class="fas fa-meh-blank fa-2x"></i></div>
+                            <div>&nbsp OKAY {{product.ok_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% else %}
+                        <span class="icon" style="color: #949494">
+                            <div><i class="fas fa-meh-blank fa-2x"></i></div>
+                            <div>&nbsp OKAY {{product.ok_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% endif %}
+                    </a>
+                </div>
 
-            <!-- dislike 버튼 -->
-            <a href="{% url 'dislike_post' product.name %}">
-                {% if user in product.dislike_users.all %}
-                <i class="fas fa-heart"></i>
-                {% else %}
-                <i class="far fa-heart"></i>
-                {% endif %}
-                dislike ({{product.dislike_users.all | length}}) 명
-            </a>
+                <div class="icon_outer">
+                    <!-- dislike 버튼 -->
+                    <a href="{% url 'dislike_post' product.name %}">
+                        {% if user in product.dislike_users.all %}
+                        <span class="icon" style="color: #f12361">
+                            <div><i class="fas fa-frown fa-2x"></i></div>
+                            <div>&nbsp HATE {{product.dislike_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% else %}
+                        <span class="icon" style="color: #949494">
+                            <div><i class="fas fa-frown fa-2x"></i></div>
+                            <div>&nbsp HATE {{product.dislike_users.all | length}}개 &nbsp</div>
+                        </span>
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
 
+    <!-- 댓글 -->
     <div class="homeLandingContents">
-        <div style="font-size: 13px; font-weight: 500; margin-left: 370px; margin-bottom: 20px;">
-            ({{comment_list | length}})개의 댓글 </div>
+        <div class="comment_length" style="font-size: 14px; font-weight: 500; margin-bottom: 20px;">
+            댓글 {{comment_list | length}}개
+        </div>
 
         <!-- 댓글 작성 -->
         {% if user.is_authenticated %}
         <div class="writecomment_wrapper">
-
             <div>
                 <form action="{%url 'writecomment' product.name%}" method="POST">
                     {% csrf_token %}
-                    <textarea type="textfield" name="content" style="font-size: 13px; width: 700px; height: 80px;"
-                        placeholder="댓글을 남겨주세요 :)"></textarea>
-                    <input class="writecomment_button" type="submit" value="등록" />
+                    <div>
+                        <textarea type="textfield" name="content" placeholder="후기를 입력해주세요."></textarea>
+                    </div>
+                    <div><input class="writecomment_button" type="submit" value="입력하기" style="cursor: pointer;" /></div>
                 </form>
             </div>
         </div>
@@ -103,45 +136,66 @@
         {%for comment in comment_list%}
         <div class="CommentWrapper">
             <div class="comments">
-                <div class="user">
-                    <!-- <div><i class="fas fa-user-circle fa-2x"></i></div> -->
-                    <span class="name" style="font-weight: 600; font-size: 13px;">{{user.nickname}}</span>
-                    <span class="date" style="color: grey; font-size: 13px;">{{comment.pub_date}}</span>
 
+                <!--댓글 콘텐츠 상단-->
+                <div class="comment_top">
+
+                    <!--유저 정보-->
+                    <div class="user">
+                        <span class="name" style="font-weight: 600; font-size: 14px;">{{comment.author}}</span>
+                        <span class="date" style="color: #949494; font-size: 14px;">{{comment.pub_date}}</span>
+                    </div>
+
+                    <!--좋아요/싫어요-->
+                    <div class="comment_like_hate">
+                        <div class="comment_like" style="margin-right: 8px;">
+                            <!-- 좋아요 -->
+                            <a href="{% url 'yesUp' product.name comment.id %}">
+                                {% if user in comment.yes_users.all %}
+                                <span class="icon" style="color: #f12361">
+                                    <div><i class="fas fa-thumbs-up"></i></div>
+                                    <div style="margin-left: 5px;">{{comment.yes_count}}</div>
+                                </span>
+                                {% else %}
+                                <span class="icon" style="color: #949494">
+                                    <div> <i class="far fa-thumbs-up"></i></div>
+                                    <div style="margin-left: 5px;">{{comment.yes_count}}</div>
+                                </span>
+                                {% endif %}
+
+                            </a>
+                        </div>
+                        <div class="comment_hate">
+                            <!-- 싫어요 -->
+                            <a href="{% url 'noUp' product.name comment.id %}">
+                                {% if user in comment.no_users.all %}
+                                <span class="icon" style="color: #f12361">
+                                    <div><i class="fas fa-thumbs-down"></i></div>
+                                    <div style="margin-left: 5px;">{{comment.no_count}}</div>
+                                </span>
+                                {% else %}
+                                <span class="icon" style="color: #949494">
+                                    <div><i class="far fa-thumbs-down"></i></div>
+                                    <div style="margin-left: 5px;">{{comment.no_count}}</div>
+                                </span>
+                                {% endif %}
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
+                <!--댓글 내용-->
                 <div class="user_content">
-                    <div class="text" style="margin-top: 10px; font-size: 13px;">
+                    <div class="text">
                         {{comment.content}}
                     </div>
                 </div>
 
                 <!-- 버튼 -->
-                <a href="{% url 'deletecomment' product.name comment.id %}">삭제하기</a>
-
-                <!-- 좋아요 -->
-                <a href="{% url 'yesUp' product.name comment.id %}">
-                    {% if user in comment.yes_users.all %}
-                    좋아요 <i class="fas fa-heart"></i>
-                    <!--좋아요 ({{comment.yes_users.all | length}}) 명-->
-                    {% else %}
-                    좋아요 <i class="far fa-heart"></i>
-                    {% endif %}
-                    {{comment.yes_count}}
-                </a>
-                <!---->
-
-                <!-- 싫어요 -->
-                <a href="{% url 'noUp' product.name comment.id %}">
-                    {% if user in comment.no_users.all %}
-                    싫어요 <i class="fas fa-heart"></i>
-                    <!--싫어요 ({{comment.no_users.all | length}}) 명-->
-                    {% else %}
-                    싫어요 <i class="far fa-heart"></i>
-                    {% endif %}
-                    {{comment.no_count}}
-                </a>
-                <!---->
+                {%if comment.author == request.user.nickname%}
+                <div class="delete_button"><a href="{% url 'deletecomment' product.name comment.id %}"
+                        style="color: #949494;">삭제하기</a></div>
+                {%endif%}
             </div>
         </div>
         {% endfor %}

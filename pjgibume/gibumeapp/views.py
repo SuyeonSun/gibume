@@ -27,20 +27,26 @@ def product(request, name):
     comment_list=list(comments)
     return render(request, 'product.html', {'product' : product, 'comment_list' : comment_list})
 
+@login_required
 # 댓글 작성
 def writecomment(request, name):
     comment=Comment()
     comment.name = Perfume.objects.get(pk=name)
     comment.content=request.POST.get('content',False)
     comment.pub_date=timezone.datetime.now()
+    comment.author=request.user
     comment.save()
     return redirect("product", name)
 
 # 댓글 삭제
+@login_required
 def deletecomment(request, name, id):
-    delete_comment = Comment.objects.get(pk=id)
-    delete_comment.delete()
-    return redirect("product", name)
+    comment = get_object_or_404(Comment, pk=id)
+    if comment.author != request.user.nickname:
+        return redirect("product", name)
+    else:
+        comment.delete()
+        return redirect("product", name)
 
 def community(request):
     return render(request,'community.html')
