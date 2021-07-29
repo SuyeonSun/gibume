@@ -16,11 +16,11 @@ class User(models.Model):
 class Perfume(models.Model):
     id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
     
-    love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
+    #love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
     ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='', blank=True)
     dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='', blank=True)
-    hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
+    #hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
     
     brand = models.CharField(max_length=200, default = '') # 브랜드
     name = models.CharField(max_length=20, primary_key=True)  # 향수 이름
@@ -47,11 +47,11 @@ class Perfume(models.Model):
     )
     time = models.CharField(max_length=3, choices=TIME_CHOICES) # 지속 시간에 따른 향수 분류
 
-    love_count = models.PositiveIntegerField(default=0) # love 수
-    like_count = models.PositiveIntegerField(default=0) # like 수
-    ok_count = models.PositiveIntegerField(default=0) # ok 수
-    dislike_count = models.PositiveIntegerField(default=0) # dislike 수
-    hate_count = models.PositiveIntegerField(default=0) # hate 수
+    #love_count = models.PositiveIntegerField(default=0) # love 수
+    #like_count = models.PositiveIntegerField(default=0) # like 수
+    #ok_count = models.PositiveIntegerField(default=0) # ok 수
+    #dislike_count = models.PositiveIntegerField(default=0) # dislike 수
+    #hate_count = models.PositiveIntegerField(default=0) # hate 수
 
     NOTE_CHOICES = (
         ('CI', 'Citrus fruits'),

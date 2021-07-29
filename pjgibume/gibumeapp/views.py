@@ -19,7 +19,12 @@ def mypage(request):
     comments=Comment.objects.all()
     comment_list=comments.filter(author = request.user.username)
     comment_list=list(comment_list)
-    return render(request, 'mypage.html', {'comment_list' : comment_list})
+
+    products=Perfume.objects.all()
+    like_product_list=products.filter(like_users = request.user)
+    ok_product_list=products.filter(ok_users = request.user)
+    dislike_product_list=products.filter(dislike_users = request.user)
+    return render(request, 'mypage.html', {'comment_list' : comment_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list})
 
 def detail(request):
     return render(request, 'detail.html')

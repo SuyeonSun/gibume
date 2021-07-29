@@ -123,10 +123,7 @@
                   <!--<p class="mb-2">{{comment.comment_summary}}</p>-->
                 </a>
                 {%endfor%}
-
-
               </div>
-
             </div>
           </div>
       </div>
@@ -156,7 +153,9 @@
                   <div class="card" style="width: 10rem;">
                     <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <p class="card-text">샤넬 샹스 오<br>땅드르 오 드<br>빠르펭 스프레이</p>
+                      {%for product in like_product_list%}
+                      <p class="card-text">{{product.name}}</p>
+                      {%endfor%}
                     </div>
                   </div>
                 </div>
@@ -166,7 +165,9 @@
                   <div class="card" style="width: 10rem;">
                     <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <p class="card-text">불가리 블루<br>뿌르 옴므<br>오드뚜왈렛</p>
+                      {%for product in ok_product_list%}
+                      <p class="card-text">{{product.name}}</p>
+                      {%endfor%}
                     </div>
                   </div>
                 </div>
@@ -176,7 +177,9 @@
                   <div class="card" style="width: 10rem;">
                     <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <p class="card-text">헤라 지일 우먼<br>오드퍼퓸</p>
+                      {%for product in dislike_product_list%}
+                      <p class="card-text">{{product.name}}</p>
+                      {%endfor%}
                     </div>
                   </div>
                 </div>
