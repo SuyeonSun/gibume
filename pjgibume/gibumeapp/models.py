@@ -86,3 +86,6 @@ class Comment(models.Model):
     #
     yes_count = models.PositiveIntegerField(default=0)
     no_count = models.PositiveIntegerField(default=0)
+
+    def comment_summary(self):
+        return self.content[:80]

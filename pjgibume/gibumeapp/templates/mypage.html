@@ -2,312 +2,260 @@
 
 <head>
   {% load static %} {% block extrahead %}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
   <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
   <title>HOME</title>
   <style>
     a {
-        text-decoration: none;
+      text-decoration: none;
     }
   </style>
   {% endblock %}
 
-    <body>
-        
-    
+<body>
 
-        <div class = "title"><p class = "maintitle">MYPAGE</p></div>
-        <div class = "detail_1">
-            <div class = "detail_2">
-                <div class = "info">
-                    <p class = "subtitle">MY INFO</p1>
-                    <div class = "profs">
-                        <div class = "prof1"><img class="Img" src="../static/img/perfume_ex.png" alt="" /></div>
-                        <div class = "prof2">
-                          
-                            <p class = "infodetail">닉네임 : {{user.nickname}}</p>
-                            <p class = "infodetail">생일 : </p>
-                            <p class = "infodetail">이메일 : {{user.email}}</p>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <hr>
-                <div class = "info">
-                    <p class = "subtitle">MY POST</p1>
-                    <div class = "posts">
-                      <div class = "post">
-                          <p class = "post-title">+POST+</p>
-                          <div id="list-example" class="list-group1">  
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">포스트 제목</h5>
-                              <small>작성 날짜</small>
-                            </div>
-                          </a>
-                          </div>
-                      </div>
 
-                      <div class = "comment">
-                        <p class = "post-title">+COMMENT+</p>
-                        <div id="list-example2" class="list-group2">  
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                              <h5 class="mb-1">댓글 내용</h5>
-                              <small>작성날짜</small>
-                            </div>
-                            <p class="mb-2">댓글 단 게시글 제목</p>
-                          </a>
-                          </div>
-                      
-                      </div>
-                    </div>
-                </div>
-                <hr>
-                <div class = "info">
-                    <p class = "subtitle">REVIEW</p1>
-                        <div class = "like">
-                          <div class="d-flex align-items-start">
-                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" style ="margin-right:0px;">
-                              <button class="nav-link active" id="v-pills-love-tab" data-bs-toggle="pill" data-bs-target="#v-pills-love" type="button" role="tab" aria-controls="v-pills-love" aria-selected="true">LOVE</button>
-                              <button class="nav-link" id="v-pills-like-tab" data-bs-toggle="pill" data-bs-target="#v-pills-like" type="button" role="tab" aria-controls="v-pills-like" aria-selected="false">LIKE</button>
-                              <button class="nav-link" id="v-pills-ok-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ok" type="button" role="tab" aria-controls="v-pills-ok" aria-selected="false">OK</button>
-                              <button class="nav-link" id="v-pills-dislike-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dislike" type="button" role="tab" aria-controls="v-pills-dislike" aria-selected="false">DISLIKE</button>
-                              <button class="nav-link" id="v-pills-hate-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hate" type="button" role="tab" aria-controls="v-pills-hate" aria-selected="false">HATE</button>
-                            </div>
-                            <div class="tab-content" id="v-pills-tabContent">
-                              <div class="tab-pane fade show active" id="v-pills-love" role="tabpanel" aria-labelledby="v-pills-love-tab">
-                                
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/LANVIN.jpg" class="card-img-top card-img" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">랑방 에끌라 드<br>아르페쥬</p>
-                                  </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/BLANCHE.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">바이레도 블랑쉬<br>오 드 퍼퓸</p>
-                                  </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/Arcipelago.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">알키펠라고<br>오드퍼퓸</p>
-                                  </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/Jomalon.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">조말론 잉글리쉬<br>페어 앤 프리지아</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="tab-pane fade" id="v-pills-like" role="tabpanel" aria-labelledby="v-pills-like-tab">
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">샤넬 샹스 오<br>땅드르 오 드<br>빠르펭 스프레이</p>
-                                  </div>
-                                </div>  
-                              </div>
-                              <div class="tab-pane fade" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab">
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">불가리 블루<br>뿌르 옴므<br>오드뚜왈렛</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="tab-pane fade" id="v-pills-dislike" role="tabpanel" aria-labelledby="v-pills-dislike-tab">
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/MissDior.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">미스디올<br>블루밍부케<br>오드뚜왈렛</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="tab-pane fade" id="v-pills-hate" role="tabpanel" aria-labelledby="v-pills-hate-tab">
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">헤라 지일 우먼<br>오드퍼퓸</p>
-                                  </div>
-                                </div>
-                              </div>
 
-                            </div>
-                          </div>   
-                        </div>
-                </div>
-                <hr>
-                <div class = "info">
-                  <p class = "subtitle">SAVED</p1>
-                    <div class = "likepost">
-                      <p class = "post-title">+POST+</p>
-                      <div id="list-example" class="list-group3">  
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1">포스트 제목</h5>
-                          <small>작성 날짜</small>
-                        </div>
-                      </a>
-                      </div>
-                  </div>
-                </div>
+  <div class="title">
+    <p class="maintitle">MYPAGE</p>
+  </div>
+  <div class="detail_1">
+    <div class="detail_2">
+      <div class="info">
+        <p class="subtitle">MY INFO</p1>
+          <div class="profs">
+            <div class="prof1"><img class="Img" src="../static/img/perfume_ex.png" alt="" /></div>
+            <div class="prof2">
+
+              <p class="infodetail">닉네임 : {{user.nickname}}</p>
+              <p class="infodetail">생일 : </p>
+              <p class="infodetail">이메일 : {{user.email}}</p>
             </div>
           </div>
+      </div>
+      <br>
+      <hr>
+      <div class="info">
+        <p class="subtitle">MY POST</p1>
+          <div class="posts">
+            <div class="post">
+              <p class="post-title">+POST+</p>
+              <div id="list-example" class="list-group1">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">포스트 제목</h5>
+                    <small>작성 날짜</small>
+                  </div>
+                </a>
+              </div>
+            </div>
 
-        </body>
-        {% endblock%}
+            <div class="comment">
+              <p class="post-title">+COMMENT+</p>
+              <div id="list-example2" class="list-group2">
+                {%for comment in comment_list%}
+                <a href="" class="list-group-item list-group-item-action">
+
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{comment.name}}</h5>
+                    <small>{{comment.pub_date}}</small>
+                  </div>
+                  <p class="mb-2">{{comment.comment_summary}}</p>
+                  <!--<p class="mb-2">{{comment.comment_summary}}</p>-->
+                </a>
+                {%endfor%}
+
+
+              </div>
+
+            </div>
+          </div>
+      </div>
+      <hr>
+      <div class="info">
+        <p class="subtitle">REVIEW</p1>
+          <div class="like">
+            <div class="d-flex align-items-start">
+              <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical"
+                style="margin-right:0px;">
+
+                <!--LIKE : id="v-pills-like-tab"-->
+                <button class="nav-link" id="v-pills-like-tab" data-bs-toggle="pill" data-bs-target="#v-pills-like"
+                  type="button" role="tab" aria-controls="v-pills-like" aria-selected="false">LIKE</button>
+                <!--OK : id="v-pills-ok-tab"-->
+                <button class="nav-link" id="v-pills-ok-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ok"
+                  type="button" role="tab" aria-controls="v-pills-ok" aria-selected="false">OK</button>
+                <!--HATE : id="v-pills-hate-tab"-->
+                <button class="nav-link" id="v-pills-hate-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hate"
+                  type="button" role="tab" aria-controls="v-pills-hate" aria-selected="false">HATE</button>
+              </div>
+
+              <div class="tab-content" id="v-pills-tabContent">
+
+                <!--LIKE : id="v-pills-like-tab"-->
+                <div class="tab-pane fade" id="v-pills-like" role="tabpanel" aria-labelledby="v-pills-like-tab">
+                  <div class="card" style="width: 10rem;">
+                    <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">샤넬 샹스 오<br>땅드르 오 드<br>빠르펭 스프레이</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!--OK : id="v-pills-ok-tab"-->
+                <div class="tab-pane fade" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab">
+                  <div class="card" style="width: 10rem;">
+                    <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">불가리 블루<br>뿌르 옴므<br>오드뚜왈렛</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!--HATE : id="v-pills-hate-tab"-->
+                <div class="tab-pane fade" id="v-pills-hate" role="tabpanel" aria-labelledby="v-pills-hate-tab">
+                  <div class="card" style="width: 10rem;">
+                    <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">헤라 지일 우먼<br>오드퍼퓸</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+      <hr>
+      <div class="info">
+        <p class="subtitle">SAVED</p1>
+          <div class="likepost">
+            <p class="post-title">+POST+</p>
+            <div id="list-example" class="list-group3">
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">포스트 제목</h5>
+                  <small>작성 날짜</small>
+                </div>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock%}

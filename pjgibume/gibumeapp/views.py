@@ -14,8 +14,12 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def mypage(request):
-    return render(request, 'mypage.html')
+    comments=Comment.objects.all()
+    comment_list=comments.filter(author = request.user.username)
+    comment_list=list(comment_list)
+    return render(request, 'mypage.html', {'comment_list' : comment_list})
 
 def detail(request):
     return render(request, 'detail.html')
