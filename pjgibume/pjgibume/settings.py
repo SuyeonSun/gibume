@@ -39,7 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gibumeapp',
     'account',
+    # 'django.contrib.sites',#사이트,url정보 관리 해주는 기능
+    # 'allauth',#설치한앱
+    # 'allauth.account',#소셜로그인한 계정관리
+    # 'allauth.socialaccount',#소셜account 정보관리
+    # 'allauth.socialaccount.providers.naver',#네이버 소셜로그인
 ]
+
+# AUTHENTICATION_BACKENDS=[
+#     'django.contrib.auth.backends.ModelBackend',#기본장고 유저
+#     'allauth.account.auth_backends.AuthenticationBackend',#소셜로그인 인증체계
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,3 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## user model
 AUTH_USER_MODEL = 'account.CustomUser'
+
+	
+# #위에'django.contrib.sites'에 첫번째 인스턴스 사용
+# SITE_ID=1
