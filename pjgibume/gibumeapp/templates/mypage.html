@@ -113,13 +113,13 @@
               <p class="post-title">+COMMENT+</p>
               <div id="list-example2" class="list-group2">
                 {%for comment in comment_list%}
-                <a href="" class="list-group-item list-group-item-action">
+                <a href="{%url 'product' comment.name %}" method="POST" class="list-group-item list-group-item-action">
 
                   <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{comment.name}}</h5>
                     <small>{{comment.pub_date}}</small>
                   </div>
-                  <p class="mb-2">{{comment.comment_summary}}</p>
+                  <p class="mb-2">{{comment.content}}</p>
                   <!--<p class="mb-2">{{comment.comment_summary}}</p>-->
                 </a>
                 {%endfor%}
@@ -155,6 +155,7 @@
                     <div class="card-body">
                       {%for product in like_product_list%}
                       <p class="card-text">{{product.name}}</p>
+                      <a href="{%url 'product' product.name%}">{{product.name}}</a>
                       {%endfor%}
                     </div>
                   </div>
@@ -166,7 +167,7 @@
                     <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       {%for product in ok_product_list%}
-                      <p class="card-text">{{product.name}}</p>
+                      <a href="{%url 'product' product.name%}">{{product.name}}</a>
                       {%endfor%}
                     </div>
                   </div>
@@ -178,7 +179,7 @@
                     <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                       {%for product in dislike_product_list%}
-                      <p class="card-text">{{product.name}}</p>
+                      <a href="{%url 'product' product.name%}">{{product.name}}</a>
                       {%endfor%}
                     </div>
                   </div>
