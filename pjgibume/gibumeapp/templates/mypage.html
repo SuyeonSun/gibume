@@ -114,7 +114,6 @@
               <div id="list-example2" class="list-group2">
                 {%for comment in comment_list%}
                 <a href="{%url 'product' comment.name %}" method="POST" class="list-group-item list-group-item-action">
-
                   <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">{{comment.name}}</h5>
                     <small>{{comment.pub_date}}</small>
