@@ -57,7 +57,7 @@ def community_detail(request):
 
 def perfume(request):
 
-    perfume_list = Perfume.objects.all() # 분류
+    perfume_list = Perfume.objects.all()
 
     return render(request, 'perfume.html', {'perfume_list' : perfume_list})
 
