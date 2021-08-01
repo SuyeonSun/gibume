@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Perfume
 from .models import Comment
 from .models import User
+from .models import Community
 from django.utils import timezone
 from django.contrib import auth
 from django.contrib import messages
@@ -58,10 +59,24 @@ def deletecomment(request, name, id):
         return redirect("product", name)
 
 def community(request):
-    return render(request,'community.html')
+    community=Community.objects.all()
+    return render(request,'community.html', {'community':community})
 
-def community_detail(request):
-    return render(request, 'community_page.html')
+def community_new(request):
+    return render(request, 'community_new.html')
+
+def create(request):
+    community=Community()
+    community.writer=request.user
+    community.title=request.POST.get('title')
+    community.body=request.POST.get('body')
+    community.date=timezone.datetime.now()
+    community.save()
+    return redirect('/community_detail/'+str(community.id))
+
+def community_detail(request, id):
+    community_detail = get_object_or_404(Community, pk=id)
+    return render(request, 'community_detail.html', {'community_detail':community_detail})
 
 def perfume(request):
     perfume_list = Perfume.objects.all()

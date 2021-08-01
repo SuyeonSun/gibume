@@ -89,3 +89,10 @@ class Comment(models.Model):
 
     def comment_summary(self):
         return self.content[:80]
+
+# 커뮤니티
+class Community(models.Model):
+    writer = models.CharField(max_length=30, default='')
+    title = models.CharField(max_length=200, null=True)
+    date = models.DateTimeField(default='')
+    body = models.TextField(null=True)

@@ -41,7 +41,10 @@ urlpatterns = [
     path('product/<str:name>/<str:id>/noUp', noUp, name="noUp"),
 
     path('community/', community, name="community"),
-    path('community_detail/', community_detail, name="community_detail"),
+    path('community/new/', community_new, name="community_new"),
+    path('community/create/', create, name="create"),
+    path('community_detail/<int:id>', community_detail, name='community_detail'),
+
     path('perfume/', perfume, name = "perfume"),
     path('education/',education,name="education"),
     path('account/', include('account.urls')),
