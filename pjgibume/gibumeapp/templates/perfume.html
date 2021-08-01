@@ -1,194 +1,168 @@
 {% extends 'base.html' %} {%block content%}
 
-  <html>
       <head>
         {% load static %} {% block extrahead %}
         <link rel="stylesheet" href="{% static 'css/perfume.css' %}">
         {% endblock %}
-
+        
       </head>
-      <body>
-        <div class="baseHeader">
-            <a href="{% url 'home'%}">
-                <img class="logoImg" src="../static/img/logo.png" alt="" />
-            </a>
-            <div class="menuWrapper">
-                <a href="{% url 'perfume' %}"><div class="menuItem">PERFUME</div></a>
-                <a href="{% url 'education' %}"><div class="menuItem">EDUCATION</div></a>
-                <a href=""><div class="menuItem">TEST</div></a>
-                <a href="{% url 'community' %}"><div class="menuItem">COMMUNITY</div></a>
+      <body style="min-width:670px;">
+      <div class = "title"><p class = "main_title">PERFUME</p></div>
+      <div class = "main">
+        <div class = "leftbox">
+        <div class = "search_box">
+          <form action ="search" method = "POST">
+            {% csrf_token %}
+            <div class = "search">
+              <input class = "search" type = "text"  name = "search_key" value = "{{search_key}}" placeholder = "search"/>
+              <button class = "submit_button" type = "submit" value = "Search">검색</button>
             </div>
-            <div class="buttonWrapper">
-                <a href="{% url 'mypage' %}">
-                    <div class="buttonItem">MYPAGE</div>
-                </a>
-                <div class="buttonItem">SIGNIN</div>
-            </div>
-            </div>
+          </form>
+        </div>
+        <div class = "subbox">
+        <div class = "selectbox" tabindex="1" style="float:left">
+            
+            <input class = "opt" type = "radio" name = "color" value = "*" id = "*" onclick = "filter()" checked/>
+            <label for = "*" class = "option">ALL</label>
+            <input class = "opt" type = "radio" name = "color" value = "red" id = "red" onclick = "filter()"/>
+            <label for = "red" class = "option">RED</label>
+            <input class = "opt" type = "radio" name = "color" value = "ora" id = "ora" onclick = "filter()"/>
+            <label for = "ora" class = "option">ORANGE</label>
+            <input class = "opt" type = "radio" name = "color" value = "yel" id = "yel" onclick = "filter()"/>
+            <label for = "yel" class = "option">YELLOW</label>
+            <input class = "opt" type = "radio" name = "color" value = "gre" id = "gre" onclick = "filter()"/>
+            <label for = "gre" class = "option">GREEN</label>
+            <input class = "opt" type = "radio" name = "color" value = "blu" id = "blu" onclick = "filter()"/>
+            <label for = "blu" class = "option">BLUE</label>
+            <input class = "opt" type = "radio" name = "color" value = "pur" id = "pur" onclick = "filter()"/>
+            <label for = "pur" class = "option">PURPLE</label>
+            <input class = "opt" type = "radio" name = "color" value = "pin" id = "pin" onclick = "filter()"/>
+            <label for = "pin" class = "option">PINK</label>
+            <input class = "opt" type = "radio" name = "color" value = "whi" id = "whi" onclick = "filter()"/>
+            <label for = "whi" class = "option">WHITE</label>
+            <input class = "opt" type = "radio" name = "color" value = "bla" id = "bla" onclick = "filter()"/>
+            <label for = "bla" class = "option">BLACK</label>
+        </div>
+        
+        <div class = "selectbox" tabindex="1" style="float:left">
+          <input class = "opt" type = "radio" name = "time" value = "-" id = "-" onclick = "filter()" checked/>
+          <label for = "-" class = "option">ALL</label>
+          <input class = "opt" type = "radio" name = "time" value = "per" id = "per" onclick = "filter()"/>
+          <label for = "per" class = "option">per</label>
+          <input class = "opt" type = "radio" name = "time" value = "edp" id = "edp" onclick = "filter()"/>
+          <label for = "edp" class = "option">edp</label>
+          <input class = "opt" type = "radio" name = "time" value = "edt" id = "edt" onclick = "filter()"/>
+          <label for = "edt" class = "option">edt</label>
+          <input class = "opt" type = "radio" name = "time" value = "edc" id = "edc" onclick = "filter()"/>
+          <label for = "edc" class = "option">edc</label>
+        </div>
+        
+        <div class = "selectbox" tabindex="1" style="float:left">
+          <input class = "opt" type = "radio" name = "note" value = "+" id = "+" onclick = "filter()" checked/>
+          <label for = "+" class = "option">ALL</label>
+          <input class = "opt" type = "radio" name = "note" value = "Citrusfruits" id = "cit" onclick = "filter()"/>
+          <label for = "cit" class = "option">CitrusFruits</label>
+          <input class = "opt" type = "radio" name = "note" value = "Aromatics" id = "aro" onclick = "filter()"/>
+          <label for = "aro" class = "option">Aromatics</label>
+          <input class = "opt" type = "radio" name = "note" value = "Floral" id = "flo" onclick = "filter()"/>
+          <label for = "flo" class = "option">Floral</label>
+          <input class = "opt" type = "radio" name = "note" value = "Green" id = "gre" onclick = "filter()"/>
+          <label for = "gre" class = "option">Green</label>
+          <input class = "opt" type = "radio" name = "note" value = "Fruity" id = "fru" onclick = "filter()"/>
+          <label for = "fru" class = "option">Fruity</label>
+          <input class = "opt" type = "radio" name = "note" value = "Spices" id = "spi" onclick = "filter()"/>
+          <label for = "spi" class = "option">Spices</label>
+          <input class = "opt" type = "radio" name = "note" value = "Wooded" id = "woo" onclick = "filter()"/>
+          <label for = "woo" class = "option">Wooded</label>
+          <input class = "opt" type = "radio" name = "note" value = "Balsamic" id = "bal" onclick = "filter()"/>
+          <label for = "bal" class = "option">Balsamic</label>
+        </div>
+      
+        </div>  
+        <div class = "infobox">
           
-          <div class = "title"><p class = "maintitle">PERFUME</p></div>
-          <div class = "detail_1">
-              <div class = "detail_2">
-                  <div class = "rainbow">
-                    <div class = "color">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                              <button class="nav-link active" id="nav-red-tab" data-bs-toggle="tab" data-bs-target="#nav-red" type="button" role="tab" aria-controls="nav-red" aria-selected="true"><img class="Img" src="../static/img/red.png" alt="" /></button>
-                              <button class="nav-link" id="nav-orange-tab" data-bs-toggle="tab" data-bs-target="#nav-orange" type="button" role="tab" aria-controls="nav-orange" aria-selected="false"><img class="Img" src="../static/img/orange.png" alt="" /></button>
-                              <button class="nav-link" id="nav-yellow-tab" data-bs-toggle="tab" data-bs-target="#nav-yellow" type="button" role="tab" aria-controls="nav-yellow" aria-selected="false"><img class="Img" src="../static/img/yellow.png" alt="" /></button>
-                              <button class="nav-link" id="nav-green-tab" data-bs-toggle="tab" data-bs-target="#nav-green" type="button" role="tab" aria-controls="nav-green" aria-selected="false"><img class="Img" src="../static/img/green.png" alt="" /></button>
-                              <button class="nav-link" id="nav-blue-tab" data-bs-toggle="tab" data-bs-target="#nav-blue" type="button" role="tab" aria-controls="nav-blue" aria-selected="false"><img class="Img" src="../static/img/blue.png" alt="" /></button>
-                              <button class="nav-link" id="nav-deepblue-tab" data-bs-toggle="tab" data-bs-target="#nav-deepblue" type="button" role="tab" aria-controls="nav-deepblue" aria-selected="false"><img class="Img" src="../static/img/deepblue.png" alt="" /></button>
-                              <button class="nav-link" id="nav-puple-tab" data-bs-toggle="tab" data-bs-target="#nav-puple" type="button" role="tab" aria-controls="nav-puple" aria-selected="false"><img class="Img" src="../static/img/puple.png" alt="" /></button>
-                              <button class="nav-link" id="nav-pink-tab" data-bs-toggle="tab" data-bs-target="#nav-pink" type="button" role="tab" aria-controls="nav-pink" aria-selected="false"><img class="Img" src="../static/img/pink.png" alt="" /></button>
-                              <button class="nav-link" id="nav-white-tab" data-bs-toggle="tab" data-bs-target="#nav-white" type="button" role="tab" aria-controls="nav-white" aria-selected="false"><img class="Img" src="../static/img/white.png" alt="" /></button>
-                              <button class="nav-link" id="nav-black-tab" data-bs-toggle="tab" data-bs-target="#nav-black" type="button" role="tab" aria-controls="nav-black" aria-selected="false"><img class="Img" src="../static/img/black.png" alt="" /></button>
-                            
-                            </div>
-                          </nav>
-                          <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-red" role="tabpanel" aria-labelledby="nav-red-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">헤라 지일 우먼<br>오드퍼퓸</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-orange" role="tabpanel" aria-labelledby="nav-orange-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/MONOTHEME.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">모노템 보씨올리<br>디 리몬<br>오드뚜왈렛</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-yellow" role="tabpanel" aria-labelledby="nav-yellow-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/LANVIN2.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">랑방 걸 인<br>카프리<br>오드뚜왈렛</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-green" role="tabpanel" aria-labelledby="nav-green-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/Arcipelago.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">알키펠라고<br>오드퍼퓸</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="..." class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">향수 이름</p>
-                                  </div>
-                                </div>
-                                
-                                
-                            </div>
-                            <div class="tab-pane fade" id="nav-blue" role="tabpanel" aria-labelledby="nav-blue-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/MARC.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">마크제이콥스<br>데이지 드림 우먼<br>오드뚜왈렛</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-deepblue" role="tabpanel" aria-labelledby="nav-deepblue-tab">
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">불가리 블루<br>뿌르 옴므<br>오드뚜왈렛</p>
-                                  </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">향수 이름</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-puple" role="tabpanel" aria-labelledby="nav-puple-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/LANVIN.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">랑방 에끌라 드<br>아르페쥬</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-pink" role="tabpanel" aria-labelledby="nav-pink-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/MissDior.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">미스디올<br>블루밍부케<br>오드뚜왈렛</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">샤넬 샹스 오<br>땅드르 오 드<br>빠르펭 스프레이</p>
-                                  </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-white" role="tabpanel" aria-labelledby="nav-white-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/Jomalon.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">조말론 잉글리쉬<br>페어 앤 프리지아</p>
-                                    </div>
-                                </div>
-                                <div class="card" style="width: 10rem;">
-                                  <img src="../static/img/BLANCHE.jpg" class="card-img-top" alt="...">
-                                  <div class="card-body">
-                                    <p class="card-text">바이레도 블랑쉬<br>오 드 퍼퓸</p>
-                                  </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-black" role="tabpanel" aria-labelledby="nav-black-tab">
-                                <div class="card" style="width: 10rem;">
-                                    <img src="../static/img/PERRARI.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <p class="card-text">페라리 블랙 맨<br>스쿠데리아<br>오드뚜왈렛</p>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
+        </div>
+      </div>
+      <div class = "value_select">
+          {% if perfume_list %} {% for perfume in perfume_list %}
+          <div class = "perfume">
+            <figure class = "perfume_thumb">
+              <img src="{% get_static_prefix %}img/{{perfume.perfume_img}}.jpg" class="perfume_img">
+              <figcaption class="perfume_caption">
+                <p class = "perfume_brand">[{{perfume.brand}}]</p>
+                <p class = "perfume_name">{{perfume.name}}</p>
+                <div class = "perfume_info">
+                 <hr>
+                 <p class = "perfume_color"><span class="perfume-color" style = "display:none">{{perfume.color}}</span>{{perfume.get_color_display}}</p>
+                 <p class = "perfume_time"><span class="perfume-time" style = "display:none">{{perfume.time}}</span>{{perfume.get_time_display}}</p>
+                 <p class = "perfume_note"><span class="perfume-note_group" style = "display:none">{{perfume.note_group}}</span>{{perfume.get_note_group_display}}</p>
                 </div>
+              </figcaption>
+            </figure>
           </div>
+          {% endfor %} {% endif %}
+          </div>
+      </div>
+      
 
+      <script>
+          function filter(){
+            const color = 'input[name="color"]:checked';
+            const selec_color = document.querySelectorAll(color);
+            let result_color = '';
+            selec_color.forEach((el) => { 
+              result_color = el.value;
+            });
+      
+            const time = 'input[name="time"]:checked';
+            const selec_time = document.querySelectorAll(time);
+            let result_time = '';
+            selec_time.forEach((el) => { 
+              result_time = el.value;
+            });
+            
+            const note = 'input[name="note"]:checked';
+            const selec_note = document.querySelectorAll(note);
+            let result_note = '';
+            selec_note.forEach((el) => { 
+              result_note = el.value;
+            });
+
+            
+            var perfumes = document.getElementsByClassName('perfume');
+            
+
+            for (var i = 0; i < perfumes.length; i++){
+              var c = perfumes[i].getElementsByClassName('perfume-color')[0].innerHTML;
+              var t = perfumes[i].getElementsByClassName('perfume-time')[0].innerHTML;
+              var n = perfumes[i].getElementsByClassName('perfume-note_group')[0].innerHTML;
+              
+              
+              var n_arr = n.split(",");
+              
+              
+              
+              if (result_color == '*' || result_color == c){
+                if ( result_time == '-' || result_time == t){
+                  for ( var j = 0; j < n_arr.length; j++){
+                    if ( result_note == '+' || result_note == n_arr[j].replace(/ /g,"")){
+                      perfumes[i].style.display = '';
+                      break;
+                    }
+                    else{
+                      perfumes[i].style.display = 'none';
+                    }
+                  }
+                }
+                else{
+                  perfumes[i].style.display = 'none';
+                }
+              }
+              else{
+                perfumes[i].style.display = 'none';
+              }
+            }
+          }
+      </script>
       </body>
       {% endblock%}
-  </html>

@@ -30,6 +30,7 @@ urlpatterns = [
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
+    path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
     path('account/', include('account.urls')),
 
