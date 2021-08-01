@@ -14,10 +14,10 @@
     width: 50%;
     display: 50%;
     background-color: #ffffff;
-
     /*product_image 가운데 배치*/
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /*right*/
@@ -42,7 +42,7 @@
 }
 
 .brand {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     margin-bottom: 8px;
 }
@@ -53,23 +53,8 @@
     margin-bottom: 30px;
 }
 
-.tags {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.tags div {
-    margin-left: 5px;
-    font-size: 15px;
-    font-weight: 12px;
-    padding: 5px;
-    text-decoration: underline;
-
-}
-
 .time_outer {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
     display: flex;
     justify-content: center;
 }
@@ -83,7 +68,7 @@
 }
 
 .note_outer {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
     display: flex;
     justify-content: center;
 }
@@ -98,23 +83,6 @@
 
 }
 
-/* 선호도 */
-.love_to_hate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.love_to_hate span {
-    font-size: large;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 10px;
-}
-
 .homeLandingContents {
     /* display: flex;
     justify-content: center; */
@@ -123,20 +91,37 @@
     margin-bottom: 10vh;
 }
 
+/*선호도 버튼*/
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.preference_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_outer {
+    margin-right: 5px;
+    padding: 2px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
 /* 댓글 작성 */
+.comment_length {
+    display: flex;
+    justify-content: center;
+    width: 770px;
+}
+
 .writecomment_wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-}
-
-.writecomment_button {
-    background-color: #f12361;
-    border: 2.5px solid #f12361;
-    border-radius: 5px;
-    color: #ffffff;
-    width: 60px;
-    margin-left: 10px;
 }
 
 .CommentWrapper {
@@ -151,4 +136,52 @@
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid grey;
+}
+
+textarea {
+    font-size: 14px;
+    width: 780px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #949494;
+    border-radius: 5px;
+}
+
+.writecomment_button {
+    background-color: #949494;
+    border: 2.5px solid #949494;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.comment_like_hate {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment_like_icon {
+    display: flex;
+}
+
+.delete_button {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    font-size: small;
+}
+
+.text {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
 }

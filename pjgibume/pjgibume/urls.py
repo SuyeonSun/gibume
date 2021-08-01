@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from gibumeapp.views import *
-
+from testapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name="home"),
@@ -27,11 +27,27 @@ urlpatterns = [
     path('product/<str:name>',product,name="product"),
     path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
     
+    # 선호도
+    path('like/<str:name>/', like_post, name="like_post"),
+    path('ok/<str:name>/', ok_post, name="ok_post"),
+    path('dislike/<str:name>/', dislike_post, name="dislike_post"),
+
+    # 댓글 삭제
+    path('product/<str:name>/<str:id>/deletecomment', deletecomment, name="deletecomment"),
+
+    # 댓글 좋아요
+    path('product/<str:name>/<str:id>/yesUp', yesUp, name="yesUp"),
+    # 댓글 싫어요
+    path('product/<str:name>/<str:id>/noUp', noUp, name="noUp"),
+
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
     path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
     path('account/', include('account.urls')),
+
+    path('form/', form, name="form"),
+    path('result/', result, name="result"),
 
 ]

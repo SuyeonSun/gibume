@@ -6,6 +6,7 @@
         {% endblock %}
         
       </head>
+
       <body style="min-width:670px;">
       <div class = "title"><p class = "main_title">PERFUME</p></div>
       <div class = "main">
@@ -128,24 +129,12 @@
               result_note = el.value;
             });
 
-            
-            var perfumes = document.getElementsByClassName('perfume');
-            
-
-            for (var i = 0; i < perfumes.length; i++){
-              var c = perfumes[i].getElementsByClassName('perfume-color')[0].innerHTML;
-              var t = perfumes[i].getElementsByClassName('perfume-time')[0].innerHTML;
-              var n = perfumes[i].getElementsByClassName('perfume-note_group')[0].innerHTML;
-              
-              
-              var n_arr = n.split(",");
-              
-              
-              
               if (result_color == '*' || result_color == c){
                 if ( result_time == '-' || result_time == t){
                   for ( var j = 0; j < n_arr.length; j++){
                     if ( result_note == '+' || result_note == n_arr[j].replace(/ /g,"")){
+
+             
                       perfumes[i].style.display = '';
                       break;
                     }
@@ -163,6 +152,7 @@
               }
             }
           }
+
       </script>
       </body>
       {% endblock%}

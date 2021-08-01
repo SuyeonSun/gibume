@@ -1,6 +1,7 @@
 from django.db import models
 from multiselectfield import MultiSelectField
 from django.urls import reverse
+from django.conf import settings
 
 # 유저
 class User(models.Model):
@@ -13,6 +14,14 @@ class User(models.Model):
 
 # 향수
 class Perfume(models.Model):
+    id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
+    
+    love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
+    ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='', blank=True)
+    dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='', blank=True)
+    hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
+    
     brand = models.CharField(max_length=200, default = '') # 브랜드
     name = models.CharField(max_length=20, primary_key=True)  # 향수 이름
     perfume_img = models.CharField(max_length=100, default = '') # 향수 사진
@@ -67,7 +76,13 @@ class Perfume(models.Model):
 # 댓글
 class Comment(models.Model):
     name=models.ForeignKey(Perfume, on_delete=models.CASCADE,default='') 
-    # user = models.ForeignKey(User, on_delete=models.CASCADE,default='') 
     pub_date = models.DateTimeField(default='')
     content=models.TextField(default='')
+    author = models.CharField(max_length=30, default='')
+    # 
+    yes_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="yes_posts", default='', blank=True)
+    no_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="no_posts", default='', blank=True)
 
+    #
+    yes_count = models.PositiveIntegerField(default=0)
+    no_count = models.PositiveIntegerField(default=0)
