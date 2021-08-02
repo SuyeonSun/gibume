@@ -52,7 +52,7 @@ def writecomment(request, name):
 @login_required
 def deletecomment(request, name, id):
     comment = get_object_or_404(Comment, pk=id)
-    if comment.author != request.user.nickname:
+    if comment.author != request.user.username:
         return redirect("product", name)
     else:
         comment.delete()
@@ -84,16 +84,19 @@ def community_edit(request, id):
 
 def community_update(request, id):
     community = Community.objects.get(id = id)
-    community.title = request.POST.get('title', False)
-    community.body = request.POST.get('body', False)
-    community.date=timezone.datetime.now()
-    community.save() # 꼭 save!
-    return redirect('/community_detail/'+str(community.id))
+    if community.writer != request.user.username: #
+        return redirect('/community_detail/'+str(community.id))
+    else:
+        community.title = request.POST.get('title', False)
+        community.body = request.POST.get('body', False)
+        community.date=timezone.datetime.now()
+        community.save() # 꼭 save!
+        return redirect('/community_detail/'+str(community.id))
 
 @login_required
 def community_delete(request, id):
     community = get_object_or_404(Community, pk=id)
-    if community.writer != request.user.nickname: #
+    if community.writer != request.user.username: #
         return redirect('/community/')
     else:
         community.delete()

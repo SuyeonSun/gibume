@@ -5,5 +5,7 @@
 <div>내용: {{community_detail.body}}</div>
 
 <!-- 버튼 -->
+{%if community_detail.writer == request.user.username%}
 <a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
 <a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
+{%endif%}
