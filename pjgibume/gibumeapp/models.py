@@ -14,13 +14,10 @@ class User(models.Model):
 
 # 향수
 class Perfume(models.Model):
-    id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
-    
-    #love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
+    # id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
     ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='', blank=True)
     dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='', blank=True)
-    #hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
     
     brand = models.CharField(max_length=200, default = '') # 브랜드
     name = models.CharField(max_length=20, primary_key=True)  # 향수 이름
@@ -73,7 +70,7 @@ class Perfume(models.Model):
     def __str__(self):
         return self.name
 
-# 댓글
+# 향수 댓글
 class Comment(models.Model):
     name=models.ForeignKey(Perfume, on_delete=models.CASCADE,default='') 
     pub_date = models.DateTimeField(default='')

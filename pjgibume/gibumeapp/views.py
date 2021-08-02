@@ -4,9 +4,9 @@ from .models import Comment
 from .models import User
 from .models import Community
 from django.utils import timezone
+from django.db.models import Q
 from django.contrib import auth
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -78,9 +78,37 @@ def community_detail(request, id):
     community_detail = get_object_or_404(Community, pk=id)
     return render(request, 'community_detail.html', {'community_detail':community_detail})
 
+def community_edit(request, id):
+    community=Community.objects.get(id=id)
+    return render(request, 'community_edit.html', {'community':community})
+
+def community_update(request, id):
+    community = Community.objects.get(id = id)
+    community.title = request.POST.get('title', False)
+    community.body = request.POST.get('body', False)
+    community.date=timezone.datetime.now()
+    community.save() # 꼭 save!
+    return redirect('/community_detail/'+str(community.id))
+
+@login_required
+def community_delete(request, id):
+    community = get_object_or_404(Community, pk=id)
+    if community.writer != request.user.nickname: #
+        return redirect('/community/')
+    else:
+        community.delete()
+        return redirect('/community/')
+
 def perfume(request):
     perfume_list = Perfume.objects.all()
     return render(request, 'perfume.html', {'perfume_list' : perfume_list})
+
+def search(request):
+    search_list = Perfume.objects.all()
+    search_key = request.POST.get('search_key')
+    if search_key:
+        search_list = search_list.filter(Q(name__icontains=search_key) | Q(brand__icontains=search_key))
+    return render(request, 'search.html', {'search_list' : search_list, 'search_key':search_key})
 
 def education(request):
     return render(request, 'education.html')

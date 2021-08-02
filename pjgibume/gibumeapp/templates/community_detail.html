@@ -1,7 +1,9 @@
-<h1>글쓰기 페이지 입니다</h1>
-
 {% csrf_token %}
-{{community_detail.writer}}<br>
-{{community_detail.date}}<br>
-{{community_detail.title}}<br>
-{{community_detail.body}}
+<div>작성자: {{community_detail.writer}}</div>
+<div>날짜: {{community_detail.date}}</div>
+<div>제목: {{community_detail.title}}</div>
+<div>내용: {{community_detail.body}}</div>
+
+<!-- 버튼 -->
+<a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
+<a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
