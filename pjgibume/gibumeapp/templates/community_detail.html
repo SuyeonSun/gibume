@@ -9,3 +9,14 @@
 <a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
 <a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
 {%endif%}
+
+<!-- 저장 버튼 -->
+<a href="{% url 'save_post' community_detail.id %}">
+    {% if user in community_detail.save_users.all %}
+    <span>저장취소</span>
+    {% else %}
+    <span>저장</span>
+    {% endif %}
+</a>
+<br>
+{{community_detail.save_users.all | length}}명이 저장한 게시글

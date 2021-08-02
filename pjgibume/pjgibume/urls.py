@@ -47,6 +47,7 @@ urlpatterns = [
     path('community_detail/<int:id>/community_delete', community_delete, name="community_delete"),
     path('community_detail/<int:id>/community_edit', community_edit, name="community_edit"),
     path('community_detail/<int:id>/community_update', community_update, name="community_update"),
+    path('community_detail/<int:id>/save_post', save_post, name="save_post"),
 
     path('perfume/', perfume, name = "perfume"),
     path('perfume/search', search, name="search"),

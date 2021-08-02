@@ -102,6 +102,20 @@ def community_delete(request, id):
         community.delete()
         return redirect('/community/')
 
+# save
+def save_post(request, id):
+    community = Community.objects.get(pk=id)
+    if request.user.is_authenticated:
+        if request.user in community.save_users.all():
+            community.save_users.remove(request.user)
+            community.save()
+        else:
+            community.save_users.add(request.user)
+            community.save()
+        return redirect('/community_detail/'+str(community.id))
+    if not request.user.is_authenticated: 
+        return redirect("login") 
+
 def perfume(request):
     perfume_list = Perfume.objects.all()
     return render(request, 'perfume.html', {'perfume_list' : perfume_list})

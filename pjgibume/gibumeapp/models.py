@@ -93,3 +93,5 @@ class Community(models.Model):
     title = models.CharField(max_length=200, null=True)
     date = models.DateTimeField(default='')
     body = models.TextField(null=True)
+
+    save_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="save_posts", default='', blank=True)
