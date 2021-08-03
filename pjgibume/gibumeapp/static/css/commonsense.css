@@ -1,7 +1,6 @@
 a {
     color: #ffffff;
 }
-
 .eduWrapper {
     width: 100%;
     height: auto;
@@ -49,24 +48,34 @@ a {
 
 .contentsWrapper {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 70vh;
+    height: auto;
     background-color: #ffffff;
 }
 
-.eduBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-    border: 1px solid #f8b5d7;
+.contentItem {
+    width: 80%;
+    height: 70vh;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    margin: 5rem 0;
+    -webkit-box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.53);
+    box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.53);
 }
 
-.eduBox .title span {
-    color: #f8b5d7;
-    font-size: 28px;
+.contentItemTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.contentItemTitle span {
     font-weight: 200;
+    font-size: 1.4rem;
+    color: #000;
 }
 
 .topBtn {
@@ -87,7 +96,6 @@ a {
 
 .topBtn .topImg i {
     font-size: 1.4rem;
-    color: #000;
 }
 
 .topHref {

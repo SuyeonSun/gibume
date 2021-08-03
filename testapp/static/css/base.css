@@ -72,8 +72,3 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-html {
-    /* font-size: 10px; */
-    scroll-behavior: smooth;
-}

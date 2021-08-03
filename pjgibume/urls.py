@@ -14,38 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 from gibumeapp.views import *
+from testapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home,name="home"),
+    path('', home, name="home"),
     path('mypage', mypage, name = "mypage"),
     path('detail/',detail,name="detail"),
-
-    # product 페이지 
-    path('product/<str:name>',product,name="product"),
-    path('product/<str:name>/writecomment/', writecomment, name="writecomment"),
-    
-    # 선호도
-    path('like/<str:name>/', like_post, name="like_post"),
-    path('ok/<str:name>/', ok_post, name="ok_post"),
-    path('dislike/<str:name>/', dislike_post, name="dislike_post"),
-
-    # 댓글 삭제
-    path('product/<str:name>/<str:id>/deletecomment', deletecomment, name="deletecomment"),
-
-    # 댓글 좋아요
-    path('product/<str:name>/<str:id>/yesUp', yesUp, name="yesUp"),
-    # 댓글 싫어요
-    path('product/<str:name>/<str:id>/noUp', noUp, name="noUp"),
-
+    path('product/',product,name="product"),
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
     path('education/',education,name="education"),
-    path('educommonsense/',common,name="common"),
-    path('eduquiz/',eduquiz,name="eduquiz"),
-    path('account/', include('account.urls')),
-
+    path('test/', test,name="test"),
+    path('form/', form, name="form"),
+    path('result/', result, name="result"),
 ]
