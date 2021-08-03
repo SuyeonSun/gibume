@@ -39,11 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gibumeapp',
     'account',
-    # 'django.contrib.sites',#사이트,url정보 관리 해주는 기능
-    # 'allauth',#설치한앱
-    # 'allauth.account',#소셜로그인한 계정관리
-    # 'allauth.socialaccount',#소셜account 정보관리
-    # 'allauth.socialaccount.providers.naver',#네이버 소셜로그인
+    'testapp',
 ]
 
 # AUTHENTICATION_BACKENDS=[

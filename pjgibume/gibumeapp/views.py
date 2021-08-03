@@ -3,9 +3,9 @@ from .models import Perfume
 from .models import Comment
 from .models import User
 from django.utils import timezone
+from django.db.models import Q
 from django.contrib import auth
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -54,9 +54,22 @@ def community(request):
 def community_detail(request):
     return render(request, 'community_page.html')
 
+
 def perfume(request):
+
     perfume_list = Perfume.objects.all()
+
     return render(request, 'perfume.html', {'perfume_list' : perfume_list})
+
+def search(request):
+    search_list = Perfume.objects.all()
+
+    search_key = request.POST.get('search_key')
+    if search_key:
+        search_list = search_list.filter(Q(name__icontains=search_key) | Q(brand__icontains=search_key))
+
+    return render(request, 'search.html', {'search_list' : search_list, 'search_key':search_key})
+
 
 def education(request):
     return render(request, 'education.html')

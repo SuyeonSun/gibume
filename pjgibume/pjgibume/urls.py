@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from gibumeapp.views import *
-
+from testapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name="home"),
@@ -43,9 +43,13 @@ urlpatterns = [
     path('community/', community, name="community"),
     path('community_detail/', community_detail, name="community_detail"),
     path('perfume/', perfume, name = "perfume"),
+    path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
     path('educommonsense/',common,name="common"),
     path('eduquiz/',eduquiz,name="eduquiz"),
     path('account/', include('account.urls')),
+
+    path('form/', form, name="form"),
+    path('result/', result, name="result"),
 
 ]

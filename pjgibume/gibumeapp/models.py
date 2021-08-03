@@ -14,7 +14,7 @@ class User(models.Model):
 
 # 향수
 class Perfume(models.Model):
-    id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
+    
     
     love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
