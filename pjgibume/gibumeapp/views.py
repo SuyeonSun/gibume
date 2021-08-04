@@ -70,6 +70,10 @@ def create(request):
     community.writer=request.user
     community.title=request.POST.get('title')
     community.body=request.POST.get('body')
+    try:
+        community.image=request.FILES['image']
+    except:
+        pass
     community.date=timezone.datetime.now()
     community.save()
     return redirect('/community_detail/'+str(community.id))

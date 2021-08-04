@@ -3,6 +3,11 @@
 <div>날짜: {{community_detail.date}}</div>
 <div>제목: {{community_detail.title}}</div>
 <div>내용: {{community_detail.body}}</div>
+<!-- image-->
+<div>이미지:</div>
+{% if community_detail.image %}
+<img src="{{community_detail.image.url}}" style="width: 300px; height: 300px;" />
+{% endif %}
 
 <!-- 버튼 -->
 {%if community_detail.writer == request.user.username%}
