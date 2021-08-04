@@ -34,10 +34,8 @@ urlpatterns = [
     path('like/<str:name>/', like_post, name="like_post"),
     path('ok/<str:name>/', ok_post, name="ok_post"),
     path('dislike/<str:name>/', dislike_post, name="dislike_post"),
-
     # 댓글 삭제
     path('product/<str:name>/<str:id>/deletecomment', deletecomment, name="deletecomment"),
-
     # 댓글 좋아요
     path('product/<str:name>/<str:id>/yesUp', yesUp, name="yesUp"),
     # 댓글 싫어요

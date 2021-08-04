@@ -2,12 +2,7 @@
 
 <head>
   {% load static %} {% block extrahead %}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
   <link rel="stylesheet" href="{% static 'css/mypage.css' %}">
   <title>HOME</title>
   <style>
@@ -18,9 +13,6 @@
   {% endblock %}
 
 <body>
-
-
-
   <div class="title">
     <p class="maintitle">MYPAGE</p>
   </div>
@@ -99,7 +91,7 @@
                 <!--LIKE : id="v-pills-like-tab"-->
                 <div class="tab-pane fade" id="v-pills-like" role="tabpanel" aria-labelledby="v-pills-like-tab">
                   <div class="card" style="width: 10rem;">
-                    <img src="../static/img/CHANEL.jpg" class="card-img-top" alt="...">
+                    <img src="" class="card-img-top" alt="...">
                     <div class="card-body">
                       {%for product in like_product_list%}
                       <p class="card-text">{{product.name}}</p>
@@ -112,7 +104,7 @@
                 <!--OK : id="v-pills-ok-tab"-->
                 <div class="tab-pane fade" id="v-pills-ok" role="tabpanel" aria-labelledby="v-pills-ok-tab">
                   <div class="card" style="width: 10rem;">
-                    <img src="../static/img/BLV.jpg" class="card-img-top" alt="...">
+                    <img src="" class="card-img-top" alt="...">
                     <div class="card-body">
                       {%for product in ok_product_list%}
                       <a href="{%url 'product' product.name%}">{{product.name}}</a>
@@ -124,7 +116,7 @@
                 <!--HATE : id="v-pills-hate-tab"-->
                 <div class="tab-pane fade" id="v-pills-hate" role="tabpanel" aria-labelledby="v-pills-hate-tab">
                   <div class="card" style="width: 10rem;">
-                    <img src="../static/img/HERA.jpg" class="card-img-top" alt="...">
+                    <img src="" class="card-img-top" alt="...">
                     <div class="card-body">
                       {%for product in dislike_product_list%}
                       <a href="{%url 'product' product.name%}">{{product.name}}</a>
@@ -158,5 +150,4 @@
     </div>
   </div>
 </body>
-
-{% endblock%}
+{% endblock %}

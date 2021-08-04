@@ -25,9 +25,9 @@
     <!-- 저장 버튼 -->
     <a href="{% url 'save_post' community_detail.id %}">
         {% if user in community_detail.save_users.all %}
-        <i class="far fa-bookmark"></i>
-        {% else %}
         <i class="fas fa-bookmark"></i>
+        {% else %}
+        <i class="far fa-bookmark"></i>
         {% endif %}
     </a>
     <br>
