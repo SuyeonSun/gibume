@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path,include
 from gibumeapp.views import *
 from testapp.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name="home"),
@@ -31,17 +34,22 @@ urlpatterns = [
     path('like/<str:name>/', like_post, name="like_post"),
     path('ok/<str:name>/', ok_post, name="ok_post"),
     path('dislike/<str:name>/', dislike_post, name="dislike_post"),
-
     # 댓글 삭제
     path('product/<str:name>/<str:id>/deletecomment', deletecomment, name="deletecomment"),
-
     # 댓글 좋아요
     path('product/<str:name>/<str:id>/yesUp', yesUp, name="yesUp"),
     # 댓글 싫어요
     path('product/<str:name>/<str:id>/noUp', noUp, name="noUp"),
 
     path('community/', community, name="community"),
-    path('community_detail/', community_detail, name="community_detail"),
+    path('community/new/', community_new, name="community_new"),
+    path('community/create/', create, name="create"),
+    path('community_detail/<int:id>', community_detail, name='community_detail'),
+    path('community_detail/<int:id>/community_delete', community_delete, name="community_delete"),
+    path('community_detail/<int:id>/community_edit', community_edit, name="community_edit"),
+    path('community_detail/<int:id>/community_update', community_update, name="community_update"),
+    path('community_detail/<int:id>/save_post', save_post, name="save_post"),
+
     path('perfume/', perfume, name = "perfume"),
     path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
@@ -50,4 +58,4 @@ urlpatterns = [
     path('form/', form, name="form"),
     path('result/', result, name="result"),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
