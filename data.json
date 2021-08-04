@@ -1,0 +1,163 @@
+[
+{
+    "model": "testapp.perfume",
+    "pk": 1,
+    "fields": {
+        "name": "향수1",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 2,
+    "fields": {
+        "name": "향수2",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 3,
+    "fields": {
+        "name": "향수3",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 4,
+    "fields": {
+        "name": "향수4",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 5,
+    "fields": {
+        "name": "향수5",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 6,
+    "fields": {
+        "name": "향수6",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 7,
+    "fields": {
+        "name": "향수7",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 8,
+    "fields": {
+        "name": "향수8",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 9,
+    "fields": {
+        "name": "향수9",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 10,
+    "fields": {
+        "name": "향수10",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 11,
+    "fields": {
+        "name": "향수11",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 12,
+    "fields": {
+        "name": "향수12",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 13,
+    "fields": {
+        "name": "향수13",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 14,
+    "fields": {
+        "name": "향수14",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 15,
+    "fields": {
+        "name": "향수15",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.perfume",
+    "pk": 16,
+    "fields": {
+        "name": "향수16",
+        "count": 0
+    }
+},
+{
+    "model": "testapp.question",
+    "pk": 1,
+    "fields": {
+        "number": 1,
+        "content": "내가 가장 좋아하는 계절은?"
+    }
+},
+{
+    "model": "testapp.question",
+    "pk": 2,
+    "fields": {
+        "number": 2,
+        "content": "무더운 여름, 당신이 선택한 아이스크림은?"
+    }
+},
+{
+    "model": "testapp.question",
+    "pk": 3,
+    "fields": {
+        "number": 3,
+        "content": "파티에 초대받았다. 뭘 입고 갈까?"
+    }
+},
+{
+    "model": "testapp.choice",
+    "pk": 1,
+    "fields": {
+        "content": "향수1",
+        "question": 1,
+        "perfume": 1
+    }
+}
+]

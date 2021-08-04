@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {%block content%} {% load static %}
+
+<head>
+    {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>나에게 맞는 향수 찾기</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+    <div class="homeLandingTop">
+        <div class="test">
+            <div class="question_container">
+                <h1 id="title" class="question_number">친구와의 약속이 취소됐을 때 나는</h1><br>
+                <input id=type type="hidden" value="EI">
+                <button id="A" type="button">"뭐야... -_-" 다른 친구에게 연락해서 나오라고 한다</button>
+                <button id="B" type="button">"앗싸 개이득" 혼자 집에서 뒹굴뒹굴 거린다</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var num = 1;
+        var q = {
+            2: {"title": "question 2", "type": "EI", "A": "E", "B":"I"},
+            3: {"title": "question 3", "type": "SN", "A": "S", "B":"N"},
+            4: {"title": "question 4", "type": "TF", "A": "T", "B":"F"},
+            5: {"title": "question 5", "type": "JP", "A": "J", "B":"P"},
+            6: {"title": "question 6", "type": "EI", "A": "E", "B":"I"},
+            7: {"title": "question 7", "type": "SN", "A": "S", "B":"N"},
+            8: {"title": "question 8", "type": "TF", "A": "T", "B":"F"},
+            9: {"title": "question 9", "type": "JP", "A": "J", "B":"P"},
+            10: {"title": "question 10", "type": "EI", "A": "E", "B":"I"},
+            11: {"title": "question 11", "type": "SN", "A": "S", "B":"N"},
+            12: {"title": "question 12", "type": "TF", "A": "T", "B":"F"},
+        }
+        function start(){
+            $(".start").hide();
+            $(".question").show();
+            next();
+        }
+        $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+ type).val();
+            $("#"+ type).val(parseInt(preValue) + 1);
+            next();
+        });
+        $("#B").click(function(){
+            next();
+        });
+        function next() {
+            $("#title").html(q[num]["title"]);
+            $("#type").val(q[num]["type"]);
+            $("#A").html(q[num]["A"]);
+            $("#B").html(q[num]["B"]);
+            num++;
+        }
+    </script>
+    {% endblock%}
+</body>

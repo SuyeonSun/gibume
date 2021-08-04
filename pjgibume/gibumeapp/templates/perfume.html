@@ -1,0 +1,158 @@
+{% extends 'base.html' %} {%block content%}
+
+      <head>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href="{% static 'css/perfume.css' %}">
+        {% endblock %}
+        
+      </head>
+
+      <body style="min-width:670px;">
+      <div class = "title"><p class = "main_title">PERFUME</p></div>
+      <div class = "main">
+        <div class = "leftbox">
+        <div class = "search_box">
+          <form action ="search" method = "POST">
+            {% csrf_token %}
+            <div class = "search">
+              <input class = "search" type = "text"  name = "search_key" value = "{{search_key}}" placeholder = "search"/>
+              <button class = "submit_button" type = "submit" value = "Search">검색</button>
+            </div>
+          </form>
+        </div>
+        <div class = "subbox">
+        <div class = "selectbox" tabindex="1" style="float:left">
+            
+            <input class = "opt" type = "radio" name = "color" value = "*" id = "*" onclick = "filter()" checked/>
+            <label for = "*" class = "option">ALL</label>
+            <input class = "opt" type = "radio" name = "color" value = "red" id = "red" onclick = "filter()"/>
+            <label for = "red" class = "option">RED</label>
+            <input class = "opt" type = "radio" name = "color" value = "ora" id = "ora" onclick = "filter()"/>
+            <label for = "ora" class = "option">ORANGE</label>
+            <input class = "opt" type = "radio" name = "color" value = "yel" id = "yel" onclick = "filter()"/>
+            <label for = "yel" class = "option">YELLOW</label>
+            <input class = "opt" type = "radio" name = "color" value = "gre" id = "gre" onclick = "filter()"/>
+            <label for = "gre" class = "option">GREEN</label>
+            <input class = "opt" type = "radio" name = "color" value = "blu" id = "blu" onclick = "filter()"/>
+            <label for = "blu" class = "option">BLUE</label>
+            <input class = "opt" type = "radio" name = "color" value = "pur" id = "pur" onclick = "filter()"/>
+            <label for = "pur" class = "option">PURPLE</label>
+            <input class = "opt" type = "radio" name = "color" value = "pin" id = "pin" onclick = "filter()"/>
+            <label for = "pin" class = "option">PINK</label>
+            <input class = "opt" type = "radio" name = "color" value = "whi" id = "whi" onclick = "filter()"/>
+            <label for = "whi" class = "option">WHITE</label>
+            <input class = "opt" type = "radio" name = "color" value = "bla" id = "bla" onclick = "filter()"/>
+            <label for = "bla" class = "option">BLACK</label>
+        </div>
+        
+        <div class = "selectbox" tabindex="1" style="float:left">
+          <input class = "opt" type = "radio" name = "time" value = "-" id = "-" onclick = "filter()" checked/>
+          <label for = "-" class = "option">ALL</label>
+          <input class = "opt" type = "radio" name = "time" value = "per" id = "per" onclick = "filter()"/>
+          <label for = "per" class = "option">per</label>
+          <input class = "opt" type = "radio" name = "time" value = "edp" id = "edp" onclick = "filter()"/>
+          <label for = "edp" class = "option">edp</label>
+          <input class = "opt" type = "radio" name = "time" value = "edt" id = "edt" onclick = "filter()"/>
+          <label for = "edt" class = "option">edt</label>
+          <input class = "opt" type = "radio" name = "time" value = "edc" id = "edc" onclick = "filter()"/>
+          <label for = "edc" class = "option">edc</label>
+        </div>
+        
+        <div class = "selectbox" tabindex="1" style="float:left">
+          <input class = "opt" type = "radio" name = "note" value = "+" id = "+" onclick = "filter()" checked/>
+          <label for = "+" class = "option">ALL</label>
+          <input class = "opt" type = "radio" name = "note" value = "Citrusfruits" id = "cit" onclick = "filter()"/>
+          <label for = "cit" class = "option">CitrusFruits</label>
+          <input class = "opt" type = "radio" name = "note" value = "Aromatics" id = "aro" onclick = "filter()"/>
+          <label for = "aro" class = "option">Aromatics</label>
+          <input class = "opt" type = "radio" name = "note" value = "Floral" id = "flo" onclick = "filter()"/>
+          <label for = "flo" class = "option">Floral</label>
+          <input class = "opt" type = "radio" name = "note" value = "Green" id = "gre" onclick = "filter()"/>
+          <label for = "gre" class = "option">Green</label>
+          <input class = "opt" type = "radio" name = "note" value = "Fruity" id = "fru" onclick = "filter()"/>
+          <label for = "fru" class = "option">Fruity</label>
+          <input class = "opt" type = "radio" name = "note" value = "Spices" id = "spi" onclick = "filter()"/>
+          <label for = "spi" class = "option">Spices</label>
+          <input class = "opt" type = "radio" name = "note" value = "Wooded" id = "woo" onclick = "filter()"/>
+          <label for = "woo" class = "option">Wooded</label>
+          <input class = "opt" type = "radio" name = "note" value = "Balsamic" id = "bal" onclick = "filter()"/>
+          <label for = "bal" class = "option">Balsamic</label>
+        </div>
+      
+        </div>  
+        <div class = "infobox">
+          
+        </div>
+      </div>
+      <div class = "value_select">
+          {% if perfume_list %} {% for perfume in perfume_list %}
+          <div class = "perfume">
+            <figure class = "perfume_thumb">
+              <img src="{% get_static_prefix %}img/{{perfume.perfume_img}}.jpg" class="perfume_img">
+              <figcaption class="perfume_caption">
+                <p class = "perfume_brand">[{{perfume.brand}}]</p>
+                <p class = "perfume_name">{{perfume.name}}</p>
+                <div class = "perfume_info">
+                 <hr>
+                 <p class = "perfume_color"><span class="perfume-color" style = "display:none">{{perfume.color}}</span>{{perfume.get_color_display}}</p>
+                 <p class = "perfume_time"><span class="perfume-time" style = "display:none">{{perfume.time}}</span>{{perfume.get_time_display}}</p>
+                 <p class = "perfume_note"><span class="perfume-note_group" style = "display:none">{{perfume.note_group}}</span>{{perfume.get_note_group_display}}</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          {% endfor %} {% endif %}
+          </div>
+      </div>
+      
+
+      <script>
+          function filter(){
+            const color = 'input[name="color"]:checked';
+            const selec_color = document.querySelectorAll(color);
+            let result_color = '';
+            selec_color.forEach((el) => { 
+              result_color = el.value;
+            });
+      
+            const time = 'input[name="time"]:checked';
+            const selec_time = document.querySelectorAll(time);
+            let result_time = '';
+            selec_time.forEach((el) => { 
+              result_time = el.value;
+            });
+            
+            const note = 'input[name="note"]:checked';
+            const selec_note = document.querySelectorAll(note);
+            let result_note = '';
+            selec_note.forEach((el) => { 
+              result_note = el.value;
+            });
+
+              if (result_color == '*' || result_color == c){
+                if ( result_time == '-' || result_time == t){
+                  for ( var j = 0; j < n_arr.length; j++){
+                    if ( result_note == '+' || result_note == n_arr[j].replace(/ /g,"")){
+
+             
+                      perfumes[i].style.display = '';
+                      break;
+                    }
+                    else{
+                      perfumes[i].style.display = 'none';
+                    }
+                  }
+                }
+                else{
+                  perfumes[i].style.display = 'none';
+                }
+              }
+              else{
+                perfumes[i].style.display = 'none';
+              }
+            }
+          }
+
+      </script>
+      </body>
+      {% endblock%}

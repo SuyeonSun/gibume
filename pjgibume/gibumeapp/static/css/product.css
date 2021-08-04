@@ -1,0 +1,187 @@
+.homeLandingTop {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*left*/
+.left {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    height: 60vh;
+    width: 50%;
+    display: 50%;
+    background-color: #ffffff;
+    /*product_image 가운데 배치*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*right*/
+.right {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    height: 60vh;
+    width: 50%;
+    display: 50%;
+    background-color: #fef5fa;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.product_image {
+    width: 300px;
+    height: 300px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.time_outer {
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: center;
+}
+
+.time_outer div {
+    font-size: 15px;
+    font-weight: 12px;
+    background-color: black;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.note_outer {
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: center;
+}
+
+.note_outer div {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 12px;
+    background-color: black;
+    color: #ffffff;
+    padding: 5px;
+
+}
+
+.homeLandingContents {
+    /* display: flex;
+    justify-content: center; */
+    margin-top: 10vh;
+    height: auto;
+    margin-bottom: 10vh;
+}
+
+/*선호도 버튼*/
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.preference_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_outer {
+    margin-right: 5px;
+    padding: 2px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+/* 댓글 작성 */
+.comment_length {
+    display: flex;
+    justify-content: center;
+    width: 770px;
+}
+
+.writecomment_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.CommentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments {
+    width: 780px;
+    height: auto;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+textarea {
+    font-size: 14px;
+    width: 780px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #949494;
+    border-radius: 5px;
+}
+
+.writecomment_button {
+    background-color: #949494;
+    border: 2.5px solid #949494;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.comment_like_hate {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment_like_icon {
+    display: flex;
+}
+
+.delete_button {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    font-size: small;
+}
+
+.text {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+}
