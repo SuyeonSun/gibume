@@ -3,6 +3,7 @@ from .models import Perfume
 from .models import Comment
 from .models import User
 from .models import Community
+from .models import CommunityComment
 from django.utils import timezone
 from django.db.models import Q
 from django.contrib import auth
@@ -93,7 +94,7 @@ def community_edit(request, id):
 
 def community_update(request, id):
     community = Community.objects.get(id = id)
-    if community.writer != request.user.username: #
+    if community.writer != request.user.username: 
         return redirect('/community_detail/'+str(community.id))
     else:
         community.title = request.POST.get('title', False)
@@ -286,3 +287,13 @@ def noUp(request,name,id):
 
     if not request.user.is_authenticated: #
         return redirect("login") # 
+
+@login_required
+def writeCommunitycomment(request, id):
+    comment=CommunityComment()
+    comment.title=Community.objects.get(pk=id)
+    comment.comment_text=request.POST.get('comment_text',False)
+    comment.created_at=timezone.datetime.now()
+    comment.author_name=request.user
+    comment.save()
+    return redirect('community_detail', id)

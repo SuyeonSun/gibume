@@ -32,6 +32,18 @@
     </a>
     <br>
     {{community_detail.save_users.all | length}}명이 저장한 게시글
+
+    <!--댓글 작성-->
+    {% if user.is_authenticated %}
+    <form action="{%url 'writeCommunitycomment' community_detail.id%}" method="POST">
+        {% csrf_token %}
+        <div>
+            <textarea type="textfield" name="comment_text" placeholder="댓글을 입력해주세요."></textarea>
+        </div>
+        <div><input class="writecomment_button" type="submit" value="입력하기" style="cursor: pointer;" /></div>
+    </form>
+    {% endif %}
+
 </body>
 
 </html>
