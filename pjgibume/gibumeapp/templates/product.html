@@ -192,7 +192,7 @@
                 </div>
 
                 <!-- 버튼 -->
-                {%if comment.author == request.user.nickname%}
+                {%if comment.author == request.user.username%}
                 <div class="delete_button"><a href="{% url 'deletecomment' product.name comment.id %}"
                         style="color: #949494;">삭제하기</a></div>
                 {%endif%}

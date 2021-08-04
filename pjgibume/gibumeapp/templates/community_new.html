@@ -1,0 +1,16 @@
+<h1>글쓰기 페이지 입니다</h1>
+
+<form action="{%url 'create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h4>제목: </h4>
+    <input type="text" name="title">
+    <br>
+    <br>
+    <h4>본문: </h4>
+    <textarea cols=40 rows=10 name="body"></textarea>
+    <br>
+    <br>
+    <h4>이미지: </h4>
+    <input type="file" name='image'>
+    <input class="btn btn-dark" type="submit" value="제출하기">
+</form>
