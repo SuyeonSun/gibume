@@ -56,6 +56,8 @@
     overflow:hidden;
     white-space:nowrap;
     
+    color:#aa224b;
+    
 }
   
 .option:hover {
@@ -158,7 +160,7 @@
       
       
       figcaption{
-        background: rgba(253, 248, 243, 0.8);
+        background: rgba(255, 248, 248, 0.8);
 			  bottom: 0;
 			  box-sizing: border-box;
 			  position: absolute;
@@ -183,7 +185,7 @@
     text-align: center;
     font-size:17px;
     margin-top:5px;
-    color:#F12361;
+    color:#aa224b;
     font-weight: bold;
     
   }
@@ -228,10 +230,7 @@
   
   .leftbox{
     display: inline-block;
-    height: 90%;
-    width:420px;
-
-    
+    height: 94.5%;
     
   }
   .value_select{
@@ -247,16 +246,42 @@
 
     font-size:0px;
   }
+
+  $x: 100%;
+  $y: 104px;
+  
+
   .infobox{
     width:388px;
-    height: 550px;
+    height:calc(#{$x} - #{$y});
     border: 1px solid  #F12361;
     margin-left:50px;
     
   }
 
   hr{
-    border:0;border-top:1px solid #911c3f;
+    border:0;border-top:1px solid #aa224b;
     width:100px;
     align-items: center;
+  }
+  .tag{
+    height: 18px;
+    width:390px;
+    margin-left:50px;
+    margin-top:1px;
+    background-color:#b9335b;
+  }
+  .tagname{
+    
+    display: inline-block;
+    width:32%;
+    text-align: center;
+    color:#fef5fa;
+    font-weight: bold;
+    font-size:small;
+  }
+
+
+  img[src *= "-"]{  /* src에 -문자가 포함되어 있는 경우 */
+    
   }
