@@ -1,27 +1,37 @@
-{% csrf_token %}
-<div>작성자: {{community_detail.writer}}</div>
-<div>날짜: {{community_detail.date}}</div>
-<div>제목: {{community_detail.title}}</div>
-<div>내용: {{community_detail.body}}</div>
-<!-- image-->
-<div>이미지:</div>
-{% if community_detail.image %}
-<img src="{{community_detail.image.url}}" style="width: 300px; height: 300px;" />
-{% endif %}
+<html>
 
-<!-- 버튼 -->
-{%if community_detail.writer == request.user.username%}
-<a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
-<a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
-{%endif%}
+<head>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
 
-<!-- 저장 버튼 -->
-<a href="{% url 'save_post' community_detail.id %}">
-    {% if user in community_detail.save_users.all %}
-    <span>저장취소</span>
-    {% else %}
-    <span>저장</span>
+<body>
+    {% csrf_token %}
+    <div>작성자: {{community_detail.writer}}</div>
+    <div>날짜: {{community_detail.date}}</div>
+    <div>제목: {{community_detail.title}}</div>
+    <div>내용: {{community_detail.body}}</div>
+    <!-- image-->
+    <div>이미지:</div>
+    {% if community_detail.image %}
+    <img src="{{community_detail.image.url}}" style="width: 300px; height: 300px;" />
     {% endif %}
-</a>
-<br>
-{{community_detail.save_users.all | length}}명이 저장한 게시글
+
+    <!-- 버튼 -->
+    {%if community_detail.writer == request.user.username%}
+    <a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
+    <a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
+    {%endif%}
+
+    <!-- 저장 버튼 -->
+    <a href="{% url 'save_post' community_detail.id %}">
+        {% if user in community_detail.save_users.all %}
+        <i class="far fa-bookmark"></i>
+        {% else %}
+        <i class="fas fa-bookmark"></i>
+        {% endif %}
+    </a>
+    <br>
+    {{community_detail.save_users.all | length}}명이 저장한 게시글
+</body>
+
+</html>

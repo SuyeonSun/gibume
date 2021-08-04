@@ -46,66 +46,15 @@
             <div class="post">
               <p class="post-title">+POST+</p>
               <div id="list-example" class="list-group1">
-                <a href="#" class="list-group-item list-group-item-action">
+                {%for community in community_list%}
+                <a href="{%url 'community_detail' community.id %}" method="POST"
+                  class="list-group-item list-group-item-action">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
+                    <h5 class="mb-1">{{community.title}}</h5>
+                    <small>{{community.date}}</small>
                   </div>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">포스트 제목</h5>
-                    <small>작성 날짜</small>
-                  </div>
-                </a>
+                {%endfor%}
               </div>
             </div>
 
@@ -194,66 +143,15 @@
           <div class="likepost">
             <p class="post-title">+POST+</p>
             <div id="list-example" class="list-group3">
-              <a href="#" class="list-group-item list-group-item-action">
+              {%for post in save_post_list%}
+              <a href="{%url 'community_detail' post.id %}" method="POST"
+                class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
+                  <h5 class="mb-1">{{post.title}}</h5>
+                  <small>{{post.date}}</small>
                 </div>
               </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">포스트 제목</h5>
-                  <small>작성 날짜</small>
-                </div>
-              </a>
+              {%endfor%}
             </div>
           </div>
       </div>

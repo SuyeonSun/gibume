@@ -21,11 +21,16 @@ def mypage(request):
     comment_list=comments.filter(author = request.user.username)
     comment_list=list(comment_list)
 
+    community=Community.objects.all()
+    community_list=community.filter(writer = request.user.username)
+    community_list=list(community_list)
+    save_post_list=community.filter(save_users = request.user)
+
     products=Perfume.objects.all()
     like_product_list=products.filter(like_users = request.user)
     ok_product_list=products.filter(ok_users = request.user)
     dislike_product_list=products.filter(dislike_users = request.user)
-    return render(request, 'mypage.html', {'comment_list' : comment_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list})
+    return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list})
 
 def detail(request):
     return render(request, 'detail.html')
