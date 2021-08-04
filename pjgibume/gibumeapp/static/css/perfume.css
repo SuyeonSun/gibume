@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .title {
   width: 100%;
   height: 100vh;
@@ -71,6 +72,7 @@
           box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
+  color: #aa224b;
 }
 
 .option:hover {
@@ -167,7 +169,7 @@ input.search {
 }
 
 .perfume figure figcaption {
-  background: rgba(253, 248, 243, 0.8);
+  background: rgba(255, 248, 248, 0.8);
   bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -194,7 +196,7 @@ input.search {
   text-align: center;
   font-size: 17px;
   margin-top: 5px;
-  color: #F12361;
+  color: #aa224b;
   font-weight: bold;
 }
 
@@ -238,8 +240,7 @@ input.search {
 
 .leftbox {
   display: inline-block;
-  height: 90%;
-  width: 420px;
+  height: 94.5%;
 }
 
 .value_select {
@@ -256,16 +257,37 @@ input.search {
 
 .infobox {
   width: 388px;
-  height: 550px;
+  height: calc(100% - 104px);
   border: 1px solid  #F12361;
   margin-left: 50px;
 }
 
 hr {
   border: 0;
-  border-top: 1px solid #911c3f;
+  border-top: 1px solid #aa224b;
   width: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.tag {
+  height: 18px;
+  width: 390px;
+  margin-left: 50px;
+  margin-top: 1px;
+  background-color: #b9335b;
+}
+
+.tagname {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  color: #fef5fa;
+  font-weight: bold;
+  font-size: small;
+}
+
+img[src*="-"] {
+  /* src에 -문자가 포함되어 있는 경우 */
 }
