@@ -86,7 +86,8 @@ def create(request):
 
 def community_detail(request, id):
     community_detail = get_object_or_404(Community, pk=id)
-    return render(request, 'community_detail.html', {'community_detail':community_detail})
+    comment = CommunityComment.objects.filter(post=id) #
+    return render(request, 'community_detail.html', {'community_detail':community_detail, 'comment':comment})
 
 def community_edit(request, id):
     community=Community.objects.get(id=id)
@@ -291,7 +292,7 @@ def noUp(request,name,id):
 @login_required
 def writeCommunitycomment(request, id):
     comment=CommunityComment()
-    comment.title=Community.objects.get(pk=id)
+    comment.post=Community.objects.get(pk=id)
     comment.comment_text=request.POST.get('comment_text',False)
     comment.created_at=timezone.datetime.now()
     comment.author_name=request.user

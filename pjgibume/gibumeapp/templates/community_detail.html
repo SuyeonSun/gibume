@@ -44,6 +44,12 @@
     </form>
     {% endif %}
 
+    {%for c in comment%}
+    <div>{{c.author_name}}</div>
+    <div>{{c.created_at}}</div>
+    <div>{{c.comment_text}}</div>
+    <hr>
+    {%endfor%}
 </body>
 
 </html>
