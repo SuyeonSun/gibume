@@ -289,6 +289,7 @@ def noUp(request,name,id):
     if not request.user.is_authenticated: #
         return redirect("login") # 
 
+# 커뮤니티 페이지 댓글 작성
 @login_required
 def writeCommunitycomment(request, id):
     comment=CommunityComment()
@@ -298,3 +299,10 @@ def writeCommunitycomment(request, id):
     comment.author_name=request.user
     comment.save()
     return redirect('community_detail', id)
+
+# 커뮤니티 페이지 댓글 삭제
+@login_required
+def deleteCommunitycomment(request,blog_id,comment_id):
+    comment_d=CommunityComment.objects.get(id=comment_id) 
+    comment_d.delete()
+    return redirect('community_detail', blog_id)

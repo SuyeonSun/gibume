@@ -44,10 +44,15 @@
     </form>
     {% endif %}
 
+    <!--댓글 보여주기-->
     {%for c in comment%}
     <div>{{c.author_name}}</div>
     <div>{{c.created_at}}</div>
     <div>{{c.comment_text}}</div>
+
+    {%if c.author_name == request.user.username%}
+    <a href="{% url 'deleteCommunitycomment' community_detail.id c.id %}">삭제하기</a>
+    {%endif%}
     <hr>
     {%endfor%}
 </body>
