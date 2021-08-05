@@ -53,8 +53,33 @@
     {%if c.author_name == request.user.username%}
     <a href="{% url 'deleteCommunitycomment' community_detail.id c.id %}">삭제하기</a>
     {%endif%}
+
+    <!--댓글 좋아요-->
+    <!-- 좋아요 -->
+    <a href="{% url 'Up' community_detail.id c.id %}">
+        {% if user in c.up_users.all %}
+        <div><i class="fas fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% endif %}
+    </a>
+
+    <!-- 싫어요 -->
+    <a href="{% url 'Down' community_detail.id c.id %}">
+        {% if user in c.down_users.all %}
+        <div><i class="fas fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% endif %}
+    </a>
     <hr>
     {%endfor%}
+
+
 </body>
 
 </html>

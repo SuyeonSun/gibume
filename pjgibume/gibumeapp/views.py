@@ -306,3 +306,51 @@ def deleteCommunitycomment(request,blog_id,comment_id):
     comment_d=CommunityComment.objects.get(id=comment_id) 
     comment_d.delete()
     return redirect('community_detail', blog_id)
+
+# 커뮤니티 페이지 댓글 좋아요
+def Up(request,blog_id,comment_id):
+    up = get_object_or_404(CommunityComment, id=comment_id)
+    if request.user.is_authenticated: #
+        if request.user in up.up_users.all():
+            up.up_users.remove(request.user)
+            up.up_count-=1 ###
+            up.save() ###
+        else:
+            if request.user in up.down_users.all():
+                up.down_users.remove(request.user)
+                up.down_count-=1 ###
+                up.up_users.add(request.user)
+                up.up_count+=1 ###
+                up.save() ###
+            else:
+                up.up_users.add(request.user)
+                up.up_count+=1 ###
+                up.save() ###
+        return redirect("community_detail", blog_id)
+
+    if not request.user.is_authenticated: #
+        return redirect("login") # 
+
+# 커뮤니티 페이지 댓글 싫어요
+def Down(request,blog_id,comment_id):
+    down = get_object_or_404(CommunityComment, id=comment_id)
+    if request.user.is_authenticated: #
+        if request.user in down.down_users.all():
+            down.down_users.remove(request.user)
+            down.down_count-=1 ###
+            down.save() ###
+        else:
+            if request.user in down.up_users.all():
+                down.up_users.remove(request.user)
+                down.up_count-=1 ###
+                down.down_users.add(request.user)
+                down.down_count+=1 ###
+                down.save() ###
+            else:
+                down.down_users.add(request.user)
+                down.down_count+=1 ###
+                down.save() ###
+        return redirect("community_detail", blog_id)
+
+    if not request.user.is_authenticated: #
+        return redirect("login") # 
