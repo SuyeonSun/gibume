@@ -31,7 +31,11 @@ def mypage(request):
     like_product_list=products.filter(like_users = request.user)
     ok_product_list=products.filter(ok_users = request.user)
     dislike_product_list=products.filter(dislike_users = request.user)
-    return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list})
+
+    com_comment=CommunityComment.objects.all()
+    com_comment=com_comment.filter(author_name = request.user.username)
+    com_comment=list(com_comment)
+    return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list, 'com_comment':com_comment})
 
 def detail(request):
     return render(request, 'detail.html')
@@ -86,7 +90,7 @@ def create(request):
 
 def community_detail(request, id):
     community_detail = get_object_or_404(Community, pk=id)
-    comment = CommunityComment.objects.filter(post=id) #
+    comment = CommunityComment.objects.filter(post=id).order_by('-up_count') #
     return render(request, 'community_detail.html', {'community_detail':community_detail, 'comment':comment})
 
 def community_edit(request, id):
