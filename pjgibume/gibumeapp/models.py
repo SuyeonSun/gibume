@@ -94,5 +94,18 @@ class Community(models.Model):
     date = models.DateTimeField(default='')
     body = models.TextField(null=True)
     image = models.ImageField(upload_to='gibumeapp/', null=True)
-
     save_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="save_posts", default='', blank=True)
+
+class CommunityComment(models.Model):
+    post=models.ForeignKey(Community, on_delete=models.CASCADE, default='', null=True)
+    author_name=models.CharField(max_length=20, default='')
+    comment_text=models.TextField(default='')
+    created_at=models.DateTimeField(default='')
+
+    # 
+    up_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="up_posts", default='', blank=True)
+    down_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="down_posts", default='', blank=True)
+
+    #
+    up_count = models.PositiveIntegerField(default=0)
+    down_count = models.PositiveIntegerField(default=0)

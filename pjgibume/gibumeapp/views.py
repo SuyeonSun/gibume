@@ -3,6 +3,7 @@ from .models import Perfume
 from .models import Comment
 from .models import User
 from .models import Community
+from .models import CommunityComment
 from django.utils import timezone
 from django.db.models import Q
 from django.contrib import auth
@@ -30,7 +31,11 @@ def mypage(request):
     like_product_list=products.filter(like_users = request.user)
     ok_product_list=products.filter(ok_users = request.user)
     dislike_product_list=products.filter(dislike_users = request.user)
-    return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list})
+
+    com_comment=CommunityComment.objects.all()
+    com_comment=com_comment.filter(author_name = request.user.username)
+    com_comment=list(com_comment)
+    return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list, 'com_comment':com_comment})
 
 def detail(request):
     return render(request, 'detail.html')
@@ -85,7 +90,8 @@ def create(request):
 
 def community_detail(request, id):
     community_detail = get_object_or_404(Community, pk=id)
-    return render(request, 'community_detail.html', {'community_detail':community_detail})
+    comment = CommunityComment.objects.filter(post=id).order_by('-up_count') #
+    return render(request, 'community_detail.html', {'community_detail':community_detail, 'comment':comment})
 
 def community_edit(request, id):
     community=Community.objects.get(id=id)
@@ -93,7 +99,7 @@ def community_edit(request, id):
 
 def community_update(request, id):
     community = Community.objects.get(id = id)
-    if community.writer != request.user.username: #
+    if community.writer != request.user.username: 
         return redirect('/community_detail/'+str(community.id))
     else:
         community.title = request.POST.get('title', False)
@@ -283,6 +289,72 @@ def noUp(request,name,id):
                 no.no_count+=1 ###
                 no.save() ###
         return redirect("product", name)
+
+    if not request.user.is_authenticated: #
+        return redirect("login") # 
+
+# 커뮤니티 페이지 댓글 작성
+@login_required
+def writeCommunitycomment(request, id):
+    comment=CommunityComment()
+    comment.post=Community.objects.get(pk=id)
+    comment.comment_text=request.POST.get('comment_text',False)
+    comment.created_at=timezone.datetime.now()
+    comment.author_name=request.user
+    comment.save()
+    return redirect('community_detail', id)
+
+# 커뮤니티 페이지 댓글 삭제
+@login_required
+def deleteCommunitycomment(request,blog_id,comment_id):
+    comment_d=CommunityComment.objects.get(id=comment_id) 
+    comment_d.delete()
+    return redirect('community_detail', blog_id)
+
+# 커뮤니티 페이지 댓글 좋아요
+def Up(request,blog_id,comment_id):
+    up = get_object_or_404(CommunityComment, id=comment_id)
+    if request.user.is_authenticated: #
+        if request.user in up.up_users.all():
+            up.up_users.remove(request.user)
+            up.up_count-=1 ###
+            up.save() ###
+        else:
+            if request.user in up.down_users.all():
+                up.down_users.remove(request.user)
+                up.down_count-=1 ###
+                up.up_users.add(request.user)
+                up.up_count+=1 ###
+                up.save() ###
+            else:
+                up.up_users.add(request.user)
+                up.up_count+=1 ###
+                up.save() ###
+        return redirect("community_detail", blog_id)
+
+    if not request.user.is_authenticated: #
+        return redirect("login") # 
+
+# 커뮤니티 페이지 댓글 싫어요
+def Down(request,blog_id,comment_id):
+    down = get_object_or_404(CommunityComment, id=comment_id)
+    if request.user.is_authenticated: #
+        if request.user in down.down_users.all():
+            down.down_users.remove(request.user)
+            down.down_count-=1 ###
+            down.save() ###
+        else:
+            if request.user in down.up_users.all():
+                down.up_users.remove(request.user)
+                down.up_count-=1 ###
+                down.down_users.add(request.user)
+                down.down_count+=1 ###
+                down.save() ###
+            else:
+                down.down_users.add(request.user)
+                down.down_count+=1 ###
+                down.save() ###
+        return redirect("community_detail", blog_id)
 
     if not request.user.is_authenticated: #
         return redirect("login") # 
