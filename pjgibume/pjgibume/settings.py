@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'testapp',
 ]
 
+# AUTHENTICATION_BACKENDS=[
+#     'django.contrib.auth.backends.ModelBackend',#기본장고 유저
+#     'allauth.account.auth_backends.AuthenticationBackend',#소셜로그인 인증체계
+# ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -134,3 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ## user model
 AUTH_USER_MODEL = 'account.CustomUser'
+
+	
+# #위에'django.contrib.sites'에 첫번째 인스턴스 사용
+# SITE_ID=1
