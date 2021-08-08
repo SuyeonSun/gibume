@@ -250,22 +250,34 @@ input.search {
   position: absolute;
   left: 475px;
   right: 50px;
-  min-width: 152px;
+  min-width: 164px;
   text-align: center;
   font-size: 0px;
 }
 
 .infobox {
+  position: relative;
+  text-align: center;
   width: 388px;
   height: calc(100% - 104px);
   border: 1px solid  #F12361;
   margin-left: 50px;
+  min-height: 510px;
 }
 
-hr {
+.h1 {
   border: 0;
-  border-top: 1px solid #aa224b;
+  border-top: 2px solid #aa224bce;
   width: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h2 {
+  border: 0;
+  border-top: 1px solid #aa224b93;
+  width: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -288,6 +300,49 @@ hr {
   font-size: small;
 }
 
+/* total width */
+.value_select::-webkit-scrollbar {
+  background-color: #fef5fa;
+  width: 12px;
+}
+
+/* background of the scrollbar except button or resizer */
+.value_select::-webkit-scrollbar-track {
+  background-color: #fef5fa;
+}
+
+/* scrollbar itself */
+.value_select::-webkit-scrollbar-thumb {
+  background-color: #aa224b;
+  border-right: 4px solid #fef5fa;
+  border-left: 4px solid #fef5fa;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.value_select::-webkit-scrollbar-button {
+  display: none;
+}
+
 img[src*="-"] {
   /* src에 -문자가 포함되어 있는 경우 */
+}
+
+.colorimg {
+  width: 230px;
+  margin-top: 40px;
+  border-radius: 30%;
+  overflow: hidden;
+  border: 1px solid #911c3f;
+}
+
+.timeimg {
+  width: 230px;
+  margin-top: 40px;
+  border: 1px solid #911c3f;
+}
+
+.noteimg {
+  width: 230px;
+  margin-top: 30px;
+  border: 1px solid #911c3f;
 }

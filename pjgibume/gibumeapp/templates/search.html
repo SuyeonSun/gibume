@@ -9,37 +9,49 @@
 
 <body>
     <div class="main">
-        <form action="search" method="POST">
+        <img src="{% get_static_prefix %}img/logo.png" class = "logo">
+        <div class = "search_box">
+            <form action ="search" method = "POST">
             {% csrf_token %}
-            <div class="search">
-                <input type="text" class="search" name="search_key" value="{{search_key}}" placeholder="search" />
-                <input class="btn" type="submit" value="Search" />
-            </div>
-        </form>
+              <div class = "search">
+                <input class = "search" type = "text"  name = "search_key" value = "{{search_key}}" placeholder = "search"/>
+                <button class = "submit_button" type = "submit" value = "Search">검색</button>
+              </div>
+            </form>
+        </div>
 
         <div class="search_result">
             {% if not search_list %}
-            <h1>검색 결과가 없습니다</h1>
+        
+            <h1 class = "result">: 검색 결과가 없습니다</h1>
 
             {% else %}
             {% if search_key %}
-            <h1 class="result">{{search_key}}의 검색결과입니다.</h1>
+            <h1 class="result">: {{search_key}}의 검색결과입니다.</h1>
             {% endif %}
             {% for search_result in search_list %}
-            <div class="perfume">
-                <p>{{search_result.name}}</p>
-                <p>색<span class="perfume-color"
-                        style="display:none">{{search_result.color}}</span>{{search_result.get_color_display}}</p>
-                <p>지속시간<span class="perfume-time"
-                        style="display:none">{{search_result.time}}</span>{{search_result.get_time_display}}</p>
-                <p><span class="perfume-note_group"
-                        style="display:none">{{search_result.note_group}}</span>{{search_result.get_note_group_display}}
-                </p>
-                <br>
-                <div>
-                    {% endfor %}
-                    {% endif %}
+            <div class = "value_select" style="overflow-x:hidden; overflow-y:scroll;">
+                <a href="{%url 'product' search_result.name%}">
+                  <div class = "perfume">
+                    <figure class = "perfume_thumb">
+                      <img src="{% get_static_prefix %}img/{{search_result.perfume_img}}.jpg" class="perfume_img">
+                      <figcaption class="perfume_caption">
+                        <p class = "perfume_brand">[{{search_result.brand}}]</p>
+                        <p class = "perfume_name">{{search_result.name}}</p>
+                          <div class = "perfume_info">
+                            <hr class = "h1">
+                            <p class = "perfume_time">{{search_result.get_time_display}}</p>
+                            <hr class = "h2">
+                            <p class = "perfume_note">{{search_result.get_note_group_display}}</p>
+                          </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </a>
+                {% endfor %} {% endif %}
                 </div>
             </div>
+        </div>
+    </div>
 </body>
 {% endblock%}
