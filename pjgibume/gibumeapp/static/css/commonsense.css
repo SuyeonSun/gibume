@@ -1,0 +1,227 @@
+a {
+    color: #ffffff;
+}
+.eduWrapper {
+    width: 100%;
+    height: auto;
+    /* padding-top: 35px; */
+}
+
+.eduCateWrapper {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+}
+
+.cateItem {
+    cursor: pointer;
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f12361;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.here {
+    background-color: #f8b5d7;
+}
+
+.cateItem:hover {
+    background-color: #f8b5d7;
+}
+
+.eduSec {
+    width: 100%;
+    height: 50vh;
+    background-color: #f8b5d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.contentsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.contentItem {
+    width: 80%;
+    height: 70vh;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    margin: 5rem 0;
+    -webkit-box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.53);
+    box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.53);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentItemTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.contentItemTitle span {
+    font-weight: 200;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.topBtn {
+    cursor: pointer;
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topBtn .topImg i {
+    font-size: 1.4rem;
+}
+
+.topHref {
+    color: #000;
+}
+
+.perfumeBoxWrapper {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.perfumeBoxItem {
+    width: 12rem;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px solid #c9c9c9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #f8b5d7;
+}
+
+.boxTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.boxTitle span {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.boxDesc {
+    width: 80%;
+}
+
+.boxDesc span {
+    font-size: 0.6rem;
+    text-align: center;
+    font-weight: 200;
+}
+
+.circleWrapper {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.circleItem {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circleItem img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.circleTitle span {
+    font-weight: 200;
+    font-size: 1.1rem;
+}
+
+.circleTitle {
+    margin-bottom: 2rem;
+}
+
+.circleDesc {
+    width: 80%;
+}
+
+.circleDesc span {
+    font-weight: 200;
+    font-size: 0.6rem;
+}
+
+.useItemWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.useItem {
+    border: 1px solid #f8b5d7;
+    width: 80%;
+    border-radius: 3px;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6rem 0;
+}
+
+.useTitle {
+    width: 80%;
+    margin-bottom: 0.3rem;
+}
+
+.useTitle span {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.useDesc {
+    width: 80%;
+}
+
+.useDesc span {
+    font-size: 0.6rem;
+    font-weight: 200;
+}

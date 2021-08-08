@@ -4,6 +4,7 @@
         {% load static %} {% block extrahead %}
         <link rel="stylesheet" href='{% static "css/education.css" %}' />
         <title>EDUCATION</title>
+        
         {% endblock %}
     </head>
 
@@ -11,6 +12,43 @@
         <div class="eduWrapper">
             <div class="eduSec">
                 <span>EDUCATION</span>
+            </div>
+            <div class="eduCateWrapper">
+                
+                    <div class="cateItem here">
+                        <a href="{%url 'education'%}">영상</a>
+                    </div>
+                
+                    <div class="cateItem">
+                        <a href="{%url 'common'%}">향수상식</a></div>
+                
+                
+                    <div class="cateItem">
+                        <a href="{%url 'eduquiz'%}">향수퀴즈</a></div>
+                
+            </div>
+            <div class="contentsWrapper">
+                <div class="eduWrapper eduBox">
+                    <div class="title">
+                        <span>조향사가 알려주는 향수 상식</span>
+                    </div>
+
+                </div>
+                
+                <div class="videoWrapper eduBox">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VCteARLYwxg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="contentsWrapper">
+                <div class="eduWrapper eduBox">
+                    <div class="title">
+                        <span>향의 기초지식</span>
+                    </div>
+
+                </div>
+                <div class="videoWrapper eduBox">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vfVAxIKzYfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+                </div>
             </div>
             <div class="contentsWrapper">
                 <div class="eduWrapper eduBox">
@@ -44,7 +82,14 @@
                 <div class="videoWrapper eduBox">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/-cbplATYPwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             </div>
+            <a href="#top" class="topHref">
+                <div class="topBtn">
+                    <div class="topImg">
+                    <i class="fas fa-angle-up"></i>
+                </div>
+            </a>
         </div>
+       
     </body>
     {% endblock%}
 </html>
