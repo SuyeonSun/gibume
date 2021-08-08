@@ -32,6 +32,54 @@
     </a>
     <br>
     {{community_detail.save_users.all | length}}명이 저장한 게시글
+
+    <!--댓글 작성-->
+    {% if user.is_authenticated %}
+    <form action="{%url 'writeCommunitycomment' community_detail.id%}" method="POST">
+        {% csrf_token %}
+        <div>
+            <textarea type="textfield" name="comment_text" placeholder="댓글을 입력해주세요."></textarea>
+        </div>
+        <div><input class="writecomment_button" type="submit" value="입력하기" style="cursor: pointer;" /></div>
+    </form>
+    {% endif %}
+
+    <!--댓글 보여주기-->
+    {%for c in comment%}
+    <div>{{c.author_name}}</div>
+    <div>{{c.created_at}}</div>
+    <div>{{c.comment_text}}</div>
+
+    {%if c.author_name == request.user.username%}
+    <a href="{% url 'deleteCommunitycomment' community_detail.id c.id %}">삭제하기</a>
+    {%endif%}
+
+    <!--댓글 좋아요-->
+    <!-- 좋아요 -->
+    <a href="{% url 'Up' community_detail.id c.id %}">
+        {% if user in c.up_users.all %}
+        <div><i class="fas fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% endif %}
+    </a>
+
+    <!-- 싫어요 -->
+    <a href="{% url 'Down' community_detail.id c.id %}">
+        {% if user in c.down_users.all %}
+        <div><i class="fas fa-thumbs-down"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-down"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% endif %}
+    </a>
+    <hr>
+    {%endfor%}
+
+
 </body>
 
 </html>

@@ -62,6 +62,22 @@
                 {%endfor%}
               </div>
             </div>
+
+            <div class="comment">
+              <p class="post-title">+COMMUNITY COMMENT+</p>
+              <div id="list-example2" class="list-group2">
+                {%for com in com_comment%}
+                <a href="" method="POST" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <small>{{com.created_at}}</small>
+                  </div>
+                  <p class="mb-2">{{com.comment_text}}</p>
+                  <!--<p class="mb-2">{{comment.comment_summary}}</p>-->
+                </a>
+                {%endfor%}
+              </div>
+            </div>
+
           </div>
       </div>
       <hr>

@@ -50,6 +50,12 @@ urlpatterns = [
     path('community_detail/<int:id>/community_update', community_update, name="community_update"),
     path('community_detail/<int:id>/save_post', save_post, name="save_post"),
 
+    path('community_detail/<int:id>/writecomment/', writeCommunitycomment, name="writeCommunitycomment"), #
+    path('community_detail/deletecomment/<int:blog_id>/<int:comment_id>',deleteCommunitycomment,name="deleteCommunitycomment"),
+
+    path('community_detail/<int:blog_id>/<int:comment_id>/Up', Up, name="Up"),
+    path('community_detail/<int:blog_id>/<int:comment_id>/Down', Down, name="Down"),
+
     path('perfume/', perfume, name = "perfume"),
     path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
