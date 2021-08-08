@@ -1,16 +1,39 @@
-<h1>글쓰기 페이지 입니다</h1>
+{% extends 'base.html' %} {%block content%}
 
-<form action="{%url 'create' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <h4>제목: </h4>
-    <input type="text" name="title">
-    <br>
-    <br>
-    <h4>본문: </h4>
-    <textarea cols=40 rows=10 name="body"></textarea>
-    <br>
-    <br>
-    <h4>이미지: </h4>
-    <input type="file" name='image'>
-    <input class="btn btn-dark" type="submit" value="제출하기">
-</form>
+<html>
+    <head>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href="{% static 'css/community_new.css' %}" />
+        <title>COMMUNITY</title>
+        {% endblock %}
+    </head>
+    <div class="newWrapper">
+        <div class="commnunityNewHeaderWrapper"></div>
+    </div>
+
+    <div class="newContentWrapper">
+        <div class="inputWrapper">
+            <form
+                action="{%url 'create' %}"
+                method="POST"
+                enctype="multipart/form-data"
+                class="formWrapper"
+            >
+                {% csrf_token %}
+                <input
+                    name="title"
+                    type="text"
+                    class="titleInput"
+                    placeholder="제목을 입력하세요."
+                />
+                <textarea name="body" id="" class="bodyInput"></textarea>
+                <div class="srcWrapper">
+                    <input type="file" name="image" className="file" />
+                    <input class="submitBtn" type="submit" value="제출하기" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% endblock%}
+</html>
