@@ -14,13 +14,10 @@ class User(models.Model):
 
 # 향수
 class Perfume(models.Model):
-    
-    
-    love_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="love_posts", default='', blank=True)
+    # id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts", default='')
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_posts", default='', blank=True)
     ok_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="ok_posts", default='', blank=True)
     dislike_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dislike_posts", default='', blank=True)
-    hate_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="hate_posts", default='', blank=True)
     
     brand = models.CharField(max_length=200, default = '') # 브랜드
     name = models.CharField(max_length=20, primary_key=True)  # 향수 이름
@@ -47,11 +44,11 @@ class Perfume(models.Model):
     )
     time = models.CharField(max_length=3, choices=TIME_CHOICES) # 지속 시간에 따른 향수 분류
 
-    love_count = models.PositiveIntegerField(default=0) # love 수
-    like_count = models.PositiveIntegerField(default=0) # like 수
-    ok_count = models.PositiveIntegerField(default=0) # ok 수
-    dislike_count = models.PositiveIntegerField(default=0) # dislike 수
-    hate_count = models.PositiveIntegerField(default=0) # hate 수
+    #love_count = models.PositiveIntegerField(default=0) # love 수
+    #like_count = models.PositiveIntegerField(default=0) # like 수
+    #ok_count = models.PositiveIntegerField(default=0) # ok 수
+    #dislike_count = models.PositiveIntegerField(default=0) # dislike 수
+    #hate_count = models.PositiveIntegerField(default=0) # hate 수
 
     NOTE_CHOICES = (
         ('CI', 'Citrus fruits'),
@@ -73,7 +70,7 @@ class Perfume(models.Model):
     def __str__(self):
         return self.name
 
-# 댓글
+# 향수 댓글
 class Comment(models.Model):
     name=models.ForeignKey(Perfume, on_delete=models.CASCADE,default='') 
     pub_date = models.DateTimeField(default='')
@@ -86,3 +83,29 @@ class Comment(models.Model):
     #
     yes_count = models.PositiveIntegerField(default=0)
     no_count = models.PositiveIntegerField(default=0)
+
+    def comment_summary(self):
+        return self.content[:80]
+
+# 커뮤니티
+class Community(models.Model):
+    writer = models.CharField(max_length=30, default='')
+    title = models.CharField(max_length=200, null=True)
+    date = models.DateTimeField(default='')
+    body = models.TextField(null=True)
+    image = models.ImageField(upload_to='gibumeapp/', null=True)
+    save_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="save_posts", default='', blank=True)
+
+class CommunityComment(models.Model):
+    post=models.ForeignKey(Community, on_delete=models.CASCADE, default='', null=True)
+    author_name=models.CharField(max_length=20, default='')
+    comment_text=models.TextField(default='')
+    created_at=models.DateTimeField(default='')
+
+    # 
+    up_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="up_posts", default='', blank=True)
+    down_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="down_posts", default='', blank=True)
+
+    #
+    up_count = models.PositiveIntegerField(default=0)
+    down_count = models.PositiveIntegerField(default=0)
