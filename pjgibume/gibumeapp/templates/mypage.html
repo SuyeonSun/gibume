@@ -67,7 +67,7 @@
               <p class="post-title">+COMMUNITY COMMENT+</p>
               <div id="list-example2" class="list-group2">
                 {%for com in com_comment%}
-                <a href="" method="POST" class="list-group-item list-group-item-action">
+                <a href="{%url 'community_detail' com.post_id %}" method="POST" class="list-group-item list-group-item-action">
                   <div class="d-flex w-100 justify-content-between">
                     <small>{{com.created_at}}</small>
                   </div>
