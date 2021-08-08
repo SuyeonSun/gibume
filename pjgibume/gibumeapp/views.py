@@ -145,6 +145,12 @@ def search(request):
 def education(request):
     return render(request, 'education.html')
 
+def common(request):
+    return render(request, 'educommonsense.html')
+
+def eduquiz(request):
+    return render(request, 'eduquize.html')
+
 #like
 # @login_required
 def like_post(request, name):

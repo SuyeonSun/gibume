@@ -1,0 +1,170 @@
+{% extends 'base.html' %} {%block content%}
+
+    <head>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href='{% static "css/commonsense.css" %}' />
+        
+        <title>EDUCATION</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="eduWrapper">
+            <div class="eduSec">
+                <span>EDUCATION</span>
+            </div>
+            <div class="eduCateWrapper">
+                <div class="cateItem">
+                    <a href="{%url 'education'%}">영상</a>
+                </div>
+                <div class="cateItem here">
+                    <a href="{%url 'common'%}">향수상식</a>
+                </div>
+                <div class="cateItem">
+                    <a href="{%url 'eduquiz'%}">향수퀴즈</a>
+                </div>
+            </div>
+            <div class="contentsWrapper">
+                <div class="contentItem">
+                    <div class="contentItemTitle">
+                        <span>향수종류</span>
+                    </div>
+                    <div class="perfumeBoxWrapper">
+                        <div class="perfumeBoxItem">
+                            <div class="boxTitle">
+                                <span>퍼퓸</span>
+                            </div>
+                            <div class="boxDesc">
+                                <span>퍼퓸은 99.5% 수준의 순도와 알코올은 15~20%로 지속시간은 5~7시간으로 가장 길다. 향수 중 완성도가 가장 높으며 향료의 농도가 높기에 비싼 가격대를 형성하고 있다. 손목이나 목덜미에 2~3방울 정도 발라주는 것이 좋다.</span>
+                            </div>
+                        </div>
+                        <div class="perfumeBoxItem">
+                            <div class="boxTitle">
+                                <span>오드퍼퓸</span>
+                            </div>
+                            <div class="boxDesc">
+                                <span>오드퍼퓸은 향료 농도 10~15%, 알코올 85~90%로 지속시간은 5시간 전후의 향수이다. 지속시간이 퍼퓸보다 강하지 않기 때문에 적당한 지속시간과 향을 가진 향수를 찾는 사람에게 적당하다. 또한 향수에 꽤 가까운 완성도임에도 불구하고 향수보다 값이 저렴한 것이 큰 장점이다.</span>
+                            </div>
+                        </div>
+                        <div class="perfumeBoxItem">
+                            <div class="boxTitle">
+                                <span>오드뚜왈렛</span>
+                            </div>
+                            <div class="boxDesc">
+                                <span>오드뚜왈렛은 순도 80~85%, 알코올 5~10%로 지속시간은 3~4시간 정도의 향수이다. 소프트하기 때문에 가장 쉽고 많이 쓰이는 향수이기도 하다.</span>
+                            </div>
+                        </div>
+                        <div class="perfumeBoxItem">
+                            <div class="boxTitle">
+                                <span>오드코롱</span>
+                            </div>
+                            <div class="boxDesc">
+                                <span>오드코롱은 향료 농도 3~5%, 알코올 75~85%로 지속시간은 1~2시간 정도이다. 향기가 가볍기 때문에 실내용 향수로 간편하게 뿌리기 적합하다.</span>
+                            </div>
+                        </div>
+                        <div class="perfumeBoxItem">
+                            <div class="boxTitle">
+                                <span>샤워코롱</span>
+                            </div>
+                            <div class="boxDesc">
+                                <span>향료 농도 1~3% 수준, 지속 시간은 1시간 정도의 샤워코롱은 이름에서 예상되다시피 샤워 후에 은은한 향기를 내기 위해 뿌리기 적합하다. 지속시간이 위의 향수들과 비교하여 짧긴 하지만 자연스러운 향기를 내기에는 안성맞춤이다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentItem">
+                    <div class="contentItemTitle">
+                        <span>향의 계열</span>
+                    </div>
+                    <div class="circleWrapper">
+                        <div class="circleItem">
+                            <img src="../static/img/floImg.png" alt="">
+                            <div class="circleTitle">
+                                <span>플로럴 향</span>
+                            </div>
+                            <div class="circleDesc">
+                                <span>여성들에게 꾸준히 사랑 받는 계열의 향이다. 10대부터 중년여성까지 폭넓은 연령대가 부담 없이 사용이 가능한 스테디 셀러다.</span>
+                            </div>
+                        </div>
+                        <div class="circleItem">
+                            <img src="../static/img/musImg.png" alt="">
+                            <div class="circleTitle">
+                                <span>머스크 향</span>
+                            </div>
+                            <div class="circleDesc">
+                                <span>사향노루의 페로몬을 기반으로 한 향으로 성별에 상관없이 달달하나 조금은 성숙한 느낌을 풍기는 매력적인 향이다.</span>
+                            </div>
+                        </div>
+                        <div class="circleItem">
+                            <img src="../static/img/wodImg.png" alt="">
+                            <div class="circleTitle">
+                                <span>우디 향</span>
+                            </div>   
+                            <div class="circleDesc">
+                                <span>시원한 숲과 나무의 향으로 플로럴 향이 여성들에게 사랑을 받는다면 우디향은 남성 향수에 많이 사용된다. 또한 중성적인 느낌을 주는 향수에도 많이 사용되기도 한다.</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="contentItem" >
+                    <div class="contentItemTitle">
+                        <span>올바른 향수 사용법</span>
+                    </div>
+                    <div class="useContentWrapper">
+                        <div class="useItemWrapper">
+                            <div class="useItem">
+                                <div class="useTitle">
+                                    <span>체온이 높은 곳에 뿌려라</span>
+                                </div>
+                                <div class="useDesc">
+                                    <span>귀 뒤, 손목, 정강이 등 움직임이 많고 체온이 높은 곳에 뿌리면 향기가 골고루 잘 퍼진다고 한다. 많은 사람들이 향수를 뿌릴 때 손목에 많이 뿌리는데, 이는 혈관이 지나가는 자리와 동시에 체온이 높은 곳이라 은은하게 향기가 흩어질 수 있는 원리다. 손목과 더불어 다양한 부위에 소량으로 뿌리면 향이 지속하는데 더욱 좋다.</span>
+                                </div>
+                            </div>
+                            <div class="useItem">
+                                <div class="useTitle">
+                                    <span>흰 옷에는 제외하고 뿌려라</span>
+                                </div>
+                                <div class="useDesc">
+                                    <span>색이 있는 향수는 변색을 유발할 수 있기 때문에 흰 옷처럼 색이 밝은 옷 위에는 뿌리지 않는 것이 좋다.</span>
+                                </div>
+                            </div>
+                            <div class="useItem">
+                                <div class="useTitle">
+                                    <span>뿌리고 비비지 말라</span>
+                                </div>
+                                <div class="useDesc">
+                                    <span>많은 사람들이 손목에 향수를 뿌린 후 다른 한쪽 손목으로 비비곤 한다. 이는 향을 변질시킬 뿐만 아니라 트러블 또한 유발할 수 있는 매우 안 좋은 습관이다. 주의하도록 하자.</span>
+                                </div>
+                            </div>
+                            <div class="useItem">
+                                <div class="useTitle">
+                                    <span>향이 섞이지 않게 뿌려라</span>
+                                </div>
+                                <div class="useDesc">
+                                    <span>향수는 대부분 기초 화장품을 다 바른 후나 화장을 다 한 후에 뿌리는 경우가 많다. 그러나 향이 섞일 수 있기 때문에 되도록 로션 및 화장품은 무향의 제품을 선택한 후 뿌리는 것이 좋다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentItem">
+                    <div class="contentItemTitle">
+                        <span>향수정보</span>
+                    </div>
+                </div>
+                <div class="contentItem">
+                    <div class="contentItemTitle">
+                        <span>향수정보</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#top" class="topHref">
+                <div class="topBtn">
+                    <div class="topImg">
+                    <i class="fas fa-angle-up"></i>
+                </div>
+            </a>
+            </div>
+    </body>
+    {% endblock%}
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {%block content%}
+
+    <head>
+        {% load static %} {% block extrahead %}
+        <link rel="stylesheet" href='{% static "css/commonsense.css" %}' />
+        <title>EDUCATION</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="eduWrapper">
+            <div class="eduSec">
+                <span>EDUCATION</span>
+            </div>
+            <div class="eduCateWrapper">
+                
+                <div class="cateItem">
+                    <a href="{%url 'education'%}">영상</a></div>
+            
+            
+                <div class="cateItem">
+                    <a href="{%url 'common'%}">향수상식</a></div>
+            
+            
+                <div class="cateItem">
+                    <a href="{%url 'eduquiz'%}">향수퀴즈</a></div>
+            
+        </div>
+           
+    </body>
+    {% endblock%}
+</html>

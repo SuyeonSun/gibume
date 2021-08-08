@@ -1,7 +1,38 @@
+a {
+    color: #ffffff;
+}
+
 .eduWrapper {
     width: 100%;
     height: auto;
     /* padding-top: 35px; */
+}
+
+.eduCateWrapper {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+}
+
+.cateItem {
+    cursor: pointer;
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f12361;
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+
+.here {
+    background-color: #f8b5d7;
+}
+
+.cateItem:hover {
+    background-color: #f8b5d7;
 }
 
 .eduSec {
@@ -36,4 +67,29 @@
     color: #f8b5d7;
     font-size: 28px;
     font-weight: 200;
+}
+
+.topBtn {
+    cursor: pointer;
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 5px 9px 1px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topBtn .topImg i {
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.topHref {
+    color: #000;
 }

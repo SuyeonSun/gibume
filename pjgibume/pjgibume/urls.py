@@ -59,6 +59,8 @@ urlpatterns = [
     path('perfume/', perfume, name = "perfume"),
     path('perfume/search', search, name="search"),
     path('education/',education,name="education"),
+    path('educommonsense/',common,name="common"),
+    path('eduquiz/',eduquiz,name="eduquiz"),
     path('account/', include('account.urls')),
 
     path('form/', form, name="form"),
