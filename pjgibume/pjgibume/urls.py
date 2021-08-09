@@ -24,7 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name="home"),
     path('mypage', mypage, name = "mypage"),
-    path('detail/',detail,name="detail"),
+    path('detail1/',detail1,name="detail1"),
+    path('detail2/',detail2,name="detail2"),
+    path('detail3/',detail3,name="detail3"),
+    path('detail4/',detail4,name="detail4"),
+    path('detail5/',detail5,name="detail5"),
+    path('detail6/',detail6,name="detail6"),
+    path('detail7/',detail7,name="detail7"),
+    path('detail8/',detail8,name="detail8"),
 
     # product 페이지 
     path('product/<str:name>',product,name="product"),
