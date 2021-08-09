@@ -37,8 +37,53 @@ def mypage(request):
     com_comment=list(com_comment)
     return render(request, 'mypage.html', {'comment_list' : comment_list, 'community_list':community_list, 'save_post_list':save_post_list, 'like_product_list':like_product_list, 'ok_product_list':ok_product_list, 'dislike_product_list':dislike_product_list, 'com_comment':com_comment})
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail1(request):
+    products = Perfume.objects.all()
+    products=products.filter(time='per')
+    products=list(products)
+    return render(request, 'detail1.html', {'products':products})
+
+def detail2(request):
+    products = Perfume.objects.all()
+    products=products.filter(time='edc')
+    products=list(products)
+    return render(request, 'detail2.html', {'products':products})
+
+def detail3(request):
+    products = Perfume.objects.all()
+    products=products.filter(color='red')
+    products=list(products)
+    return render(request, 'detail3.html', {'products':products})
+
+def detail4(request):
+    products = Perfume.objects.all()
+    products=products.filter(color='blu')
+    products=list(products)
+    return render(request, 'detail4.html', {'products':products})
+
+def detail5(request):
+    products = Perfume.objects.all()
+    products=products.filter(time='edt')
+    products=list(products)
+    return render(request, 'detail5.html', {'products':products})
+
+def detail6(request):
+    products = Perfume.objects.all()
+    products=products.filter(time='edp')
+    products=list(products)
+    return render(request, 'detail6.html', {'products':products})
+
+def detail7(request):
+    products = Perfume.objects.all()
+    products=products.filter(time='edc')
+    products=list(products)
+    return render(request, 'detail7.html', {'products':products})
+
+def detail8(request):
+    products = Perfume.objects.all()
+    products=products.filter(color='ora')
+    products=list(products)
+    return render(request, 'detail8.html', {'products':products})
 
 def product(request, name):
     product = Perfume.objects.get(pk=name)

@@ -1,53 +1,55 @@
 {% extends 'base.html' %} {%block content%}
 
 <html>
-    <head>
-        {% load static %} {% block extrahead %}
-        <link rel="stylesheet" href="{% static 'css/community.css' %}" />
-        <title>COMMUNITY</title>
-        {% endblock %}
-    </head>
 
-    <body>
-        <div class="commnunityHeaderWrapper">
-            <p class="maintitle">COMMUNITY</p>
+<head>
+    {% load static %} {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/community.css' %}" />
+    <title>COMMUNITY</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div class="commnunityHeaderWrapper">
+        <p class="maintitle">COMMUNITY</p>
+    </div>
+    <div class="commnuityBarWrapper">
+        <div class="commnunityNewItem">
+            <span>
+                <a href="{%url 'community_new' %}">포스팅 하러가기</a>
+            </span>
         </div>
-        <div class="commnuityBarWrapper">
-            <div class="commnunityNewItem">
-                <span>
-                    <a href="{%url 'community_new' %}">포스팅 하러가기</a>
-                </span>
+    </div>
+    <div class="contentsWrapper">
+        <div class="postWrapper">
+            <div class="create">
+                <span>+</span>
             </div>
         </div>
-        <div class="contentsWrapper">
+        {% for post in community %}
+        <a href="{%url 'community_detail' post.id%}">
             <div class="postWrapper">
-                <div class="create">
-                    <span>+</span>
+                <div class="postImg">
+                    {% if post.image %}
+                    <img src="{{post.image.url}}" alt="" />
+                    {% endif %}
+                </div>
+                <div class="postContentWrapper">
+                    <div class="uesrName">
+                        <span> {{post.title}} </span>
+                    </div>
+                    <div class="data">
+                        <span>{{post.date}}</span>
+                    </div>
+                    <div class="desc">
+                        <span></span>
+                    </div>
                 </div>
             </div>
-            {% for post in community %}
-            <a href="{%url 'community_detail' post.id%}">
-                <div class="postWrapper">
-                    <div class="postImg">
-                        {% if post.image %}
-                        <img src="{{post.image.url}}" alt="" />
-                        {% endif %}
-                    </div>
-                    <div class="postContentWrapper">
-                        <div class="uesrName">
-                            <span> {{post.title}} </span>
-                        </div>
-                        <div class="data">
-                            <span>{{post.date}}</span>
-                        </div>
-                        <div class="desc">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            {%endfor%}
-        </div>
-    </body>
-    {% endblock%}
+        </a>
+        {%endfor%}
+    </div>
+</body>
+{% endblock%}
+
 </html>
