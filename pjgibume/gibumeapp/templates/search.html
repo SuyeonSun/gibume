@@ -9,7 +9,9 @@
 
 <body>
     <div class="main">
-        <img src="{% get_static_prefix %}img/logo.png" class = "logo">
+        
+        <img src="{% get_static_prefix %}img/logo2.png" class = "logo">
+        
         <div class = "search_box">
             <form action ="search" method = "POST">
             {% csrf_token %}
@@ -29,8 +31,9 @@
             {% if search_key %}
             <h1 class="result">: {{search_key}}의 검색결과입니다.</h1>
             {% endif %}
-            {% for search_result in search_list %}
+            
             <div class = "value_select" style="overflow-x:hidden; overflow-y:scroll;">
+              {% for search_result in search_list %}
                 <a href="{%url 'product' search_result.name%}">
                   <div class = "perfume">
                     <figure class = "perfume_thumb">
@@ -40,18 +43,20 @@
                         <p class = "perfume_name">{{search_result.name}}</p>
                           <div class = "perfume_info">
                             <hr class = "h1">
-                            <p class = "perfume_time">{{search_result.get_time_display}}</p>
+                            <p class = "perfume_time" style = "padding-top:10px; padding-bottom:5px;">{{search_result.get_time_display}}</p>
                             <hr class = "h2">
-                            <p class = "perfume_note">{{search_result.get_note_group_display}}</p>
+                            <p class = "perfume_note" style = "padding-top:5px; padding-bottom:3px; width:95%;">{{search_result.get_note_group_display}}</p>
                           </div>
                       </figcaption>
                     </figure>
-                  </div>
+                  </div> 
                 </a>
                 {% endfor %} {% endif %}
                 </div>
             </div>
+
         </div>
-    </div>
+      </div>
+ 
 </body>
 {% endblock%}

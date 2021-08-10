@@ -14,9 +14,9 @@
 
   <div class="detail_1">
     <div class="detail_2">
-      <div class="info">
+      <div class="info1">
         <p class="subtitle">MY INFO</p1>
-        
+          <hr class = "line">
           <div class="profs">
             <div class="prof1"><img class="Img" src="../static/img/call.jpg" alt="" /></div>
             <div class="prof2">
@@ -28,61 +28,10 @@
           </div>
       </div>
       <br>
-      <hr>
-      <div class="info">
-        <p class="subtitle">MY POST</p1>
-          <div class="posts">
-            <div class="post">
-              <p class="post-title">+POST+</p>
-              <div class="list-group1">
-                {%for community in community_list%}
-                <div class = "comu_post">
-                  <a href="{%url 'community_detail' community.id %}" method="POST" class = "a1">
-                      <h1 class = "comu_title">{{community.title}}</h1>
-                      <h1 class = "comu_date">{{community.date}}</h1>            
-                  </a>
-                </div>
-                {%endfor%}
-              </div>
-            </div>
-
-            <div class="comment">
-              <p class="post-title">+COMMENT+</p>
-              <div id="list-example2" class="list-group2">
-                {%for comment in comment_list%}
-                <div class = "comm_list">
-                  <a href="{%url 'product' comment.name %}" method="POST" class = "a1">
-                    
-                      <h1 class = "comm_title">{{comment.name}}</h1>
-                      <h1 class = "comm_cont">{{comment.content}}</h1>
-                      <h1 class = "comm_date">{{comment.pub_date}}</h1>
-
-                  </a>
-                </div>
-                {%endfor%}
-              </div>
-            </div>
-
-            <div class="comment">
-              <p class="post-title">+COMMUNITY COMMENT+</p>
-              <div id="list-example2" class="list-group2">
-                {%for com in com_comment%}
-                <a href="{%url 'community_detail' com.post_id %}" method="POST" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-between">
-                    <small>{{com.created_at}}</small>
-                  </div>
-                  <p class="mb-2">{{com.comment_text}}</p>
-                  <!--<p class="mb-2">{{comment.comment_summary}}</p>-->
-                </a>
-                {%endfor%}
-              </div>
-            </div>
-
-          </div>
-      </div>
-      <hr>
-      <div class="info">
-        <p class="subtitle">REVIEW</p1>
+      <div class="info3">
+        <p class="subtitle">PERFUME REVIEW</p1>
+          <hr class = "line">
+          <div class = "review">
           <div class="like">
 
             <div class="tabset">
@@ -124,7 +73,7 @@
                 <section id="ok" class="tab-panel">
                   <div class="perfume_list">
                     {%for product in ok_product_list%}
-                    <a href="{%url 'product' product.name%}">
+                    <a href="{%url 'product' product.name%}"> 
                       <div class = "perfume">
                         <figure class = "perfume_thumb">
                           <img src="{% get_static_prefix %}img/{{product.perfume_img}}.jpg" class="perfume_img">
@@ -169,15 +118,69 @@
                 </section>
               </div>
               
+          
+          </div>
+          <div class="perfume_comment">
+            <p class="post-title">[COMMENT]</p>
+              <div class=list-group1>
+                {%for comment in comment_list%}
+                  <div class = "comm_list">
+                    <a href="{%url 'product' comment.name %}" method="POST" class = "a1">
+                      
+                        <h1 class = "comm_title">{{comment.name}}</h1>
+                        <h1 class = "comm_cont">{{comment.content}}</h1>
+                        <h1 class = "comm_date">{{comment.pub_date}}</h1>
+
+                    </a>
+                  </div>
+                {%endfor%}
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <br>
+      <div class="info2">
+        <p class="subtitle">COMMUNITY</p1>
+          <hr class = "line">
+          <div class="posts">
+            <div class="post">
+              <p class="post-title">[POST]</p>
+              <div class="list-group1">
+                {%for community in community_list%}
+                <div class = "comu_post">
+                  <a href="{%url 'community_detail' community.id %}" method="POST" class = "a1">
+                      <h1 class = "comu_title">{{community.title}}</h1>
+                      <h1 class = "comu_date">{{community.date}}</h1>            
+                  </a>
+                </div>
+                {%endfor%}
+              </div>
+            </div>
+            <div class="comment">
+              <p class="post-title">[COMMENT]</p>
+              <div class="list-group1">
+                {%for com in com_comment%}
+                <div class = "comu_comm">
+                <a href="{%url 'community_detail' com.post_id %}" method="POST" class = "a1">
+                  <h1 class = "comm_cont">{{com.comment_text}}</h1>
+                  <h1 class = "comm_date">{{com.created_at}}</h1>
+                  
+                </a>
+                </div>
+                {%endfor%}
+              </div>
             </div>
 
+          </div>
       </div>
-      <hr>
-      <div class="info">
+      <br>
+      <div class="info4">
         <p class="subtitle">SAVED</p1>
+          <hr class = "line">
           <div class="likepost">
-            <p class="post-title">+POST+</p>
-            <div class="list-group3">
+            <p class="post-title">[POST]</p>
+            <div class="list-group2">
               {%for post in save_post_list%}
               <div class = "comu_post">
                 <a href="{%url 'community_detail' post.id %}" method="POST" class = "a1">

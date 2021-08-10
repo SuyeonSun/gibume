@@ -1,6 +1,6 @@
 .main {
-  height: 80vh;
-  margin: 80px;
+  height: 83vh;
+  margin: 60px;
   text-align: center;
 }
 
@@ -12,7 +12,7 @@
           transform: translate(-50%);
   height: 40px;
   width: 420px;
-  border: 1px solid  #F12361;
+  border: 1px solid  #282828;
   background: #ffffff;
 }
 
@@ -29,15 +29,15 @@ input.search {
   width: 51px;
   height: 41px;
   border: 0px;
-  background: #F12361;
+  background: #282828;
   outline: none;
   float: right;
-  color: #ffffff;
+  color: #fef5fa;
   border-radius: 0px;
 }
 
 .logo {
-  width: 250px;
+  width: 300px;
 }
 
 .search_result {
@@ -48,14 +48,15 @@ input.search {
 .result {
   font-size: 18px;
   font-weight: bold;
-  color: #911c3f;
+  color: #282828;
 }
 
 .value_select {
-  padding-top: 30px;
+  margin-top: 30px;
   margin-right: 50px;
   margin-left: 50px;
-  height: 90%;
+  height: 85%;
+  font-size: 0px;
 }
 
 .perfume {
@@ -80,12 +81,13 @@ input.search {
 
 .perfume figure .perfume_info {
   font-size: 15px;
-  color: #911c3f;
+  color: #282828;
   font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .perfume .perfume_img {
-  margin-top: 5px;
   width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -95,7 +97,7 @@ input.search {
   text-align: center;
   font-size: 17px;
   margin-top: 5px;
-  color: #aa224b;
+  color: #282828;
   font-weight: bold;
 }
 
@@ -108,13 +110,13 @@ input.search {
     bottom: 0;
     width: 100%;
     height: 100%;
-    -webkit-transition: height .5s ease-in;
-    transition: height .5s ease-in;
+    -webkit-transition: height .3s ease-in;
+    transition: height .3s ease-in;
   }
   figure:hover .perfume_info {
     opacity: 1;
-    -webkit-transition: opacity .5s ease-in .6s;
-    transition: opacity .5s ease-in .6s;
+    -webkit-transition: opacity .3s ease-in .3s;
+    transition: opacity .3s ease-in .3s;
   }
   .perfume_info {
     opacity: 0;
@@ -139,7 +141,7 @@ input.search {
 
 .h1 {
   border: 0;
-  border-top: 2px solid #aa224bce;
+  border-top: 2px solid #7e1937ce;
   width: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -148,7 +150,7 @@ input.search {
 
 .h2 {
   border: 0;
-  border-top: 1px solid #aa224b93;
+  border-top: 1px solid #7e1937ce;
   width: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -163,14 +165,14 @@ input.search {
 
 /* background of the scrollbar except button or resizer */
 .value_select::-webkit-scrollbar-track {
-  background-color: #fef5fa;
+  background-color: #282828;
 }
 
 /* scrollbar itself */
 .value_select::-webkit-scrollbar-thumb {
-  background-color: #aa224b;
-  border-right: 4px solid #fef5fa;
-  border-left: 4px solid #fef5fa;
+  background-color: #fef5fa;
+  border-right: 2px solid #282828;
+  border-left: 3px solid #282828;
 }
 
 /* set button(top and bottom of the scrollbar) */

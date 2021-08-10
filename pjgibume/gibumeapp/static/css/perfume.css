@@ -2,7 +2,7 @@
 .title {
   width: 100%;
   height: 100vh;
-  background-color: #fef5fa;
+  background-color: #282828;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,13 +19,16 @@
 }
 
 .main_title {
-  color: #282828;
+  color: #fef5fa;
   font-weight: bold;
   font-size: 50px;
 }
 
+body {
+  background-color: #F1F2F8;
+}
+
 .main {
-  background-color: white;
   width: 100%;
   height: 90vh;
   margin-top: 35px;
@@ -98,7 +101,7 @@
       -ms-flex-order: 1;
           order: 1;
   z-index: 2;
-  background: #fef5fa;
+  background: #f4a7b5;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -126,7 +129,7 @@
   height: 40px;
   width: 40px;
   content: '';
-  background: #fef5fa;
+  background: #f4a7b5;
 }
 
 .subbox {
@@ -154,7 +157,7 @@ input.search {
 
 .submit_button {
   width: 50px;
-  height: 40px;
+  height: 41px;
   border: 0px;
   background: #282828;
   outline: none;
@@ -187,10 +190,11 @@ input.search {
   font-size: 15px;
   color: #282828;
   font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .perfume .perfume_img {
-  margin-top: 5px;
   width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -213,13 +217,13 @@ input.search {
     bottom: 0;
     width: 100%;
     height: 100%;
-    -webkit-transition: height .5s ease-in;
-    transition: height .5s ease-in;
+    -webkit-transition: height .3s ease-in;
+    transition: height .3s ease-in;
   }
   figure:hover .perfume_info {
     opacity: 1;
-    -webkit-transition: opacity .5s ease-in .6s;
-    transition: opacity .5s ease-in .6s;
+    -webkit-transition: opacity .3s ease-in .3s;
+    transition: opacity .3s ease-in .3s;
   }
   .perfume_info {
     opacity: 0;
@@ -255,8 +259,10 @@ input.search {
   left: 475px;
   right: 50px;
   min-width: 164px;
+  min-height: 590px;
   text-align: center;
   font-size: 0px;
+  background-color: white;
 }
 
 .infobox {
@@ -267,6 +273,7 @@ input.search {
   border: 1px solid  #282828;
   margin-left: 50px;
   min-height: 510px;
+  background-color: white;
 }
 
 .h1 {
@@ -333,7 +340,7 @@ img[src*="-"] {
 
 .colorimg {
   width: 230px;
-  margin-top: 40px;
+  margin-top: 50px;
   border-radius: 30%;
   overflow: hidden;
   border: 1px solid #282828;
@@ -341,10 +348,72 @@ img[src*="-"] {
 
 .timeimg {
   width: 230px;
-  margin-top: 40px;
 }
 
 .noteimg {
   width: 230px;
-  margin-top: 30px;
+}
+
+/* tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltip__item {
+  position: absolute;
+  min-width: 300px;
+  height: 10px;
+  padding: 10px 10px 20px 10px;
+  visibility: hidden;
+  opacity: 0;
+  background: #282828;
+  -webkit-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  color: #F1F2F8;
+  border: 1px solid #282828;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 400;
+  -webkit-box-shadow: 0 2px 1px #F1F2F8;
+          box-shadow: 0 2px 1px #F1F2F8;
+  z-index: 4;
+}
+
+.tooltip__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.tooltip__initiator {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.tooltip[data-direction="bottom"] .tooltip__initiator:hover ~ .tooltip__item {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip[data-direction="bottom"] .tooltip__item {
+  top: calc(100% + 1em);
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -15px, 0);
+          transform: translate3d(-50%, -15px, 0);
+}
+
+.tooltip[data-direction="bottom"] .tooltip__item:after {
+  top: -0.5em;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  border-width: 0 0.5em 0.5em 0.5em;
+  border-color: transparent transparent #282828 transparent;
+  -webkit-filter: drop-shadow(1px 2px 1px #F1F2F8);
+  filter: drop-shadow(1px -1px 1px #F1F2F8);
 }
