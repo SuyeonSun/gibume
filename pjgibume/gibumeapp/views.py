@@ -409,9 +409,9 @@ def Down(request,blog_id,comment_id):
 
     if not request.user.is_authenticated: #
         return redirect("login") # 
- 
+
 # 향수 test
- def test(request):
+def test(request):
     return render(request, 'test.html')
 
 def form(request):
