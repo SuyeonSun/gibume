@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from gibumeapp.views import *
-from testapp.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -71,6 +70,6 @@ urlpatterns = [
     path('account/', include('account.urls')),
 
     path('form/', form, name="form"),
-    path('result/', result, name="result"),
+    path('test/', result, name="test"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
