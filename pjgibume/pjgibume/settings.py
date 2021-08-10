@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gibumeapp',
     'account',
-    'testapp',
 ]
 
 # AUTHENTICATION_BACKENDS=[
