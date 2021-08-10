@@ -75,7 +75,7 @@ def detail6(request):
 
 def detail7(request):
     products = Perfume.objects.all()
-    products=products.filter(color='white')
+    products=products.filter(color='whi')
     products=list(products)
     return render(request, 'detail7.html', {'products':products})
 
