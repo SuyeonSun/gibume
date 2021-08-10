@@ -12,7 +12,7 @@
 }
 
 .main_title{
-    color:#F12361;
+    color:#282828;
     font-weight: bold;
     font-size:50px;
 }
@@ -41,10 +41,10 @@
     min-height:40px;
     display:flex;
     align-items:center;
-    background:white;
-    border-bottom:#F12361 solid 1px;
-    border-left:#F12361 solid 1px;
-    border-right:#F12361 solid 1px;
+    background:#fef5fa;
+    border-bottom:#282828 solid 1px;
+    border-left:#282828 solid 1px;
+    border-right:#282828 solid 1px;
     position:absolute;
     top:0;
     width: 100%;
@@ -55,13 +55,15 @@
     box-sizing:border-box;
     overflow:hidden;
     white-space:nowrap;
-    
-    color:#aa224b;
+    font-weight: 400;
+    color:#282828;
     
 }
   
 .option:hover {
-    background:#fef5fa;
+    background-color: #ffc0cc;
+    color:#282828;
+    font-weight: 600;
 }
   
 .selectbox:focus .option {
@@ -83,6 +85,8 @@
     border-left:none;
     border-right:none;
     position:relative;
+    font-weight:normal;
+    
 }
   
 .opt:checked + label:after {
@@ -92,7 +96,7 @@
       height: 0; 
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
-      border-top: 5px solid #F12361;
+      border-top: 5px solid #282828;
     position:absolute;
     right:10px;
     top:calc(50% - 2.5px);
@@ -122,7 +126,7 @@
     margin-left:50px;
     height:40px;
     width:388px;
-    border: 1px solid  #F12361;
+    border: 1px solid  #282828;
     background:#ffffff;
   }
 
@@ -139,10 +143,10 @@
     width:50px;
     height:40px;
     border:0px;
-    background: #F12361;
+    background: #282828;
     outline:none;
     float:right;
-    color: #ffffff;
+    color: #fef5fa;
     border-radius:0px;
   }
   
@@ -171,7 +175,7 @@
         
         
       }
-      .perfume_info { font-size:15px;color:#911c3f; font-weight: bold;} 
+      .perfume_info { font-size:15px;color:#282828; font-weight: bold;} 
     }
 
     .perfume_img {
@@ -185,7 +189,7 @@
     text-align: center;
     font-size:17px;
     margin-top:5px;
-    color:#aa224b;
+    color:#282828;
     font-weight: bold;
     
   }
@@ -236,7 +240,7 @@
   .value_select{
     display: inline-block;
     height: 85%;
-    border:1px solid #F12361;
+    border:1px solid #282828;
     position:absolute;
     left:475px;
     right:50px;
@@ -256,21 +260,22 @@
     text-align: center;
     width:388px;
     height:calc(#{$x} - #{$y});
-    border: 1px solid  #F12361;
+    border: 1px solid  #282828;
     margin-left:50px;
     min-height:510px;
+    
     
     
   }
 
   .h1{
-    border:0;border-top:2px solid #aa224bce;
+    border:0;border-top:2px solid #7e1937ce;
     width:100px;
     align-items: center;
   }
 
   .h2{
-    border:0;border-top:1px solid #aa224b93;
+    border:0;border-top:1px solid #7e1937ce;
     width:70px;
     align-items: center;
   }
@@ -279,7 +284,7 @@
     width:390px;
     margin-left:50px;
     margin-top:1px;
-    background-color:#b9335b;
+    background-color:#282828;
   }
   .tagname{
     
@@ -301,16 +306,16 @@
 
   /* background of the scrollbar except button or resizer */
   .value_select::-webkit-scrollbar-track {
-    background-color: #fef5fa;
+    background-color: #282828;
     
   }
 
   /* scrollbar itself */
   .value_select::-webkit-scrollbar-thumb {
-    background-color: #aa224b;
+    background-color: #fef5fa;
     
-    border-right: 4px solid #fef5fa;
-    border-left: 4px solid #fef5fa;
+    border-right: 2px solid #282828;
+    border-left: 3px solid #282828;
   }
 
   /* set button(top and bottom of the scrollbar) */
@@ -327,16 +332,18 @@
     margin-top:40px;
     border-radius: 30%;
     overflow: hidden;
-    border:1px solid #911c3f;
+    border:1px solid #282828;
   }
 
   .timeimg{
     width:230px;
     margin-top:40px;
-    border:1px solid #911c3f;
+    
+    
   }
   .noteimg{
     width:230px;
     margin-top:30px;
-    border:1px solid #911c3f;
+    
+    
   }
