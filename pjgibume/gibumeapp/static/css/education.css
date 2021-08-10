@@ -8,9 +8,36 @@ a {
     /* padding-top: 35px; */
 }
 
+.eduHeaderWrapper {
+    width: 100%;
+    height: 70vh;
+    background: url("https://images.unsplash.com/photo-1589289986796-6cfd8987d6c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
+
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.maintitle {
+    font-size: 32px;
+    font-weight: 800;
+    color: #f4a7b5;
+}
+
+.commnuityBarWrapper {
+    width: 100%;
+    height: 8vh;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .eduCateWrapper {
     width: 100%;
-    height: 5rem;
+    height: 8vh;
     display: flex;
 }
 
@@ -21,18 +48,26 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f12361;
-    color: #ffffff;
+    background-color: #282828;
+    color: #f8b5d7;
     font-weight: 200;
     font-size: 1.2rem;
+}
+
+.cateItem a {
+    color: #f8b5d7;
 }
 
 .here {
     background-color: #f8b5d7;
 }
 
+.here a {
+    color: #282828;
+}
+
 .cateItem:hover {
-    background-color: #f8b5d7;
+    background-color: #ffffff;
 }
 
 .eduSec {

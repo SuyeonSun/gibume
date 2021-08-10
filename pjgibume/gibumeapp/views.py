@@ -75,7 +75,7 @@ def detail6(request):
 
 def detail7(request):
     products = Perfume.objects.all()
-    products=products.filter(time='edc')
+    products=products.filter(color='whi')
     products=list(products)
     return render(request, 'detail7.html', {'products':products})
 
@@ -409,3 +409,10 @@ def Down(request,blog_id,comment_id):
 
     if not request.user.is_authenticated: #
         return redirect("login") # 
+
+# 향수 test
+def test(request):
+    return render(request, 'test.html')
+
+def form(request):
+    return render(request, 'form.html')

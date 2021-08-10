@@ -3,30 +3,123 @@
     <head>
         {% load static %} {% block extrahead %}
         <link rel="stylesheet" href='{% static "css/commonsense.css" %}' />
+        <link rel="stylesheet" href='{% static "css/eduquiz.css" %}' />
         <title>EDUCATION</title>
         {% endblock %}
     </head>
-
-    <body>
+    <style>
+        h1 { color: #f12361; margin-top:10px; text-align: center; font-size: 25px; font-weight: bolder; width: 600px;}
+        h2 { color: #000; margin-top:10px; text-align: center; font-size: 20px; font-weight: normal; width: 500px;}
+        h3 { color: #000;  margin-top:10px; text-align: center; font-size:20px; width: 500px; line-height: 25px; }
+        div { text-align: center; }
+        IMG {border: none;}
+    </style>
+    <body onload="NextQuestion(0)">
         <div class="eduWrapper">
-            <div class="eduSec">
-                <span>EDUCATION</span>
+            <div class="eduHeaderWrapper">
+                <span class="maintitle">EDUCATION</span>
             </div>
             <div class="eduCateWrapper">
                 
-                <div class="cateItem">
-                    <a href="{%url 'education'%}">영상</a></div>
-            
-            
-                <div class="cateItem">
-                    <a href="{%url 'common'%}">향수상식</a></div>
-            
-            
-                <div class="cateItem">
-                    <a href="{%url 'eduquiz'%}">향수퀴즈</a></div>
-            
+                    <div class="cateItem">
+                        <a href="{%url 'education'%}">영상</a>
+                    </div>
+                
+                    <div class="cateItem">
+                        <a href="{%url 'common'%}">향수상식</a></div>
+                
+                
+                    <div class="cateItem here">
+                        <a href="{%url 'eduquiz'%}">향수퀴즈</a></div>
+                
+            </div>
+
+        <br><br><br><br><br><br><br><br><br>
+        <div class="homeLandingTop">
+            <div class="test">
+                <img class="line" src="../static/img/line.png">
+            </div>
+
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>퀴즈가 끝났습니다</h1>
+
+                <div class="grade-details">
+                    <p>총 문제 수: 10</p>
+                    <p>오답 수 : <span id="wrong-answers"></span></p>
+                    <p>정답 수: <span id="right-answers"></span></p>
+                    <p>Grade : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">계속</button>
+                </div>
+
+            </div>
         </div>
-           
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>점수 : <span id="player-score"></span> / 10</h1>
+                <h1>질문 : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+
+                <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                            <h1>답을 선택해주세요</h1>
+
+                            <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">계속</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">다음</button>
+            </div>
+            <br><br><br><br>
+        </div>
+
+    <script src="../static/js/eduquiz.js"></script>
     </body>
     {% endblock%}
 </html>
