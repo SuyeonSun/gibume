@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {%block content%}
+
+<html>
+
+<head>
+    {% load static %} {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}" />
+    <title>DETAIL</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div class="commnunityHeaderWrapper">
+        <p class="maintitle">오랜 시간 향이 지속되는 향수</p>
+    </div>
+
+    <div class="contentsWrapper">
+        {%for product in products%}
+        <a href="{%url 'product' product.name%}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="{% get_static_prefix %}img/{{product.perfume_img}}.jpg">
+                </div>
+            </div>
+            <div class="theme_text">[{{product.brand}}] {{product.name}}</div>
+        </a>
+        {%endfor%}
+    </div>
+</body>
+{% endblock%}
+
+</html>

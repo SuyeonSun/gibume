@@ -2,151 +2,64 @@ input:focus {
     outline: none;
 }
 
-.wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 15vh;
+textarea:focus,
+input:focus {
+    outline: none;
 }
-
-.formWrapper {
+.loginWrapper {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/loginBg.jpg");
+    background-size: cover;
     display: flex;
-    flex-direction: column;
-
-    width: 30%;
-    height: 40vh;
-    background-color: #fff;
-    border-radius: 14px;
-    border: 5px solid #fff;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .formHeader {
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fde4fd;
-    border-radius: 10px 10px 0 0;
-}
-
-.formHeader span {
-    font-weight: 800;
-    color: #fff;
-    font-size: 20px;
-}
-
-.formItemWrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    width: 20rem;
+    height: 20rem;
+    background: url("../img/nuLogo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .formItem {
+    border: 1px solid #ffffff;
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
     display: flex;
-    padding-left: 50px;
-    width: 100%;
-    margin: 10px;
+    align-items: center;
 }
 
 .formItem span {
-    width: 150px;
-    height: 22px;
-    /* border: 1px solid red; */
-    font-weight: 800;
-    color: #db98db;
+    margin-left: 10px;
+    width: 4rem;
+    text-align: start;
+    font-weight: 200;
+    color: #ffffff;
+    font-size: 0.8rem;
 }
+
 .formItem input {
+    margin-left: 2rem;
+    height: 2rem;
     border: none;
-    background-color: #bcb9b5;
-    width: 200px;
-    height: 22px;
-    padding-left: 10px;
-    border-radius: 10px;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 .btn {
-    background-color: #fde4fd;
-    border: none;
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 150px;
-    height: 40px;
-    color: #fff;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: #fde4fd;
-    overflow: hidden;
-}
-
-section .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url(../img/wave1.png);
-    background-size: 1000px 100px;
-}
-
-section .wave.wave1 {
-    animation: animate 30s linear infinite;
-    z-index: 1000;
-    opacity: 1;
-    animation-delay: 0s;
-    bottom: 0;
-}
-
-section .wave.wave2 {
-    animation: animate2 15s linear infinite;
-    z-index: 999;
-    opacity: 0.5;
-    animation-delay: -5s;
-    bottom: 10px;
-}
-
-section .wave.wave3 {
-    animation: animate2 15s linear infinite;
-    z-index: 998;
-    opacity: 0.2;
-    animation-delay: -2s;
-    bottom: 15px;
-}
-
-section .wave.wave4 {
-    animation: animate2 15s linear infinite;
-    z-index: 997;
-    opacity: 0.7;
-    animation-delay: -5 s;
-    bottom: 20px;
-}
-
-@keyframes animate {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: 1000px;
-    }
-}
-
-@keyframes animate2 {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: -1000px;
-    }
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: 200;
 }

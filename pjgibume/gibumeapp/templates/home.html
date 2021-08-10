@@ -1,54 +1,91 @@
 {% extends 'base.html' %} {%block content%}
 
+<html>
+
 <head>
     {% load static %} {% block extrahead %}
-    <link rel="stylesheet" href='{% static "css/home.css" %}' />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
     <title>HOME</title>
     {% endblock %}
 </head>
 
 <body>
-    <div class="homeLandingTop">
-        <div class="landingTitle">
-            <span>Perfume Team <br />
-                this is DJANGO</span>
-        </div>
-        <br />
-        <div class="landingMessage">
-            <span>검색하지 마세요. <br />
-                여러분에게 맞는 향수를 추천해 드립니다.</span>
-        </div>
+    <div class="commnunityHeaderWrapper">
+        <p class="maintitle">검색하지 마세요. 당신에게 맞는 향수를 찾아드립니다.</p>
     </div>
-    <div class="homeLandingContents">
-        <a href="{%url 'detail'%}">
-            <div class="contentsItem">
-                <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
+
+    <div class="contentsWrapper">
+        <a href="{%url 'detail1' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈1.png" alt="" />
+                </div>
             </div>
+            <div class="theme_text">오랜 시간 향이 지속되는 향수</div>
         </a>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
-        <div class="contentsItem">
-            <span>끝도없이 더워지는 여름... 뿌리좋은 향수 추천</span>
-        </div>
+
+        <a href="{%url 'detail2' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈2.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">면접 볼 때 어울리는 향수</div>
+        </a>
+
+        <a href="{%url 'detail3' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈3.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">물기를 머금은 장미가 연상되는 향수</div>
+        </a>
+
+        <a href="{%url 'detail4' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈4.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">청량함을 담아 휴가철에 어울리는 향수</div>
+        </a>
+
+        <a href="{%url 'detail5' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈5.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">소개팅에 어울리는 은은한 향수</div>
+        </a>
+
+        <a href="{%url 'detail6' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈6.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">적당한 지속력과 향을 갖춘 노멀한 향수</div>
+        </a>
+
+        <a href="{%url 'detail7' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈7.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">소프트한 향을 가진 가벼운 향수</div>
+        </a>
+
+        <a href="{%url 'detail8' %}">
+            <div class="postWrapper">
+                <div class="postImg">
+                    <img src="../static/img/홈8.png" alt="" />
+                </div>
+            </div>
+            <div class="theme_text">오렌지빛 꽃물처럼 상큼한 향수</div>
+        </a>
     </div>
 </body>
 {% endblock%}

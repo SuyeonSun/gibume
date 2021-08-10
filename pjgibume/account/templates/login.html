@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,31 +10,21 @@
         <title>Document</title>
     </head>
     <body>
-        <section>
-            <div class="wrapper">
-                <div class="formWrapper">
-                    <form action="{% url 'login' %}" method="POST">
-                        <div class="formHeader">
-                            <span>SIGNIN</span>
-                        </div>
-                        {% csrf_token %}
-                        <div class="formItemWrapper">
-                            <div class="formItem">
-                                <span>ID </span>{{form.username}}
-                            </div>
-                            <div class="formItem">
-                                <span>PASSWORD </span>{{form.password}}
-                            </div>
+        <div class="loginWrapper">
+            <form action="{% url 'login' %}" method="POST">
+                <div class="formHeader"></div>
+                {% csrf_token %}
+                <div class="formItemWrapper">
+                    <div class="formItem">
+                        <span>ID </span>{{form.username}}
+                    </div>
+                    <div class="formItem">
+                        <span>PASSWORD </span>{{form.password}}
+                    </div>
 
-                            <button class="btn" type="submit">로그인</button>
-                        </div>
-                    </form>
+                    <button class="btn" type="submit">로그인</button>
                 </div>
-            </div>
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
-            <div class="wave wave4"></div>
-        </section>
+            </form>
+        </div>
     </body>
 </html>
