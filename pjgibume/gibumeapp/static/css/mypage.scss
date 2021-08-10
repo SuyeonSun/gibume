@@ -1,0 +1,535 @@
+.title{
+    width: 100%;
+    height: 100vh;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+.maintitle{
+    color:#F1F2F8;
+    font-weight: bold;
+    font-size:50px;
+}
+
+.detail_1{
+  display: flex;
+  justify-content: center;
+  background-color:#F1F2F8;
+  
+  padding:50px;
+  padding-bottom:50px;
+  
+}
+
+.detail_2{
+    
+    height:100%;
+    width:1100px;
+    padding-left:40px;
+    padding-right: 40px;
+    padding-bottom:30px;
+   
+}
+
+
+
+.subtitle{
+    color:#f4a7b5;
+    font-weight: bold;
+    font-size:28px;
+}
+
+body{
+    width:100%;
+    height:100%;
+    background-color:#F1F2F8;
+    padding:0;
+    margin:0;
+}
+
+
+
+hr{
+    border:none;
+    border-top:1px solid #F12361;
+    color:white;
+    background-color:white;
+}
+
+.prof1{
+    border: 1px solid #f4a7b5;
+    border-radius:5px;
+    width: 110px;
+    height: 110px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:10px;
+    overflow: hidden;
+   
+}
+
+.Img{
+    width: 110px;
+    height: 110px;
+    
+    
+}
+
+.prof2{
+
+    font-size:17px;
+    width:300px;
+    display:inline-block;
+    text-align:left;
+    vertical-align: middle;
+    margin-left:30px;
+    
+}
+
+.profs{
+    
+    width:600px;
+    padding:15px;
+    margin:0 auto;
+    margin-top:10px;
+
+    
+    
+}
+.line {
+  border:0;
+  border-top:1px solid #f4a7b5;
+}
+.info1{
+  padding:20px;
+  background-color:white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.info2{
+  padding:20px;
+  background-color:white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.info3{
+  padding:20px;
+  background-color:white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.info4{
+  padding:20px;
+  background-color:white;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.infodetail{
+    font-size:17px;
+    margin:0;
+    font-weight: 400;
+    line-height:2.5em;
+}
+
+
+.comu_post{
+  
+  margin:0 auto;
+  margin-top:15px;
+  margin-bottom:15px;
+  width:340px;
+  box-shadow: 0 3px 6px rgba(133, 83, 83, 0.16), 0 3px 6px rgba(75, 49, 49, 0.23);
+}
+
+.comu_title{
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+  overflow:hidden;
+}
+
+.comu_date{
+  font-size: 13px;
+  padding: 15px;
+}
+.comu_comm{
+  margin:0 auto;
+  margin-top:15px;
+  margin-bottom:15px;
+  width:340px;
+  box-shadow: 0 3px 6px rgba(133, 83, 83, 0.16), 0 3px 6px rgba(75, 49, 49, 0.23);
+}
+
+.comm_list{
+  margin:0 auto;
+  margin-top:15px;
+  margin-bottom:15px;
+  width:340px;
+  box-shadow: 0 3px 6px rgba(133, 83, 83, 0.16), 0 3px 6px rgba(75, 49, 49, 0.23);
+}
+
+.comm_title{
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+  overflow:hidden;
+}
+
+.comm_date{
+  font-size: 13px;
+  padding: 15px;
+}
+.comm_cont{
+  font-size:18px;
+  padding:5px;
+  overflow:hidden;
+
+}
+
+
+
+.list-group1{
+  margin:13px;
+  height: 375px;
+  width:400px;
+  overflow-y: scroll;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+  
+  
+}
+
+.list-group1::-webkit-scrollbar {
+  background-color: #fef5fa;
+  width: 12px;
+
+}
+
+/* background of the scrollbar except button or resizer */
+.list-group1::-webkit-scrollbar-track {
+  background-color: #F1F2F8;
+  
+}
+
+/* scrollbar itself */
+.list-group1::-webkit-scrollbar-thumb {
+  background-color: #fef5fa;
+  
+  border-right: 2px solid #F1F2F8;
+  border-left: 3px solid #F1F2F8;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.list-group1::-webkit-scrollbar-button {
+  display:none;
+}
+
+
+.list-group2{
+  margin:13px;
+  height: 375px;
+  width:800px;
+  overflow-y: scroll;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+  
+  
+}
+
+.list-group2::-webkit-scrollbar {
+  background-color: #fef5fa;
+  width: 12px;
+
+}
+
+/* background of the scrollbar except button or resizer */
+.list-group2::-webkit-scrollbar-track {
+  background-color: #F1F2F8;
+  
+}
+
+/* scrollbar itself */
+.list-group2::-webkit-scrollbar-thumb {
+  background-color: #fef5fa;
+  
+  border-right: 2px solid #F1F2F8;
+  border-left: 3px solid #F1F2F8;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.list-group2::-webkit-scrollbar-button {
+  display:none;
+}
+
+.posts{
+    margin-top:20px;
+    text-align:center;
+}
+
+.comment{
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.perfume_comment{
+    display:inline-block;
+    vertical-align: middle;
+    
+}
+.review{
+  text-align: center;
+}
+.post{
+    display:inline-block;
+    vertical-align: middle;
+    
+}
+
+.post-title{
+    color:#282828;
+    font-weight:400;
+    font-size:22px;
+    margin:0;
+
+}
+
+
+
+.likepost{
+    
+  width:800px;
+  margin:0 auto;
+  margin-top:20px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* update */
+
+.tabset{
+    display:inline-block;
+    vertical-align: middle;
+    width:400px;
+}
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color: #f4a7b5;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background: #f4a7b5;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    
+    border-top: 1px solid #ccc;
+  }
+
+  
+  .tabset {
+    max-width: 65em;
+  }
+
+  .perfume_list{
+    margin-bottom: 20px;
+    height: 375px;
+    overflow-y: scroll;
+    
+  }
+  /* total width */
+  .perfume_list::-webkit-scrollbar {
+    background-color: #fef5fa;
+    width: 12px;
+  
+  }
+
+  /* background of the scrollbar except button or resizer */
+  .perfume_list::-webkit-scrollbar-track {
+    background-color: #F1F2F8;
+    
+  }
+
+  /* scrollbar itself */
+  .perfume_list::-webkit-scrollbar-thumb {
+    background-color: #fef5fa;
+    
+    border-right: 2px solid #F1F2F8;
+    border-left: 3px solid #F1F2F8;
+  }
+
+  /* set button(top and bottom of the scrollbar) */
+  .perfume_list::-webkit-scrollbar-button {
+    display:none;
+  }
+
+.perfume{
+    width:150px;
+    height: 205px;
+    border: 1px solid rgba(228, 180, 180, 0.8);
+    
+    display:inline-block;
+    font-size: 0px;
+    
+    position: relative;
+
+    figure{
+      
+      
+      figcaption{
+        background: rgba(255, 248, 248, 0.8);
+			  bottom: 0;
+			  box-sizing: border-box;
+			  position: absolute;
+			  width: 100%;
+			  
+			  -webkit-transition: max-height 0.3s ease-out;
+			  overflow: hidden;
+        
+        
+      }
+      .perfume_info { font-size:15px;color:#911c3f; font-weight: bold; text-align: center;} 
+    }
+
+    .perfume_img {
+      margin-top:5px;
+      width:150px;
+      
+      object-fit: cover;
+    }
+  }
+  .perfume_brand, .perfume_name{
+    text-align: center;
+    font-size:17px;
+    margin-top:5px;
+    color:#aa224b;
+    font-weight: bold;
+    
+  }
+  @media screen and (min-width: 300px) {
+    figure {
+      
+
+      figcaption { height: 50px; }
+    
+      &:hover {
+        figcaption {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          transition: height .5s ease-in;
+        }
+        
+        .perfume_info {
+          opacity: 1;
+          -webkit-transition: opacity .5s ease-in .6s;
+          -moz-transition: opacity .5s ease-in .6s;
+          -ms-transition: opacity .5s ease-in .6s;
+          transition: opacity .5s ease-in .6s;
+        }
+      }
+    }
+    
+    .perfume_info { opacity: 0; }
+    }
+  
+    .perfume_color, .perfume_time, .perfume_note{
+      margin-bottom:5px;
+    }
+  @media screen and (max-width: 301px) {
+    figure { width: 100%; }
+    
+    .perfume_info { opacity: 1; }
+    figcaption { height: auto; }
+  }
+  .h1{
+    border:0;border-top:2px solid #aa224bce;
+    width:100px;
+    align-items: center;
+  }
+
+  .h2{
+    border:0;border-top:1px solid #aa224b93;
+    width:70px;
+    align-items: center;
+  }
+
+  .a1:link{
+    color: #552030;
+  }
+
+  .a1:visited{
+    color: #552030;
+  }
+
+  .a1:hover{
+    color:#F12361;
+  }
+
+  .a1:active{
+    color:#F12361;
+  }

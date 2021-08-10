@@ -2,7 +2,7 @@
 .title {
   width: 100%;
   height: 100vh;
-  background-color: #fef5fa;
+  background-color: #282828;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,13 +19,16 @@
 }
 
 .main_title {
-  color: #F12361;
+  color: #fef5fa;
   font-weight: bold;
   font-size: 50px;
 }
 
+body {
+  background-color: #F1F2F8;
+}
+
 .main {
-  background-color: white;
   width: 100%;
   height: 90vh;
   margin-top: 35px;
@@ -54,10 +57,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: white;
-  border-bottom: #F12361 solid 1px;
-  border-left: #F12361 solid 1px;
-  border-right: #F12361 solid 1px;
+  background: #fef5fa;
+  border-bottom: #282828 solid 1px;
+  border-left: #282828 solid 1px;
+  border-right: #282828 solid 1px;
   position: absolute;
   top: 0;
   width: 100%;
@@ -72,11 +75,14 @@
           box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
-  color: #aa224b;
+  font-weight: 400;
+  color: #282828;
 }
 
 .option:hover {
-  background: #fef5fa;
+  background-color: #ffc0cc;
+  color: #282828;
+  font-weight: 600;
 }
 
 .selectbox:focus .option {
@@ -95,11 +101,12 @@
       -ms-flex-order: 1;
           order: 1;
   z-index: 2;
-  background: #fef5fa;
+  background: #f4a7b5;
   border-top: none;
   border-left: none;
   border-right: none;
   position: relative;
+  font-weight: normal;
 }
 
 .opt:checked + label:after {
@@ -108,7 +115,7 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #F12361;
+  border-top: 5px solid #282828;
   position: absolute;
   right: 10px;
   top: calc(50% - 2.5px);
@@ -122,7 +129,7 @@
   height: 40px;
   width: 40px;
   content: '';
-  background: #fef5fa;
+  background: #f4a7b5;
 }
 
 .subbox {
@@ -135,7 +142,7 @@
   margin-left: 50px;
   height: 40px;
   width: 388px;
-  border: 1px solid  #F12361;
+  border: 1px solid  #282828;
   background: #ffffff;
 }
 
@@ -150,12 +157,12 @@ input.search {
 
 .submit_button {
   width: 50px;
-  height: 40px;
+  height: 41px;
   border: 0px;
-  background: #F12361;
+  background: #282828;
   outline: none;
   float: right;
-  color: #ffffff;
+  color: #fef5fa;
   border-radius: 0px;
 }
 
@@ -181,12 +188,13 @@ input.search {
 
 .perfume figure .perfume_info {
   font-size: 15px;
-  color: #911c3f;
+  color: #282828;
   font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .perfume .perfume_img {
-  margin-top: 5px;
   width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -196,7 +204,7 @@ input.search {
   text-align: center;
   font-size: 17px;
   margin-top: 5px;
-  color: #aa224b;
+  color: #282828;
   font-weight: bold;
 }
 
@@ -209,13 +217,13 @@ input.search {
     bottom: 0;
     width: 100%;
     height: 100%;
-    -webkit-transition: height .5s ease-in;
-    transition: height .5s ease-in;
+    -webkit-transition: height .3s ease-in;
+    transition: height .3s ease-in;
   }
   figure:hover .perfume_info {
     opacity: 1;
-    -webkit-transition: opacity .5s ease-in .6s;
-    transition: opacity .5s ease-in .6s;
+    -webkit-transition: opacity .3s ease-in .3s;
+    transition: opacity .3s ease-in .3s;
   }
   .perfume_info {
     opacity: 0;
@@ -246,26 +254,41 @@ input.search {
 .value_select {
   display: inline-block;
   height: 85%;
-  border: 1px solid #F12361;
+  border: 1px solid #282828;
   position: absolute;
   left: 475px;
   right: 50px;
-  min-width: 152px;
+  min-width: 164px;
+  min-height: 590px;
   text-align: center;
   font-size: 0px;
+  background-color: white;
 }
 
 .infobox {
+  position: relative;
+  text-align: center;
   width: 388px;
   height: calc(100% - 104px);
-  border: 1px solid  #F12361;
+  border: 1px solid  #282828;
   margin-left: 50px;
+  min-height: 510px;
+  background-color: white;
 }
 
-hr {
+.h1 {
   border: 0;
-  border-top: 1px solid #aa224b;
+  border-top: 2px solid #7e1937ce;
   width: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h2 {
+  border: 0;
+  border-top: 1px solid #7e1937ce;
+  width: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -276,7 +299,7 @@ hr {
   width: 390px;
   margin-left: 50px;
   margin-top: 1px;
-  background-color: #b9335b;
+  background-color: #282828;
 }
 
 .tagname {
@@ -288,6 +311,109 @@ hr {
   font-size: small;
 }
 
+/* total width */
+.value_select::-webkit-scrollbar {
+  background-color: #fef5fa;
+  width: 12px;
+}
+
+/* background of the scrollbar except button or resizer */
+.value_select::-webkit-scrollbar-track {
+  background-color: #282828;
+}
+
+/* scrollbar itself */
+.value_select::-webkit-scrollbar-thumb {
+  background-color: #fef5fa;
+  border-right: 2px solid #282828;
+  border-left: 3px solid #282828;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.value_select::-webkit-scrollbar-button {
+  display: none;
+}
+
 img[src*="-"] {
   /* src에 -문자가 포함되어 있는 경우 */
+}
+
+.colorimg {
+  width: 230px;
+  margin-top: 50px;
+  border-radius: 30%;
+  overflow: hidden;
+  border: 1px solid #282828;
+}
+
+.timeimg {
+  width: 230px;
+}
+
+.noteimg {
+  width: 230px;
+}
+
+/* tooltip */
+.tooltip {
+  position: relative;
+}
+
+.tooltip__item {
+  position: absolute;
+  min-width: 300px;
+  height: 10px;
+  padding: 10px 10px 20px 10px;
+  visibility: hidden;
+  opacity: 0;
+  background: #282828;
+  -webkit-transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  color: #F1F2F8;
+  border: 1px solid #282828;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 400;
+  -webkit-box-shadow: 0 2px 1px #F1F2F8;
+          box-shadow: 0 2px 1px #F1F2F8;
+  z-index: 4;
+}
+
+.tooltip__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.tooltip__initiator {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.tooltip[data-direction="bottom"] .tooltip__initiator:hover ~ .tooltip__item {
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip[data-direction="bottom"] .tooltip__item {
+  top: calc(100% + 1em);
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -15px, 0);
+          transform: translate3d(-50%, -15px, 0);
+}
+
+.tooltip[data-direction="bottom"] .tooltip__item:after {
+  top: -0.5em;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  border-width: 0 0.5em 0.5em 0.5em;
+  border-color: transparent transparent #282828 transparent;
+  -webkit-filter: drop-shadow(1px 2px 1px #F1F2F8);
+  filter: drop-shadow(1px -1px 1px #F1F2F8);
 }

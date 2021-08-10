@@ -29,8 +29,8 @@
           <div class = "subbox">
             <div class = "selectbox" tabindex="1" style="float:left">
               
-              <input class = "opt" type = "radio" name = "color" value = "*" id = "*" onclick = "filter();drawimage_color();" checked/>
-              <label for = "*" class = "option">ALL</label>
+              <input class = "opt" type = "radio" name = "color" value = "call" id = "call" onclick = "filter();drawimage_color();" checked/>
+              <label for = "call" class = "option">ALL</label>
               <input class = "opt" type = "radio" name = "color" value = "red" id = "red" onclick = "filter();drawimage_color();"/>
               <label for = "red" class = "option">RED</label>
               <input class = "opt" type = "radio" name = "color" value = "ora" id = "ora" onclick = "filter();drawimage_color();"/>
@@ -52,8 +52,8 @@
             </div>
           
             <div class = "selectbox" tabindex="1" style="float:left">
-              <input class = "opt" type = "radio" name = "time" value = "-" id = "-" onclick = "filter();drawimage_time();" checked/>
-              <label for = "-" class = "option">ALL</label>
+              <input class = "opt" type = "radio" name = "time" value = "tall" id = "tall" onclick = "filter();drawimage_time();" checked/>
+              <label for = "tall" class = "option">ALL</label>
               <input class = "opt" type = "radio" name = "time" value = "per" id = "per" onclick = "filter();drawimage_time();"/>
               <label for = "per" class = "option">PER</label>
               <input class = "opt" type = "radio" name = "time" value = "edp" id = "edp" onclick = "filter();drawimage_time();"/>
@@ -65,16 +65,16 @@
             </div>
           
             <div class = "selectbox" tabindex="1" style="float:left">
-              <input class = "opt" type = "radio" name = "note" value = "+" id = "+" onclick = "filter();drawimage_note();" checked/>
-              <label for = "+" class = "option">ALL</label>
+              <input class = "opt" type = "radio" name = "note" value = "nall" id = "nall" onclick = "filter();drawimage_note();" checked/>
+              <label for = "nall" class = "option">ALL</label>
               <input class = "opt" type = "radio" name = "note" value = "Citrusfruits" id = "cit" onclick = "filter();drawimage_note();"/>
               <label for = "cit" class = "option">CitrusFruits</label>
               <input class = "opt" type = "radio" name = "note" value = "Aromatics" id = "aro" onclick = "filter();drawimage_note();"/>
               <label for = "aro" class = "option">Aromatics</label>
               <input class = "opt" type = "radio" name = "note" value = "Floral" id = "flo" onclick = "filter();drawimage_note();"/>
               <label for = "flo" class = "option">Floral</label>
-              <input class = "opt" type = "radio" name = "note" value = "Green" id = "gre" onclick = "filter();drawimage_note();"/>
-              <label for = "gre" class = "option">Green</label>
+              <input class = "opt" type = "radio" name = "note" value = "Green" id = "gree" onclick = "filter();drawimage_note();"/>
+              <label for = "gree" class = "option">Green</label>
               <input class = "opt" type = "radio" name = "note" value = "Fruity" id = "fru" onclick = "filter();drawimage_note();"/>
               <label for = "fru" class = "option">Fruity</label>
               <input class = "opt" type = "radio" name = "note" value = "Spices" id = "spi" onclick = "filter();drawimage_note();"/>
@@ -87,28 +87,56 @@
         
           </div>  
           <div class = "infobox">
-            <img id = "colorimage" class = "colorimg">
-            <img id = "timeimage" class = "timeimg">
-            <img id = "noteimage" class = "noteimg">
+            <form>
+              <img id = "colorimage" class = "colorimg" src="{% get_static_prefix %}img/call.jpg" >
+
+              <div class="tooltip" data-direction="bottom">
+                <div class="tooltip__initiator">
+                  <div style = "margin-top:40px;">
+                    <img id = "timeimage" class = "timeimg" src="{% get_static_prefix %}img/tall.png" onmouseover = tooltips_time()>
+                  </div>
+                </div>
+                <div class="tooltip__item">
+                  <p id = "time_ex">bottom</p>
+                </div>
+              </div>
+              
+              <div class="tooltip" data-direction="bottom">
+                <div class="tooltip__initiator">
+                  <div style="margin-top:30px;">
+                    <img id = "noteimage" class = "noteimg" src="{% get_static_prefix %}img/nall.png" onmouseover = tooltips_note()>
+                  </div>
+                </div>
+                <div class="tooltip__item">
+                  <p id = "note_ex">bottom</p>
+                </div>
+              </div>
+              
+              
+            </form>  
+            <div style = "background-color: #282828;width:100%; height:25px; position:absolute; bottom: 0;"></div>
           </div>
         </div>
-        <div class = "value_select">
+        <div class = "value_select" style="overflow-x:hidden; overflow-y:scroll;">
           {% if perfume_list %} {% for perfume in perfume_list %}
-          <div class = "perfume">
-            <figure class = "perfume_thumb">
-              <img src="{% get_static_prefix %}img/{{perfume.perfume_img}}.jpg" class="perfume_img">
-              <figcaption class="perfume_caption">
-                <p class = "perfume_brand">[{{perfume.brand}}]</p>
-                <p class = "perfume_name">{{perfume.name}}</p>
-                <div class = "perfume_info">
-                 <hr>
-                 <p class = "perfume_color"><span class="perfume-color" style = "display:none">{{perfume.color}}</span>{{perfume.get_color_display}}</p>
-                 <p class = "perfume_time"><span class="perfume-time" style = "display:none">{{perfume.time}}</span>{{perfume.get_time_display}}</p>
-                 <p class = "perfume_note"><span class="perfume-note_group" style = "display:none">{{perfume.note_group}}</span>{{perfume.get_note_group_display}}</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
+          <a href="{%url 'product' perfume.name%}">
+            <div class = "perfume">
+              <figure class = "perfume_thumb">
+                <img src="{% get_static_prefix %}img/{{perfume.perfume_img}}.jpg" class="perfume_img">
+                <figcaption class="perfume_caption">
+                  <p class = "perfume_brand">[{{perfume.brand}}]</p>
+                  <p class = "perfume_name">{{perfume.name}}</p>
+                  <div class = "perfume_info">
+                  <hr class = "h1">
+                  <span class = "perfume-color" style = "display:none;">{{perfume.color}}</span>
+                  <p class = "perfume_time" style = "padding-top:10px; padding-bottom:5px;"><span class="perfume-time" style = "display:none">{{perfume.time}}</span>{{perfume.get_time_display}}</p>
+                  <hr class = "h2">
+                  <p class = "perfume_note" style = "padding-top:5px; padding-bottom:3px; width:95%;"><span class="perfume-note_group" style = "display:none">{{perfume.note_group}}</span>{{perfume.get_note_group_display}}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
           {% endfor %} {% endif %}
           </div>
       </div>
@@ -146,10 +174,10 @@
 
               var n_arr = n.split(",");
 
-              if (result_color == '*' || result_color == c){
-                if ( result_time == '-' || result_time == t){
+              if (result_color == 'call' || result_color == c){
+                if ( result_time == 'tall' || result_time == t){
                   for ( var j = 0; j < n_arr.length; j++){
-                    if ( result_note == '+' || result_note == n_arr[j].replace(/ /g,"")){
+                    if ( result_note == 'nall' || result_note == n_arr[j].replace(/ /g,"")){
 
                       perfumes[i].style.display = '';
                       break;
@@ -198,7 +226,7 @@
                   break;
                 }
               }
-              img.src = found.value;
+              img.src = "{% get_static_prefix %}img/" + found.value + ".png";
           }
 
           function drawimage_note(){
@@ -212,9 +240,70 @@
                   break;
                 }
               }
-              img.src = found.value;
+              img.src = "{% get_static_prefix %}img/" + found.value + ".png";
           }
 
+          function tooltips_time(){
+            var time = document.getElementsByName("time");
+            for(var i =0; i<time.length;i++){
+                if(time[i].checked == true){
+                  found = time[i];
+                  break;
+                }
+            }
+            if ( found.value == 'tall'){
+              document.getElementById("time_ex").innerHTML = "ALL";
+            }
+            else if ( found.value == 'per'){
+              document.getElementById("time_ex").innerHTML = "향 지속시간 : 6~7h";
+            }
+            else if ( found.value == 'edp'){
+              document.getElementById("time_ex").innerHTML = "향 지속시간 : 5h";
+            }
+            else if ( found.value == 'edt'){
+              document.getElementById("time_ex").innerHTML = "향 지속시간 : 3~5h";
+            }
+            else{
+              document.getElementById("time_ex").innerHTML = "향 지속시간 : 1~2h";
+            }
+          }
+
+          function tooltips_note(){
+            var note = document.getElementsByName("note");
+            for(var i =0; i<note.length;i++){
+                if(note[i].checked == true){
+                  found = note[i];
+                  break;
+                }
+            }
+            if ( found.value == 'nall'){
+              document.getElementById("note_ex").innerHTML = "ALL";
+            }
+            else if ( found.value == 'Citrusfruits'){
+              document.getElementById("note_ex").innerHTML = "감귤류 향";
+            }
+            else if ( found.value == 'Aromatics'){
+              document.getElementById("note_ex").innerHTML = "허브 향";
+            }
+            else if ( found.value == 'Floral'){
+              document.getElementById("note_ex").innerHTML = "꽃 향";
+            }
+            else if ( found.value == 'Green'){
+              document.getElementById("note_ex").innerHTML = "풀&나뭇잎 향";
+            }
+            else if ( found.value == 'Fruity'){
+              document.getElementById("note_ex").innerHTML = "과일류 향";
+            }
+            else if ( found.value == 'Spices'){
+              document.getElementById("note_ex").innerHTML = "향신료 향";
+            }
+            else if ( found.value == 'Wooded'){
+              document.getElementById("note_ex").innerHTML = "나무 향";
+            }
+            else{
+              document.getElementById("note_ex").innerHTML = "발삼 향";
+            }
+          } 
           
 
       </script>

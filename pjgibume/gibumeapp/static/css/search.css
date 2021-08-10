@@ -1,3 +1,181 @@
-.main{
-    margin:300px;
+.main {
+  height: 83vh;
+  margin: 60px;
+  text-align: center;
+}
+
+.search_box {
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  height: 40px;
+  width: 420px;
+  border: 1px solid  #282828;
+  background: #ffffff;
+}
+
+input.search {
+  font-size: 16px;
+  width: 300px;
+  padding: 10px;
+  border: 0px;
+  outline: none;
+  float: left;
+}
+
+.submit_button {
+  width: 51px;
+  height: 41px;
+  border: 0px;
+  background: #282828;
+  outline: none;
+  float: right;
+  color: #fef5fa;
+  border-radius: 0px;
+}
+
+.logo {
+  width: 300px;
+}
+
+.search_result {
+  padding-top: 70px;
+  height: 75%;
+}
+
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  color: #282828;
+}
+
+.value_select {
+  margin-top: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
+  height: 85%;
+  font-size: 0px;
+}
+
+.perfume {
+  width: 150px;
+  height: 205px;
+  border: 1px solid rgba(228, 180, 180, 0.8);
+  display: inline-block;
+  font-size: 0px;
+  position: relative;
+}
+
+.perfume figure figcaption {
+  background: rgba(255, 248, 248, 0.8);
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  -webkit-transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.perfume figure .perfume_info {
+  font-size: 15px;
+  color: #282828;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.perfume .perfume_img {
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.perfume_brand, .perfume_name {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 5px;
+  color: #282828;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 300px) {
+  figure figcaption {
+    height: 50px;
+  }
+  figure:hover figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: height .3s ease-in;
+    transition: height .3s ease-in;
+  }
+  figure:hover .perfume_info {
+    opacity: 1;
+    -webkit-transition: opacity .3s ease-in .3s;
+    transition: opacity .3s ease-in .3s;
+  }
+  .perfume_info {
+    opacity: 0;
+  }
+}
+
+.perfume_color, .perfume_time, .perfume_note {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 301px) {
+  figure {
+    width: 100%;
+  }
+  .perfume_info {
+    opacity: 1;
+  }
+  figcaption {
+    height: auto;
+  }
+}
+
+.h1 {
+  border: 0;
+  border-top: 2px solid #7e1937ce;
+  width: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.h2 {
+  border: 0;
+  border-top: 1px solid #7e1937ce;
+  width: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* total width */
+.value_select::-webkit-scrollbar {
+  background-color: #fef5fa;
+  width: 12px;
+}
+
+/* background of the scrollbar except button or resizer */
+.value_select::-webkit-scrollbar-track {
+  background-color: #282828;
+}
+
+/* scrollbar itself */
+.value_select::-webkit-scrollbar-thumb {
+  background-color: #fef5fa;
+  border-right: 2px solid #282828;
+  border-left: 3px solid #282828;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.value_select::-webkit-scrollbar-button {
+  display: none;
 }
