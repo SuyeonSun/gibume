@@ -411,7 +411,7 @@ def Down(request,blog_id,comment_id):
         return redirect("login") # 
  
 # 향수 test
- def test(request):
+def test(request):
     return render(request, 'test.html')
 
 def form(request):
