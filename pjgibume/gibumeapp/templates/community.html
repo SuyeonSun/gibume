@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {%block content%}
+
+<html>
+
+<head>
+    {% load static %} {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/community.css' %}">
+    <title>COMMUNITY</title>
+    {% endblock %}
+</head>
+
+<body>
+
+
+    <div class="title">
+        <p class="maintitle">COMMUNITY</p>
+        <a href="{%url 'community_new' %}">새 글 작성하기</a>
+    </div>
+    <div class="detail_1">
+        <div class="detail_2">
+            <div class="post-list">
+                {%for com in community%}
+                <div class="post">
+                    <div class="post-top">
+                        <p class="username">작성자: {{com.writer}}</p>
+                        <p class="date">날짜 : {{com.date}}</p>
+                    </div>
+                    <hr>
+                    <div class="post-middle">
+                        <p class="posttitle"> 제목: {{com.title}}</p>
+                    </div>
+                    <div class="img">img</div>
+                    <div class="write">내용 : {{com.body}}</div>
+                    <hr>
+                    <div class="post-bottom">
+                        <a href="{%url 'community_detail' com.id%}">더보기</a>
+                        <button class="comment">comment</button>
+                        <button class="save">save</button>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+{% endblock%}
+
+</html>

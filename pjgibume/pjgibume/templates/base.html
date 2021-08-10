@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block extrahead %} {% endblock %}
+        <link rel="stylesheet" href='{% static "css/reset.css" %}' />
+        <link rel="stylesheet" href='{% static "css/base.css" %}' />
+        <style>
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="baseHeader">
+            <a href="{% url 'home'%}">
+                <img class="logoImg" src="../static/img/logo.png" alt="" />
+            </a>
+            <div class="menuWrapper">
+                <a href="{% url 'perfume' %}"
+                    ><div class="menuItem">PERFUME</div></a
+                >
+                <a href="{% url 'education' %}"
+                    ><div class="menuItem">EDUCATION</div></a
+                >
+                <a href="{% url 'test' %}"
+                    ><div class="menuItem">TEST</div></a
+                >
+                <a href="{% url 'community' %}"
+                    ><div class="menuItem">COMMUNITY</div></a
+                >
+                {% if user.is_authenticated %}
+                <div class="menuItem">{{user.nickname}}님</div>
+                {% endif%}
+            </div>
+            <div class="buttonWrapper">
+                {% if user.is_authenticated %}
+                <a href="{% url 'mypage' %}">
+                    <div class="buttonItem">MYPAGE</div>
+                </a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">
+                    <div class="buttonItem">LOGOUT</div>
+                </a>
+                {% endif %} {% endif %} {% if not user.is_authenticated %}
+                <a href="{% url 'signup' %}">
+                    <div class="buttonItem">SIGNUP</div>
+                </a>
+                {% endif %} {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}">
+                    <div class="buttonItem">SIGNIN</div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {%block content%} {% endblock%}
+        <div class="baseFooter">
+            <span>&copy; copyright all rights reserved PERFUMEE</span>
+        </div>
+    </body>
+</html>

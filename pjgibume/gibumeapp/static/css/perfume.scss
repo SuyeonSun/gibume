@@ -1,0 +1,287 @@
+
+
+.title{
+   
+    width: 100%;
+    height: 100vh;
+    background-color: #fef5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main_title{
+    color:#F12361;
+    font-weight: bold;
+    font-size:50px;
+}
+
+.main{
+    background-color:white;
+    width: 100%;
+    height: 90vh;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+
+.selectbox {
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    width:130px;
+    height:40px;
+    
+    
+}
+  
+.option {
+    padding:0 30px 0 10px;
+    min-height:40px;
+    display:flex;
+    align-items:center;
+    background:white;
+    border-bottom:#F12361 solid 1px;
+    border-left:#F12361 solid 1px;
+    border-right:#F12361 solid 1px;
+    position:absolute;
+    top:0;
+    width: 100%;
+    pointer-events:none;
+    order:2;
+    z-index:1;
+    transition: background .4s ease-in-out;
+    box-sizing:border-box;
+    overflow:hidden;
+    white-space:nowrap;
+    
+    color:#aa224b;
+    
+}
+  
+.option:hover {
+    background:#fef5fa;
+}
+  
+.selectbox:focus .option {
+    position:relative;
+    pointer-events:all;
+}
+  
+.opt {
+    opacity:0;
+    position:absolute;
+    left:-99999px;
+}
+  
+.opt:checked + label {
+    order: 1;
+    z-index:2;
+    background:#fef5fa;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    position:relative;
+}
+  
+.opt:checked + label:after {
+
+    content:'';
+    width: 0; 
+      height: 0; 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #F12361;
+    position:absolute;
+    right:10px;
+    top:calc(50% - 2.5px);
+    pointer-events:none;
+    z-index:3;
+}
+  
+.opt:checked + label:before {
+
+    position:absolute;
+    right:0;
+    height: 40px;
+    width: 40px;
+    content: '';
+    background:#fef5fa;
+}
+
+
+  .subbox {
+    width:400px;
+    height: 42px;
+    margin-left:50px;
+  }
+
+ 
+  .search_box{
+    margin-left:50px;
+    height:40px;
+    width:388px;
+    border: 1px solid  #F12361;
+    background:#ffffff;
+  }
+
+  input.search{
+    font-size: 16px;
+    width: 300px;
+    padding: 10px;
+    border:0px;
+    outline:none;
+    float:left;
+  }
+
+  .submit_button{
+    width:50px;
+    height:40px;
+    border:0px;
+    background: #F12361;
+    outline:none;
+    float:right;
+    color: #ffffff;
+    border-radius:0px;
+  }
+  
+  .perfume{
+    width:150px;
+    height: 205px;
+    border: 1px solid rgba(228, 180, 180, 0.8);
+    
+    display:inline-block;
+    font-size: 0px;
+    
+    position: relative;
+
+    figure{
+      
+      
+      figcaption{
+        background: rgba(255, 248, 248, 0.8);
+			  bottom: 0;
+			  box-sizing: border-box;
+			  position: absolute;
+			  width: 100%;
+			  
+			  -webkit-transition: max-height 0.3s ease-out;
+			  overflow: hidden;
+        
+        
+      }
+      .perfume_info { font-size:15px;color:#911c3f; font-weight: bold;} 
+    }
+
+    .perfume_img {
+      margin-top:5px;
+      width:150px;
+      
+      object-fit: cover;
+    }
+  }
+  .perfume_brand, .perfume_name{
+    text-align: center;
+    font-size:17px;
+    margin-top:5px;
+    color:#aa224b;
+    font-weight: bold;
+    
+  }
+  @media screen and (min-width: 300px) {
+    figure {
+      
+
+      figcaption { height: 50px; }
+    
+      &:hover {
+        figcaption {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          transition: height .5s ease-in;
+        }
+        
+        .perfume_info {
+          opacity: 1;
+          -webkit-transition: opacity .5s ease-in .6s;
+          -moz-transition: opacity .5s ease-in .6s;
+          -ms-transition: opacity .5s ease-in .6s;
+          transition: opacity .5s ease-in .6s;
+        }
+      }
+    }
+    
+    .perfume_info { opacity: 0; }
+    }
+  
+    .perfume_color, .perfume_time, .perfume_note{
+      margin-bottom:5px;
+    }
+  @media screen and (max-width: 301px) {
+    figure { width: 100%; }
+    
+    .perfume_info { opacity: 1; }
+    figcaption { height: auto; }
+  }
+  
+  
+  .leftbox{
+    display: inline-block;
+    height: 94.5%;
+    
+  }
+  .value_select{
+    display: inline-block;
+    height: 85%;
+    border:1px solid #F12361;
+    position:absolute;
+    left:475px;
+    right:50px;
+    min-width:152px;
+    
+    text-align: center;
+
+    font-size:0px;
+  }
+
+  $x: 100%;
+  $y: 104px;
+  
+
+  .infobox{
+    width:388px;
+    height:calc(#{$x} - #{$y});
+    border: 1px solid  #F12361;
+    margin-left:50px;
+    
+  }
+
+  hr{
+    border:0;border-top:1px solid #aa224b;
+    width:100px;
+    align-items: center;
+  }
+  .tag{
+    height: 18px;
+    width:390px;
+    margin-left:50px;
+    margin-top:1px;
+    background-color:#b9335b;
+  }
+  .tagname{
+    
+    display: inline-block;
+    width:32%;
+    text-align: center;
+    color:#fef5fa;
+    font-weight: bold;
+    font-size:small;
+  }
+
+
+  img[src *= "-"]{  /* src에 -문자가 포함되어 있는 경우 */
+    
+  }

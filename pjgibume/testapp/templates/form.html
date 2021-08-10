@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {%block content%} {% load static %}
+
+<head>
+    {% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>나에게 맞는 향수 찾기</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        h1 { color: #f12361; margin-top:10px; text-align: center; font-size: 30px; font-weight: bolder; width: 900px;}
+        h2 { color: #f12361; margin-top:10px; text-align: center; font-size: 30px; font-weight: bolder; width: 500px;}
+        h3 { color: #000;  margin-top:10px; text-align: center; font-size:20px; width: 500px; line-height: 25px; }
+        div { text-align: center; }
+        IMG {border: none;}
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <div class="homeLandingTop">
+        <div class="test">
+            <div class="question_container">
+                <h1 id="title" class="question_number">친구와의 약속이 취소됐을 때 나는</h1><br>
+                <input id=type type="hidden" value="EI">
+                <br><br>
+                <button id="A" type="button">"뭐야... -_-" 다른 친구에게 연락해서 나오라고 한다</button>
+                <button id="B" type="button">"앗싸 개이득" 혼자 집에서 뒹굴뒹굴 거린다</button>
+            </div>
+            <div class="result">
+                <img id="img" src="../static/img/default.png">
+                <br>
+                <h2 id="perfume"></h2>
+                <br><br>
+                <h3 id="explain"></h3>
+                <br><br><br>
+                <div class="addthis_inline_share_toolbox_fozs"></div>
+                <br><br><br>
+            </div>  
+        </div>         
+    </div>
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var num = 2;
+        var q = {
+            2: {"title": "예전에 한 번 사용한 향수에 대해서 나는", "type": "SN", "A": "한 번 써봤지만 생생하게 기억한다", "B":"한 번 써봤는데 어떻게 기억해?"},
+            3: {"title": "내 최애 향수가 별로라는 얘기가 돌 때", "type": "TF", "A": "'응 아니야~~' 아랑곳하지 않고 계속 쓴다", "B":"'이게 별론가..?' 괜히 다른 향수를 써보고 싶어진다"},
+            4: {"title": "시험기간에 나는", "type": "JP", "A": "'오늘은 51p까지 공부해야지' 계획대로 차근차근 공부한다", "B":"'아직 24시간이나 남았네~' 놀다가 벼락치기 한다"},
+            5: {"title": "사람이 많은 길거리에서 넘어졌을떄 나는", "type": "EI", "A": "'아씨 개아파!! 뭐야?' 괜히 큰소리 친다", "B":"(머쓱타드;;) 꾹 참고 가던 길 간다"},
+            6: {"title": "내 최애 향수에 대해 설명할 때 나는", "type": "SN", "A": "'탑 노트는 시트러스에 잔향이 4시간 이상 가고..' 구체적으로 설명한다 ", "B":"'진짜 좋아' 단순하게 설명한다"},
+            7: {"title": "친구와 쇼핑하던 중 향수 샘플을 하나 받았다, 이럴때 나는", "type": "TF", "A": "'가위바위보 할래?' 정정당당하게 맞선다", "B":"'너 써~' 양보한다"},
+            8: {"title": "휴가 계획을 짤 때 나는", "type": "JP", "A": "'1시 반까지는 해수욕장에 도착해야 해' 구체적으로 짠다", "B":"'이날은 쇼핑데이~~' 대충 테마만 정한다"},
+            9: {"title": "정말 괜찮은 향수를 찾았을 때 나는 ", "type": "EI", "A": "'여러분 이 향수 좀 제발 써보세요!!!!!' 동네방네 인생향수라고 추천한다", "B":"'오~ 괜찮은데?' 혼자 생각한다"},
+            10: {"title": "향수를 선택할 때 나는", "type": "SN", "A": "'역시 이게 짱이지~!' 최애 향수를 선택한다", "B":"'오? 새로운 향수네?' 신상을 선택한다"},
+            11: {"title": "조별과제를 할 때 나는", "type": "TF", "A": "'무임승차 밴' 제대로 못하는 팀원은 제명한다", "B":"'사정이 있겠지..' 한 번 봐준다"},
+            12: {"title": "친구가 우리집에 놀러와서 물건을 찾을때 나는", "type": "JP", "A": "'그거 오른쪽 세번 째 서랍에 있어' 정확히 알고 있다", "B":"'음 대충 화장대 쭉 한 번 살펴봐' 대충은 안다"},
+        }
+        var result = {
+            "ESTJ": {"perfume": "조말론 블랙베리 앤 베이", "explain": "똑똑하고 질서와 원칙을 잘 지키는 당신, 부드럽고 진한 정석 머스크 향의 블랙베리 앤 베이를 추천해요😎", "img": "../static/img/blackberry.png"},
+            "ESTP": {"perfume": "이솝 휠", "explain": "느긋하고 편안하며 현실적인 문제를 잘 해결하는 당신, 신선함과 중후하지만 따뜻한 향의 우디 향의 휠을 추천해요🌳", "img": "../static/img/hwyl.png"},
+            "ESFJ": {"perfume": "구찌 블룸 오드 퍼퓸", "explain": "사람에 대한 관심이 많고 누구보다 친절한 당신, 산뜻하고 발랄한 플로럴향의 블룸 오드 퍼퓸을 추천해요🌸", "img": "../static/img/bloom.png"},
+            "ESFP": {"perfume": "다슈 보타닉 리프 퍼퓸", "explain": "호기심이 많으며 개방적이지만 때로는 현실적인 당신, 싱그러운 자연의 향기인 다슈 보타닉 리프 퍼퓸을 추천해요🍀", "img": "../static/img/dashu.png"},
+            "ENTP": {"perfume": "루이비통 Afternoon swim", "explain": "박학다식하고 독창적이며, 새로운 시도를 즐기는 당신, 시원하고 은은한 향인 Afternoon swim을 추천해요🌊", "img": "../static/img/afternoonswim.png"},
+            "ENTJ": {"perfume": "이스뜨와드퍼퓸 1828 쥘 베른", "explain": "활동적이며 준비성과 통솔력을 겸비한 당신, 무게감 있고 깔끔한 블랙수트 향의 1828 쥘 베른을 추천해요👨‍🎓", "img": "../static/img/1828.png"},
+            "ENFP": {"perfume": "플로리스 런던 산탈", "explain": "상상력이 풍부하고 순발력이 뛰어난 당신, 지루하지 않고 화사한 스파이시 향의 플로리스 런던 산탈을 추천해요✨", "img": "../static/img/플로리스.png"},
+            "ENFJ": {"perfume": "에어린 메디터레니언 허니써클", "explain": "사교적이고 타인의 의견을 존중하는 당신, 그윽하고 깊은 달콤함을 가진 허니 향의 에어린 메디터레니언 허니써클을 추천해요!🥞", "img": "../static/img/aerin.png"},
+            "ISTJ": {"perfume": "샤넬 코코 마드모아젤 오 드 파르펭", "explain": "책임감이 강하며 현실적이고 늘 철저한 당신, 동양적이고 부드럽고 중후한 오리엔탈향의 마드모아젤 오 드 파르펭을 추천해요🎴", "img": "../static/img/coco.png"},
+            "ISTP": {"perfume": "톰포드 메탈리크", "explain": "과묵하지만 분석적이고 적응령이 강한 당신, 차갑지만 중성적이고 매력적인 메탈릭 향의 톰포드 메탈리크 향수를 추천해요🔗", "img": "../static/img/metalic.png"},
+            "ISFJ": {"perfume": "진마리 아로마틱 시트러스", "explain": "차분하고 헌신적이며, 인내심도 강한 당신, 은은하게 차분하고 편안한 아로마틱 향의 진마리 시트러스를 추천해요🍂", "img": "../static/img/aromatic.png"},
+            "ISFP": {"perfume": "불가리 아쿠아 마린", "explain": "온화하고 겸손하며, 삶의 여유를 즐길줄 아는 당신, 시원하고 상쾌한 마린 향의 불가리 아쿠아 마린을 추천해요🥽", "img": "../static/img/aqva.png"},
+            "INTJ": {"perfume": "에르메스 운 자르뎅 수르닐 오드 뚜왈렛", "explain": "독립적이고 높은 분석력과 의지를 가진 당신, 깔끔하고 차분한 잔향의 운 자르뎅 수르닐 오드 뚜왈렛을 추천해요🎓", "img": "../static/img/jardin.png"},
+            "INTP": {"perfume": "톰포드 투스칸레더", "explain": "호기심과 탐구심이 높으며 지적인 당신, 고급스럽고 섹시한 레더리 향의 투스칸레더를 추천해요💼", "img": "../static/img/tuscan.png"},
+            "INFJ": {"perfume": "바이레도 미스터 마블러스", "explain": "높은 통찰력으로 다른 사람들에게 영감을 주는 당신, 싱그럽고 상큼달달한 시트러스 향의 미스터 마블러스를 추천해요🥝", "img": "../static/img/byredo.png"},
+            "INFP": {"perfume": "겔랑 허브 프레스카", "explain": "성실하고 이해심 많으며 개방적인 당신, 청량함과 상쾌함이 가득한 민티햐의 겔랑 허브 프레스카를 추천해요🍃", "img": "../static/img/mint.png"},
+        }
+        function start(){
+            $(".result").hide();
+            $(".question").show();
+        }
+        $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+ type).val();
+            $("#"+ type).val(parseInt(preValue) + 1);
+            next();
+        });
+        $("#B").click(function(){
+            next();
+        });
+        function next() {
+            if (num==13) {
+                $(".question_container").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val()<2) ? mbti+="I" : mbti+="E";
+                ($("#SN").val()<2) ? mbti+="N" : mbti+="S";
+                ($("#TF").val()<2) ? mbti+="F" : mbti+="T";
+                ($("#JP").val()<2) ? mbti+="P" : mbti+="J";
+                $("#img").attr("src", result[mbti]["img"]);
+                $("#perfume").html(result[mbti]["perfume"]);
+                $("#explain").html(result[mbti]["explain"]);
+            } else {
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-610fb7f0c61a6a40"></script>
+    {% endblock%}
+</body>

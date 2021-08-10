@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+
+<body>
+    {% csrf_token %}
+    <div>작성자: {{community_detail.writer}}</div>
+    <div>날짜: {{community_detail.date}}</div>
+    <div>제목: {{community_detail.title}}</div>
+    <div>내용: {{community_detail.body}}</div>
+    <!-- image-->
+    <div>이미지:</div>
+    {% if community_detail.image %}
+    <img src="{{community_detail.image.url}}" style="width: 300px; height: 300px;" />
+    {% endif %}
+
+    <!-- 버튼 -->
+    {%if community_detail.writer == request.user.username%}
+    <a href="{% url 'community_delete' community_detail.id %}">삭제하기</a>
+    <a href="{% url 'community_edit' community_detail.id %}">수정하기</a>
+    {%endif%}
+
+    <!-- 저장 버튼 -->
+    <a href="{% url 'save_post' community_detail.id %}">
+        {% if user in community_detail.save_users.all %}
+        <i class="fas fa-bookmark"></i>
+        {% else %}
+        <i class="far fa-bookmark"></i>
+        {% endif %}
+    </a>
+    <br>
+    {{community_detail.save_users.all | length}}명이 저장한 게시글
+
+    <!--댓글 작성-->
+    {% if user.is_authenticated %}
+    <form action="{%url 'writeCommunitycomment' community_detail.id%}" method="POST">
+        {% csrf_token %}
+        <div>
+            <textarea type="textfield" name="comment_text" placeholder="댓글을 입력해주세요."></textarea>
+        </div>
+        <div><input class="writecomment_button" type="submit" value="입력하기" style="cursor: pointer;" /></div>
+    </form>
+    {% endif %}
+
+    <!--댓글 보여주기-->
+    {%for c in comment%}
+    <div>{{c.author_name}}</div>
+    <div>{{c.created_at}}</div>
+    <div>{{c.comment_text}}</div>
+
+    {%if c.author_name == request.user.username%}
+    <a href="{% url 'deleteCommunitycomment' community_detail.id c.id %}">삭제하기</a>
+    {%endif%}
+
+    <!--댓글 좋아요-->
+    <!-- 좋아요 -->
+    <a href="{% url 'Up' community_detail.id c.id %}">
+        {% if user in c.up_users.all %}
+        <div><i class="fas fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-up"></i></div>
+        <div style="margin-left: 5px;">{{c.up_count}}</div>
+        {% endif %}
+    </a>
+
+    <!-- 싫어요 -->
+    <a href="{% url 'Down' community_detail.id c.id %}">
+        {% if user in c.down_users.all %}
+        <div><i class="fas fa-thumbs-down"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% else %}
+        <div> <i class="far fa-thumbs-down"></i></div>
+        <div style="margin-left: 5px;">{{c.down_count}}</div>
+        {% endif %}
+    </a>
+    <hr>
+    {%endfor%}
+
+
+</body>
+
+</html>
