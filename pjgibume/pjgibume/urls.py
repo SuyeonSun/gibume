@@ -70,6 +70,6 @@ urlpatterns = [
     path('account/', include('account.urls')),
 
     path('form/', form, name="form"),
-    path('test/', result, name="test"),
+    path('test/', test, name="test"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
