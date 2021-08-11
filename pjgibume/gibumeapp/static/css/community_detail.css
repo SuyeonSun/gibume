@@ -111,13 +111,25 @@ textarea {
 
 .commentAuthWrapper {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     width: 80%;
     font-weight: 200;
     height: 5rem;
     display: flex;
     padding-left: 1rem;
     /* flex-direction: column; */
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #c9c9c9;
+}
+
+.updownWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+.updownWrapper a {
+    color: #000;
+    margin: 0 0.5rem;
 }
