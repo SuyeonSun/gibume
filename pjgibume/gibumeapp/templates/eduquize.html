@@ -8,11 +8,11 @@
         {% endblock %}
     </head>
     <style>
-        h1 { color: #f12361; margin-top:10px; text-align: center; font-size: 25px; font-weight: bolder; width: 600px;}
-        h2 { color: #000; margin-top:10px; text-align: center; font-size: 20px; font-weight: normal; width: 500px;}
-        h3 { color: #000;  margin-top:10px; text-align: center; font-size:20px; width: 500px; line-height: 25px; }
+        h1 { color: white; margin-top:10px; text-align: center; font-size: 25px; font-weight: normal; width: 600px;}
+        h2 { color: white; margin-top:10px; text-align: center; font-size: 20px; font-weight: normal; width: 500px;}
+        h3 { color: white;  margin-top:10px; text-align: center; font-size:20px; width: 500px; line-height: 25px; }
         div { text-align: center; }
-        IMG {border: none;}
+        img {border: none;}
     </style>
     <body onload="NextQuestion(0)">
         <div class="eduWrapper">
@@ -36,9 +36,6 @@
 
         <br><br><br><br><br><br><br><br><br>
         <div class="homeLandingTop">
-            <div class="test">
-                <img class="line" src="../static/img/line.png">
-            </div>
 
         <div class="modal-container" id="score-modal">
 
@@ -60,18 +57,18 @@
 
             </div>
         </div>
-
+        <br>
         <div class="game-quiz-container">
 
             <div class="game-details-container">
                 <h1>점수 : <span id="player-score"></span> / 10</h1>
                 <h1>질문 : <span id="question-number"></span> / 10</h1>
             </div>
-
+            <br><br>
             <div class="game-question-container">
                 <h1 id="display-question"></h1>
             </div>
-
+            <br>
             <div class="game-options-container">
 
                 <div class="modal-container" id="option-modal">
@@ -86,7 +83,7 @@
                     </div>
 
                 </div>
-
+                
                 <span>
                     <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
                     <label for="option-one" class="option" id="option-one-label"></label>
@@ -112,7 +109,7 @@
 
 
             </div>
-
+            <br>
             <div class="next-button-container">
                 <button onclick="handleNextQuestion()">다음</button>
             </div>
