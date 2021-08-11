@@ -12,7 +12,7 @@
 .maintitle{
     color:#F1F2F8;
     font-weight: bold;
-    font-size:50px;
+    font-size:60px;
 }
 
 .detail_1{
@@ -24,7 +24,7 @@
   padding-bottom:50px;
   
 }
-
+ 
 .detail_2{
     
     height:100%;
@@ -150,6 +150,14 @@ hr{
   margin-top:15px;
   margin-bottom:15px;
   width:340px;
+  box-shadow: 0 3px 6px rgba(133, 83, 83, 0.16), 0 3px 6px rgba(75, 49, 49, 0.23);
+}
+.comu_post2{
+  
+  margin:0 auto;
+  margin-top:15px;
+  margin-bottom:15px;
+  width:500px;
   box-shadow: 0 3px 6px rgba(133, 83, 83, 0.16), 0 3px 6px rgba(75, 49, 49, 0.23);
 }
 
@@ -327,7 +335,7 @@ hr{
 .tabset{
     display:inline-block;
     vertical-align: middle;
-    width:400px;
+    width:480px;
 }
 .tabset > input[type="radio"] {
     position: absolute;
@@ -426,7 +434,7 @@ hr{
     display:none;
   }
 
-.perfume{
+  .perfume{
     width:150px;
     height: 205px;
     border: 1px solid rgba(228, 180, 180, 0.8);
@@ -451,11 +459,11 @@ hr{
         
         
       }
-      .perfume_info { font-size:15px;color:#911c3f; font-weight: bold; text-align: center;} 
+      .perfume_info { font-size:15px;color:#282828; font-weight: bold; padding-left:5px; padding-right: 5px;} 
     }
 
     .perfume_img {
-      margin-top:5px;
+      
       width:150px;
       
       object-fit: cover;
@@ -465,7 +473,7 @@ hr{
     text-align: center;
     font-size:17px;
     margin-top:5px;
-    color:#aa224b;
+    color:#282828;
     font-weight: bold;
     
   }
@@ -481,15 +489,15 @@ hr{
           bottom: 0;
           width: 100%;
           height: 100%;
-          transition: height .5s ease-in;
+          transition: height .3s ease-in;
         }
         
         .perfume_info {
           opacity: 1;
-          -webkit-transition: opacity .5s ease-in .6s;
-          -moz-transition: opacity .5s ease-in .6s;
-          -ms-transition: opacity .5s ease-in .6s;
-          transition: opacity .5s ease-in .6s;
+          -webkit-transition: opacity .3s ease-in .3s;
+          -moz-transition: opacity .3s ease-in .3s;
+          -ms-transition: opacity .3s ease-in .3s;
+          transition: opacity .3s ease-in .3s;
         }
       }
     }
@@ -506,6 +514,7 @@ hr{
     .perfume_info { opacity: 1; }
     figcaption { height: auto; }
   }
+  
   .h1{
     border:0;border-top:2px solid #aa224bce;
     width:100px;
@@ -533,3 +542,37 @@ hr{
   .a1:active{
     color:#F12361;
   }
+
+   
+.arrow{
+  margin-top:30px;
+}
+.arrow span{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #f4a7b5;
+  border-right: 5px solid #f4a7b5;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+  animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+  animation-delay: -0.4s;
+}
+@keyframes animate {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+  }
+}

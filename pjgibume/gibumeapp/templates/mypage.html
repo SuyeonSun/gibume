@@ -10,8 +10,15 @@
 <body>
   <div class="title">
     <p class="maintitle">MYPAGE</p>
+    <a href = "#main">
+      <div class="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
   </div>
-
+  <div class = "top" id = "main" style = "width:100%; height:40px; background-color:#282828;"></div>
   <div class="detail_1">
     <div class="detail_2">
       <div class="info1">
@@ -58,9 +65,9 @@
                           <p class = "perfume_name">{{product.name}}</p>
                             <div class = "perfume_info">
                               <hr class = "h1">
-                              <p class = "perfume_time">{{product.get_time_display}}</p>
+                              <p class = "perfume_time" style = "padding-top:10px; padding-bottom:5px;">{{product.get_time_display}}</p>
                               <hr class = "h2">
-                              <p class = "perfume_note">{{product.get_note_group_display}}</p>
+                              <p class = "perfume_note" style = "padding-top:5px; padding-bottom:3px; width:95%;">{{product.get_note_group_display}}</p>
                             </div>
                         </figcaption>
                       </figure>
@@ -82,9 +89,9 @@
                             <p class = "perfume_name">{{product.name}}</p>
                               <div class = "perfume_info">
                                 <hr class = "h1">
-                                <p class = "perfume_time">{{product.get_time_display}}</p>
+                                <p class = "perfume_time" style = "padding-top:10px; padding-bottom:5px;">{{product.get_time_display}}</p>
                                 <hr class = "h2">
-                                <p class = "perfume_note">{{product.get_note_group_display}}</p>
+                                <p class = "perfume_note" style = "padding-top:5px; padding-bottom:3px; width:95%;">{{product.get_note_group_display}}</p>
                               </div>
                           </figcaption>
                         </figure>
@@ -105,9 +112,9 @@
                             <p class = "perfume_name">{{product.name}}</p>
                               <div class = "perfume_info">
                                 <hr class = "h1">
-                                <p class = "perfume_time">{{product.get_time_display}}</p>
+                                <p class = "perfume_time" style = "padding-top:10px; padding-bottom:5px;">{{product.get_time_display}}</p>
                                 <hr class = "h2">
-                                <p class = "perfume_note">{{product.get_note_group_display}}</p>
+                                <p class = "perfume_note" style = "padding-top:5px; padding-bottom:3px; width:95%;">{{product.get_note_group_display}}</p>
                               </div>
                           </figcaption>
                         </figure>
@@ -182,7 +189,7 @@
             <p class="post-title">[POST]</p>
             <div class="list-group2">
               {%for post in save_post_list%}
-              <div class = "comu_post">
+              <div class = "comu_post2">
                 <a href="{%url 'community_detail' post.id %}" method="POST" class = "a1">
                 
                   <h1 class = "comu_title">{{post.title}}</h1>
@@ -194,7 +201,7 @@
             </div>
           </div>
 
-
+        </div>
       </div>
     </div>
   </div>
