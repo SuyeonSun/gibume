@@ -20,12 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x1*kvb^2u6*k3l$t)l2jt&+^yk#sl_w1way$rkr_msp!r&%&-j'
+# SECRET_KEY = 'django-insecure-x1*kvb^2u6*k3l$t)l2jt&+^yk#sl_w1way$rkr_msp!r&%&-j'
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-x1*kvb^2u6*k3l$t)l2jt&+^yk#sl_w1way$rkr_msp!r&%&-j')
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
 # ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,3 +146,9 @@ AUTH_USER_MODEL = 'account.CustomUser'
 	
 # #위에'django.contrib.sites'에 첫번째 인스턴스 사용
 # SITE_ID=1
+
+#Heroku
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
