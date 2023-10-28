@@ -32,6 +32,5 @@
 #### 4. 주요 기능
 <img width="1400" alt="스크린샷 2023-10-28 오후 3 59 55" src="https://github.com/SuyeonSun/perfect_trip/assets/77823761/4d0368a8-2605-44e2-9e65-261614c16eb0">
 <img width="1398" alt="스크린샷 2023-10-28 오후 4 00 12" src="https://github.com/SuyeonSun/perfect_trip/assets/77823761/b098a61a-fb49-4ab3-af20-33a9f58eb651">
-<img width="1397" alt="스크린샷 2023-10-28 오후 4 00 29" src="https://github.com/SuyeonSun/perfect_trip/as
+<img width="1397" alt="스크린샷 2023-10-28 오후 4 00 29" src="https://github.com/SuyeonSun/perfect_trip/assets/77823761/64697df4-a55d-4139-a393-96b812debb33">
 <img width="1398" alt="스크린샷 2023-10-28 오후 4 01 09" src="https://github.com/SuyeonSun/perfect_trip/assets/77823761/e68af31b-4a9d-4c48-9c37-eb63f4bec23c">
-sets/77823761/64697df4-a55d-4139-a393-96b812debb33">
